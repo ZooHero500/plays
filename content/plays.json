@@ -10,6 +10,19 @@
     "sourceUrl": "https://x.com/RayFernando1337/status/2090195841822998888",
     "date": "2026-08-19",
     "imageUrls": ["https://pbs.twimg.com/media/HQHcxfza4AEDHqh.jpg", "https://pbs.twimg.com/media/HQHYjeracAA1a34.png", "https://pbs.twimg.com/media/HQHY-rCaoAAm4pG.jpg", "https://pbs.twimg.com/media/HQHZOj4bIAA6o3E.jpg", "https://pbs.twimg.com/media/HQHabOubYAAvBx1.png", "https://pbs.twimg.com/media/HQHaxVVbgAAv-T4.jpg"],
-    "steps": ["新建与项目同名的 Grok Bot（Ray 的例子叫 Clippy App / Clippy Agent），把它写成这个仓库的 Direct Responsible Agent，而不是通用助手。", "把首席 agent prompt 贴进去：挂上 GitHub 仓，授权它拉起 cloud agent、跟进 PR，并在需要时使用 poteto-mode；同时装上 pstack（Cursor Marketplace 或 github.com/cursor/plugins/tree/main/pstack）并让它自己读完 pstack Guide。", "像经理一样只在这一个对话里派活：新想法、修 bug、QA、合流。实现交给主 bot，主 bot 再交给 cloud agent。", "活多到一个 bot 记不住时，再发第二条 prompt：让它招新的 Grok Bot 向它汇报，同样按需用 pstack / cloud agent 跟进，下属不直接 ping 你。", "在侧栏右键把 bot 移进分组 / 泳道，按项目或栈分开，避免上百条线程一起涌过来。", "目 token：Ray 警告这种编制会很快烧掉大量额度，先从少数任务收敛，再扩大舰队。"]
+    "steps": ["新建与项目同名的 Grok Bot（Ray 的例子叫 Clippy App / Clippy Agent），把它写成这个仓库的 Direct Responsible Agent，而不是通用助手。", "把首席 agent prompt 贴进去：挂上 GitHub 仓，授权它拉起 cloud agent、跟进 PR，并在需要时使用 poteto-mode；同时装上 pstack（Cursor Marketplace 或 github.com/cursor/plugins/tree/main/pstack）并让它自己读完 pstack Guide。", "像经理一样只在这一个对话里派活：新想法、修 bug、QA、合流。实现交给主 bot，主 bot 再交给 cloud agent。", "活多到一个 bot 记不住时，再发第二条 prompt：让它招新的 Grok Bot 向它汇报，同样按需用 pstack / cloud agent 跟进，下属不直接 ping 你。", "在侧栏右键把 bot 移进分组 / 泳道，按项目或栈分开，避免上百条线程一起涌过来。", "盯 token：Ray 警告这种编制会很快烧掉大量额度，先从少数任务收敛，再扩大舰队。"]
+  },
+  {
+    "id": "official-sales-outbound",
+    "title": "销售外呼过夜跑",
+    "summary": "xAI 官方示例：销售外呼 Bot 过夜研究账号、按意向打分，用每个销售的口吻起草邮件和 LinkedIn，早上只留待批草稿。",
+    "category": "官方玩法",
+    "tags": ["销售", "过夜", "CRM", "LinkedIn", "草稿待批"],
+    "author": "xAI",
+    "authorHandle": "@bot",
+    "sourceUrl": "https://x.ai/news/introducing-grok-bot",
+    "date": "2026-08-11",
+    "imageUrls": ["https://pbs.twimg.com/amplify_video_thumb/2087221157787525120/img/n9OrR6nUrxVZL4oY.jpg"],
+    "steps": ["建一个 Sales Outbound Bot，在简介里写清它拥有的结果：账号研究、联系人优先级、只出待审外呼。", "接上 CRM、产品意向源、公司站点、邮箱和职业网络（遵守各平台条款）；把你平时的邮件 / LinkedIn 口吻样本交给它。", "用官方起步任务：研究当前 CRM 视图里的账号，对照 ICP 和近期意向打分，每户最多找 3 个相关联系人，跳过已在序列里的人，起草邮件和 LinkedIn，返回审阅清单，禁止发送或入组。", "输出稳定后，做成夜间研究 routine：只停在 review list，早上你批草稿再发出。"]
   }
 ]
