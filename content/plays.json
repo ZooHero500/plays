@@ -1,1 +1,15 @@
-SEE_FULL_FILE_ON_DISK_33_PLAYS
+[
+  {
+    "id": "ray-cto-pstack",
+    "title": "把 Grok Bot 当成 CTO",
+    "summary": "Ray Fernando 用两个 prompt + pstack / poteto-mode，让一个主 Grok Bot 接管仓库，再招下属 bot 跟进 PR 与 cloud agent，自己只跟主 bot 说话。",
+    "category": "编制",
+    "tags": ["CTO", "pstack", "poteto-mode", "cloud agent", "PR", "过夜"],
+    "author": "Ray Fernando",
+    "authorHandle": "@RayFernando1337",
+    "sourceUrl": "https://x.com/RayFernando1337/status/2090195841822998888",
+    "date": "2026-08-19",
+    "imageUrls": ["https://pbs.twimg.com/media/HQHcxfza4AEDHqh.jpg", "https://pbs.twimg.com/media/HQHYjeracAA1a34.png", "https://pbs.twimg.com/media/HQHY-rCaoAAm4pG.jpg", "https://pbs.twimg.com/media/HQHZOj4bIAA6o3E.jpg", "https://pbs.twimg.com/media/HQHabOubYAAvBx1.png", "https://pbs.twimg.com/media/HQHaxVVbgAAv-T4.jpg"],
+    "steps": ["新建与项目同名的 Grok Bot（Ray 的例子叫 Clippy App / Clippy Agent），把它写成这个仓库的 Direct Responsible Agent，而不是通用助手。", "把首席 agent prompt 贴进去：挂上 GitHub 仓，授权它拉起 cloud agent、跟进 PR，并在需要时使用 poteto-mode；同时装上 pstack（Cursor Marketplace 或 github.com/cursor/plugins/tree/main/pstack）并让它自己读完 pstack Guide。", "像经理一样只在这一个对话里派活：新想法、修 bug、QA、合流。实现交给主 bot，主 bot 再交给 cloud agent。", "活多到一个 bot 记不住时，再发第二条 prompt：让它招新的 Grok Bot 向它汇报，同样按需用 pstack / cloud agent 跟进，下属不直接 ping 你。", "在侧栏右键把 bot 移进分组 / 泳道，按项目或栈分开，避免上百条线程一起涌过来。", "目 token：Ray 警告这种编制会很快烧掉大量额度，先从少数任务收敛，再扩大舰队。"]
+  }
+]
