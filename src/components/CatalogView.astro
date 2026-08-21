@@ -43,7 +43,7 @@ const config = {
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/')}
 >
-  <Mast locale={locale} bot />
+  <Mast locale={locale} bot dek={locale === 'en'} />
 
   <div class="search-wrap">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

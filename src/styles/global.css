@@ -143,6 +143,15 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.04em;
 }
 
+.mast-dek {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
 /* --- search --- */
 .search-wrap {
   margin: 56px auto 0;
@@ -1577,4 +1586,15 @@ body.is-about .pager { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mini:active { scale: 1; }
+}
+
+.site-nav .nav-github {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-3);
+  line-height: 0;
+}
+
+.site-nav .nav-github:hover {
+  color: var(--text);
 }

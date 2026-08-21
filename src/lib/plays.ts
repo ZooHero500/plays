@@ -146,6 +146,9 @@ export const PLAY_ORDER = [
   "dfc369-code-watcher",
   "harry-munro-overnight-prs",
   "priya-bhatia-deep-thought",
+  "ryan-tydingco-mocha-stevie",
+  "hassan-chagani-claims-agent",
+  "vincent-tellier-king-leads",
 ] as const;
 
 export function sortPlays<T extends { id: string }>(list: T[]) {

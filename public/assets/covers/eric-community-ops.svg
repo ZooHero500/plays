@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#15130f"/>
+  <ellipse cx="190" cy="130" rx="200" ry="170" fill="#4a3a30" opacity="0.38"/>
+  <ellipse cx="680" cy="410" rx="230" ry="140" fill="#4a3a30" opacity="0.26"/>
+  <ellipse cx="90" cy="370" rx="100" ry="88" fill="#8b7355" opacity="0.16"/>
+  <text x="52" y="268" fill="#F2EFE8" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="86" font-weight="500" letter-spacing="-1">社区</text>
+  <text x="54" y="324" fill="#C9C4BB" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="28" font-weight="400" letter-spacing="1.6">增长</text>
+</svg>

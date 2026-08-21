@@ -1,0 +1,46 @@
+---
+id: "official-teach-routine"
+title: "Teach it first. Then let it run overnight."
+summary: "Run it once. Save it as a skill. Then let it run on a schedule. Do not schedule first."
+category: "Official"
+tags:
+  - "skill"
+  - "routine"
+  - "teach-a-task"
+  - "overnight"
+author: "xAI Docs"
+authorHandle: "@bot"
+sourceUrl: "https://docs.x.ai/grok-bot/skills-routines-and-automations"
+date: ""
+audience: "You have a weekly job. You want to teach it first, then let it run on its own."
+outcome: "A skill you will sign off on. A routine that knows what to do when it fails."
+commentary: "What's good: you sign the method first. Then it runs overnight. The catch: schedule first, change the rules later, and failures happen while you are gone."
+cover: "/assets/covers/official-teach-routine.png"
+imageUrls:
+  - "assets/covers/official-teach-routine.png"
+steps:
+  - "Narrow the scope. Steps, pass/fail, what it delivers, what needs your yes. Edit until you will sign it."
+  - "Write when to use it, inputs, order, how to check, what it returns. If it needs a walk-through, use Teach a task once, then review the draft it writes."
+  - "The trial run is real work. Writes still stay parked."
+  - "Write who owns it, which timezone, what to do when data is missing. A background routine still runs when the laptop is closed."
+  - "Example: a ticket link and needs repro land in the same channel. Do not listen to every new message."
+tutorial:
+  - title: "Do the real job once."
+    body: "Narrow the scope. Steps, pass/fail, what it delivers, what needs your yes. Edit until you will sign it."
+  - title: "Have it save the process you just used as a skill."
+    body: "Write when to use it, inputs, order, how to check, what it returns. If it needs a walk-through, use Teach a task once, then review the draft it writes."
+  - title: "Try it on a second input."
+    body: "The trial run is real work. Writes still stay parked."
+  - title: "Then create the routine."
+    body: "Write who owns it, which timezone, what to do when data is missing. A background routine still runs when the laptop is closed."
+  - title: "Keep event triggers narrow."
+    body: "Example: a ticket link and needs repro land in the same channel. Do not listen to every new message."
+prompts:
+  - title: "存成 skill"
+    text: "Save the process we just used as a skill called “Weekly account health.” Include the source systems, risk definitions, output format, and the rule that customer contact always requires approval."
+    source: "https://docs.x.ai/grok-bot/skills-routines-and-automations 原文"
+  - title: "排一条工作日 routine"
+    text: "Every weekday at 8:00 AM, run the Daily customer-risk skill against the current account list. Post a linked watch list in this conversation. Do not contact customers. If the source data is unavailable, report the failure instead of using old data."
+    source: "https://docs.x.ai/grok-bot/skills-routines-and-automations 原文"
+featured: false
+---

@@ -1,9 +1,6 @@
 node_modules/
 dist/
 .astro/
-src/content/plays/
-public/assets/covers/
-public/assets/cover.jpg
 plays.json
 js/data.js
 shots/
@@ -11,3 +8,4 @@ STATUS.md
 .env
 .env.*
 !.env.example
+.skills/

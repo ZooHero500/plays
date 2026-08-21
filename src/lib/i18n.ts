@@ -64,7 +64,7 @@ const en = {
   "chips.aria": "Categories",
   "meta.clickCards": "Click a card to see how",
   "meta.emptyFilter": "No matching plays. Try another word, or tap All.",
-  "meta.emptyCatalog": "No English plays yet. Switch to 中文 for the current catalog.",
+  "meta.emptyCatalog": "No plays yet.",
   "meta.emptyBlog": "No English posts yet.",
   "detail.audience": "For",
   "detail.outcome": "When you're done",
@@ -83,6 +83,7 @@ const en = {
   "detail.note":
     "Write-ups follow public posts and official docs. No likes, views, or dashboard numbers. Open the source to check the original.",
   "mast.tagline": "Grok Bot plays",
+  "mast.dek": "Grok Bot is still early. Help us grow this community.",
   "lang.en": "EN",
   "lang.zh": "中文",
   "lang.aria": "Language",
@@ -133,6 +134,7 @@ const zh: Record<keyof typeof en, string> = {
   "detail.note":
     "正文按公开帖 / 官方说明改写。没有点赞、阅读或后台数字。打开来源核原文。",
   "mast.tagline": "Grok Bot 玩法导航",
+  "mast.dek": "",
   "lang.en": "EN",
   "lang.zh": "中文",
   "lang.aria": "语言",

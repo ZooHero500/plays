@@ -1,0 +1,48 @@
+---
+id: "official-sales-outbound"
+title: "Research overnight, park the drafts"
+summary: "Overnight the bot researches accounts and drafts outreach. Morning, you only approve the drafts."
+category: "Official"
+tags:
+  - "sales"
+  - "overnight"
+  - "crm"
+  - "linkedin"
+  - "drafts"
+author: "xAI"
+authorHandle: "@bot"
+sourceUrl: "https://x.ai/news/introducing-grok-bot"
+date: "2026-08-11"
+audience: "Sales or SDR. The names are already in the CRM. You do not want to research accounts overnight yourself."
+outcome: "A review list in the morning: who is worth a follow, plus email and LinkedIn drafts. The bot does not send."
+commentary: "What's good: the bot works overnight. Morning, you only approve. The catch: voice samples and the current view have to be ready first, or the drafts drift."
+cover: "/assets/covers/official-sales-outbound.png"
+imageUrls:
+  - "assets/covers/official-sales-outbound.png"
+  - "https://pbs.twimg.com/amplify_video_thumb/2087221157787525120/img/n9OrR6nUrxVZL4oY.jpg"
+steps:
+  - "Tell the bot: research accounts, score them, draft. Do not send. Do not enroll anyone in a sequence."
+  - "Connect the CRM you already use. Drop a few emails or LinkedIn notes you wrote yourself, as voice samples."
+  - "Score against ICP and recent intent. At most three contacts per account. Skip anyone already in a sequence. Return a review list. Do not send."
+  - "Spot-check: did it skip the people it should. Can the scores open to evidence. Do the drafts sound like you."
+  - "It still stops at the review list. Morning, you approve. Then they go out."
+tutorial:
+  - title: "Stand up a bot that only does outbound research."
+    body: "Tell the bot: research accounts, score them, draft. Do not send. Do not enroll anyone in a sequence."
+  - title: "Show it how you write."
+    body: "Connect the CRM you already use. Drop a few emails or LinkedIn notes you wrote yourself, as voice samples."
+  - title: "Have it research the accounts in the current view."
+    body: "Score against ICP and recent intent. At most three contacts per account. Skip anyone already in a sequence. Return a review list. Do not send."
+  - title: "Spot-check a few."
+    body: "Spot-check: did it skip the people it should. Can the scores open to evidence. Do the drafts sound like you."
+  - title: "When the shape is right, let it run overnight."
+    body: "It still stops at the review list. Morning, you approve. Then they go out."
+prompts:
+  - title: "官方起步任务"
+    text: "Research the 25 accounts in this CRM view. Score them against our ideal customer profile (ICP) and recent intent, identify up to three relevant contacts per account, and draft email and LinkedIn outreach in the style examples attached. Skip anyone already in an active sequence. Return a review list; do not send or enroll anyone."
+    source: "https://docs.x.ai/grok-bot/use-cases 原文"
+  - title: "岗位简介"
+    text: "You own account research, contact prioritization, and review-ready outreach. Work from our CRM, product-intent sources, company websites, email, and professional networks as their terms allow. Score accounts against our ICP and recent intent, draft email and LinkedIn in the seller's voice, and stop at a review list. Do not send or enroll anyone."
+    source: "改写自 https://docs.x.ai/grok-bot/use-cases"
+featured: false
+---

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#14130f"/>
+  <ellipse cx="640" cy="140" rx="210" ry="180" fill="#3a342c" opacity="0.42"/>
+  <ellipse cx="160" cy="420" rx="240" ry="130" fill="#3a342c" opacity="0.28"/>
+  <ellipse cx="720" cy="390" rx="90" ry="80" fill="#c4b8a5" opacity="0.18"/>
+  <text x="52" y="268" fill="#F2EFE8" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="86" font-weight="500" letter-spacing="-1">冰箱</text>
+  <text x="54" y="324" fill="#C9C4BB" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="28" font-weight="400" letter-spacing="1.6">生活</text>
+</svg>

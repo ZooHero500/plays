@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#121212"/>
+  <ellipse cx="420" cy="70" rx="280" ry="120" fill="#3a3632" opacity="0.32"/>
+  <ellipse cx="710" cy="360" rx="160" ry="150" fill="#3a3632" opacity="0.22"/>
+  <ellipse cx="120" cy="410" rx="180" ry="100" fill="#8a8278" opacity="0.2"/>
+  <text x="52" y="268" fill="#F2EFE8" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="86" font-weight="500" letter-spacing="-1">取证</text>
+  <text x="54" y="324" fill="#C9C4BB" font-family="ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif" font-size="28" font-weight="400" letter-spacing="1.6">工程</text>
+</svg>
