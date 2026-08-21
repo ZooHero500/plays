@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Unofficial public frontend for a Grok Bot plays directory. Catalog data is loaded at runtime and is not in this repo."
+    />
+    <meta name="plays-data-url" content="" />
+    <title>玩法 — 非官方 Grok Bot 目录</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到内容</a>
+    <header class="mast">
+      <div class="mast-brand">
+        <p class="eyebrow">Unofficial · 非官方</p>
+        <a class="wordmark" href="index.html">玩法</a>
+        <p class="lede">Grok Bot 玩法目录。前端公开，编目数据不在 git 里。</p>
+      </div>
+      <nav class="mast-nav" aria-label="站点">
+        <a href="index.html" aria-current="page">目录</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="catalog-status" class="status" hidden></section>
+      <div id="catalog-app"></div>
+    </main>
+
+    <footer class="colophon">
+      <p>静态前端。编目从 <code>content/plays.json</code> 或 <code>PLAYS_DATA_URL</code> 运行时读取。</p>
+    </footer>
+
+    <script>
+      window.PLAYS_DATA_URL = window.PLAYS_DATA_URL || "";
+    </script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

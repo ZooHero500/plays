@@ -1,0 +1,19 @@
+[
+  {
+    "id": "example-placeholder-play",
+    "title": "EXAMPLE ONLY — not a real Grok Bot play",
+    "summary": "Fake placeholder that documents the catalog shape. Do not treat this as editorial content. Copy this file to content/plays.json locally, or deploy a private catalog to that path on the host.",
+    "category": "example",
+    "tags": ["placeholder", "not-real", "schema"],
+    "author": "Example Author",
+    "authorHandle": "@example",
+    "sourceUrl": "https://example.com/placeholder-play",
+    "date": "2026-01-01",
+    "imageUrls": [],
+    "steps": [
+      "Copy content/plays.example.json to content/plays.json (plays.json is gitignored).",
+      "Replace this single object with your private editorial entries on the deployed host only.",
+      "Serve the site over HTTP and reload. The frontend fetches content/plays.json at runtime."
+    ]
+  }
+]
