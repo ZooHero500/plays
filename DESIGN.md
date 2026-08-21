@@ -173,3 +173,4 @@ Elyxo 过了抽象样张。32 张同一系列，16:9。`ray-cto-pstack` 真图�
 - 详情页 `document.title` 为 `{play.title} · Grok Bot Plays`；目录 / 关于恢复 `Grok Bot Plays`。
 - 列表 12 条一页。页码用反色芯片，不要蓝 pager。
 - fallback 字段只活在 JS，等 JSON 长字段。
+- Blog 是三篇编辑随笔（什么是 Grok Bot / 怎么安装 / 和其他 agent 差在哪）；列表 + 详情；`install.html` 是「开始之前」短导（SuperGrok / Cursor Ultra、x.ai/bot、密码不进聊天、审批）；顶栏 目录 / Blog / 安装 / 关于。
