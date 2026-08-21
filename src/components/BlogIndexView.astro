@@ -18,7 +18,7 @@ const posts = await getPosts(locale);
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/blog')}
 >
-  <Mast locale={locale} tagline="Blog" />
+  <Mast locale={locale} tagline="Blog" compact />
 
   {posts.length === 0 ? (
     <p class="empty">{t(locale, 'meta.emptyBlog')}</p>

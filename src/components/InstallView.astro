@@ -16,7 +16,7 @@ const { locale } = Astro.props;
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/install')}
 >
-  <Mast locale={locale} heading={false} />
+  <Mast locale={locale} heading={false} compact />
 
   {locale === 'zh' ? (
     <article class="post">

@@ -29,7 +29,7 @@ const ogAbs = new URL('/og.png', Astro.site).href;
 <html lang={htmlLang(locale)}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -53,12 +53,14 @@ const ogAbs = new URL('/og.png', Astro.site).href;
   </head>
   <body class={bodyClass}>
     <div class="grain" aria-hidden="true"></div>
-    {nav !== 'none' && <SiteNav current={nav} locale={locale} switchHref={switchHref} />}
-    <div class="wrap">
-      <slot />
-      <Footer locale={locale}>
-        <slot name="footer" />
-      </Footer>
+    <div class="page">
+      <div class="wrap">
+        {nav !== 'none' && <SiteNav current={nav} locale={locale} switchHref={switchHref} />}
+        <slot />
+        <Footer locale={locale}>
+          <slot name="footer" />
+        </Footer>
+      </div>
     </div>
   </body>
 </html>
