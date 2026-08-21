@@ -74,6 +74,10 @@ const en = {
   "detail.share": "Share",
   "detail.copied": "Copied",
   "detail.copy": "Copy",
+  "detail.preview": "Preview image",
+  "detail.closePreview": "Close",
+  "detail.prevImage": "Previous image",
+  "detail.nextImage": "Next image",
   "detail.back": "← Back to catalog",
   "detail.related": "Related plays",
   "detail.note":
@@ -120,6 +124,10 @@ const zh: Record<keyof typeof en, string> = {
   "detail.share": "分享",
   "detail.copied": "已复制",
   "detail.copy": "复制",
+  "detail.preview": "预览图片",
+  "detail.closePreview": "关闭",
+  "detail.prevImage": "上一张",
+  "detail.nextImage": "下一张",
   "detail.back": "← 返回目录",
   "detail.related": "同类玩法",
   "detail.note":

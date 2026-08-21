@@ -49,13 +49,15 @@ function stepTitleBody(s: string | { title: string; body: string }) {
   <a class="back" id="back" href={catalogHref} data-base={catalogHref} data-locale={locale}>{t(locale, 'detail.back')}</a>
 
   <div class="hero-cover">
-    <img
-      src={cover}
-      alt={play.title}
-      referrerpolicy={remote ? 'no-referrer' : undefined}
-      data-fallback={fallback}
-      onerror="this.onerror=null;this.src=this.dataset.fallback"
-    />
+    <button type="button" class="shot-hit" data-preview data-caption={play.title} aria-haspopup="dialog" aria-label={t(locale, 'detail.preview')}>
+      <img
+        src={cover}
+        alt={play.title}
+        referrerpolicy={remote ? 'no-referrer' : undefined}
+        data-fallback={fallback}
+        onerror="this.onerror=null;this.src=this.dataset.fallback"
+      />
+    </button>
   </div>
 
   <div class="detail-head">
@@ -112,8 +114,17 @@ function stepTitleBody(s: string | { title: string; body: string }) {
                 )}
                 {figs.map((f) => (
                   <figure class="shot step-shot">
-                    <img src={f.src} alt={f.cap} />
-                    {f.cap && <figcaption>{f.cap}</figcaption>}
+                    <button
+                      type="button"
+                      class="shot-hit"
+                      data-preview
+                      data-caption={f.cap || ''}
+                      aria-haspopup="dialog"
+                      aria-label={f.cap ? `${t(locale, 'detail.preview')} · ${f.cap}` : t(locale, 'detail.preview')}
+                    >
+                      <img src={f.src} alt={f.cap || ''} />
+                    </button>
+                    {f.cap && <figcaption aria-hidden="true">{f.cap}</figcaption>}
                   </figure>
                 ))}
               </div>
@@ -192,6 +203,16 @@ function stepTitleBody(s: string | { title: string; body: string }) {
     {t(locale, 'detail.note')}
     <a class="source-link" href={localePath(locale, '/about')}>{t(locale, 'nav.about')}</a>
   </p>
+
+  <dialog class="preview" id="preview" aria-label={t(locale, 'detail.preview')}>
+    <button type="button" class="copy-chip preview-close" data-preview-close>{t(locale, 'detail.closePreview')}</button>
+    <button type="button" class="preview-nav preview-prev" data-preview-prev aria-label={t(locale, 'detail.prevImage')}>‹</button>
+    <figure class="preview-frame">
+      <img id="preview-img" alt="" />
+      <figcaption id="preview-cap" hidden></figcaption>
+    </figure>
+    <button type="button" class="preview-nav preview-next" data-preview-next aria-label={t(locale, 'detail.nextImage')}>›</button>
+  </dialog>
 </Base>
 
 <script src="../scripts/detail.js"></script>
