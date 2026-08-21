@@ -1,0 +1,197 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  coverOf,
+  coverFallback,
+  sourceLabel,
+  blobStyle,
+  hideHandle,
+  LOCAL_SHOTS,
+  pad,
+  hasText,
+  PAGE_TITLE,
+} from '../lib/plays';
+import type { PlayData } from '../lib/plays';
+import { t, localePath, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  play: PlayData;
+  plays: PlayData[];
+}
+
+const { locale, play, plays } = Astro.props;
+const cover = coverOf(play);
+const fallback = coverFallback(play);
+const remote = cover.startsWith('http');
+const handle = hideHandle(play.authorHandle) ? '' : play.authorHandle || '';
+const authorHref = handle
+  ? `https://x.com/${handle.replace(/^@/, '')}`
+  : play.sourceUrl;
+const label = sourceLabel(play.sourceUrl, locale);
+const date = play.date ? play.date.replace(/-/g, '.') : '';
+const how = hasText(play.tutorial) ? play.tutorial! : play.steps || [];
+const shots = LOCAL_SHOTS[play.id] || [];
+const shotsByStep: Record<number, typeof shots> = {};
+for (const s of shots) {
+  if (!shotsByStep[s.step]) shotsByStep[s.step] = [];
+  shotsByStep[s.step].push(s);
+}
+const related = plays.filter((x) => x.category === play.category && x.id !== play.id).slice(0, 4);
+const catalogHref = localePath(locale, '/');
+
+function stepTitleBody(s: string | { title: string; body: string }) {
+  if (typeof s === 'string') return { title: '', body: s };
+  return { title: s.title || '', body: s.body || '' };
+}
+---
+<Base title={`${play.title} · ${PAGE_TITLE}`} description={play.summary} nav="none" bodyClass="is-detail" locale={locale}>
+  <a class="back" id="back" href={catalogHref} data-base={catalogHref} data-locale={locale}>{t(locale, 'detail.back')}</a>
+
+  <div class="hero-cover">
+    <img
+      src={cover}
+      alt={play.title}
+      referrerpolicy={remote ? 'no-referrer' : undefined}
+      data-fallback={fallback}
+      onerror="this.onerror=null;this.src=this.dataset.fallback"
+    />
+  </div>
+
+  <div class="detail-head">
+    <h1 class="detail-title">{play.title}</h1>
+    <p class="detail-sum">{play.summary}</p>
+    <div class="byline">
+      <span class="blob" style={blobStyle(play.author)} aria-hidden="true"></span>
+      <span>{play.author}</span>
+      {handle && (
+        <a class="source-link" href={authorHref} target="_blank" rel="noopener noreferrer">{handle}</a>
+      )}
+      <a class="source-link" href={play.sourceUrl} target="_blank" rel="noopener noreferrer">{label} ↗</a>
+      {date && <span class="handle">{date}</span>}
+      <button type="button" class="copy-chip" data-share data-idle={t(locale, 'detail.share')} data-copied={t(locale, 'detail.copied')}>{t(locale, 'detail.share')}</button>
+    </div>
+  </div>
+
+  {hasText(play.audience) && (
+    <section class="section">
+      <h2>{t(locale, 'detail.audience')}</h2>
+      <div class="article-prose">
+        <p>{play.audience}</p>
+      </div>
+    </section>
+  )}
+
+  {hasText(play.outcome) && (
+    <section class="section">
+      <h2>{t(locale, 'detail.outcome')}</h2>
+      <div class="article-prose">
+        <p>{play.outcome}</p>
+      </div>
+    </section>
+  )}
+
+  {how.length > 0 && (
+    <section class="section">
+      <h2>{t(locale, 'detail.steps')}</h2>
+      <ol class="steps">
+        {how.map((s, i) => {
+          const { title, body } = stepTitleBody(s);
+          const figs = shotsByStep[i + 1] || [];
+          return (
+            <li>
+              <span class="step-n">{pad(i + 1)}</span>
+              <div class="step-body">
+                {title && body && title !== body ? (
+                  <>
+                    <strong>{title}</strong>
+                    <p>{body}</p>
+                  </>
+                ) : (
+                  <p class="step-full">{body || title}</p>
+                )}
+                {figs.map((f) => (
+                  <figure class="shot step-shot">
+                    <img src={f.src} alt={f.cap} />
+                    {f.cap && <figcaption>{f.cap}</figcaption>}
+                  </figure>
+                ))}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  )}
+
+  {hasText(play.commentary) && (
+    <section class="section">
+      <h2>{t(locale, 'detail.commentary')}</h2>
+      <div class="take">
+        <p>{play.commentary}</p>
+      </div>
+    </section>
+  )}
+
+  {hasText(play.prompts) && (
+    <section class="section">
+      <h2>{t(locale, 'detail.prompt')}</h2>
+      {play.prompts!.map((item) => (
+        <figure class="prompt-wrap">
+          <div class="prompt-bar">
+            {item.title ? <figcaption class="prompt-title">{item.title}</figcaption> : <span></span>}
+            <button type="button" class="copy-chip" data-copy data-idle={t(locale, 'detail.copy')} data-copied={t(locale, 'detail.copied')}>{t(locale, 'detail.copy')}</button>
+          </div>
+          <pre class="prompt-text">{item.text}</pre>
+          {item.source && (
+            <p class="prompt-source">
+              {/^https?:\/\//i.test(item.source.split(/\s/)[0]) ? (
+                <>
+                  <a class="source-link" href={item.source.split(/\s/)[0]} target="_blank" rel="noopener noreferrer">
+                    {item.source.split(/\s/)[0]}
+                  </a>
+                  {item.source.slice(item.source.split(/\s/)[0].length)}
+                </>
+              ) : (
+                item.source
+              )}
+            </p>
+          )}
+        </figure>
+      ))}
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="section">
+      <h2>{t(locale, 'detail.related')}</h2>
+      <div class="related-grid">
+        {related.map((x) => {
+          const c = coverOf(x);
+          const fb = coverFallback(x);
+          const rem = c.startsWith('http');
+          return (
+            <a class="mini" href={localePath(locale, `/play/${x.id}`)}>
+              <img
+                src={c}
+                alt={x.title}
+                referrerpolicy={rem ? 'no-referrer' : undefined}
+                data-fallback={fb}
+                onerror="this.onerror=null;this.src=this.dataset.fallback"
+              />
+              <span class="mini-title">{x.title}</span>
+              <span class="mini-meta">{x.category}</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <p class="note">
+    {t(locale, 'detail.note')}
+    <a class="source-link" href={localePath(locale, '/about')}>{t(locale, 'nav.about')}</a>
+  </p>
+</Base>
+
+<script src="../scripts/detail.js"></script>

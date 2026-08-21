@@ -1,0 +1,24 @@
+---
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  current?: 'catalog' | 'blog' | 'install' | 'about' | 'none';
+  locale: Locale;
+  switchHref?: string;
+}
+
+const { current = 'catalog', locale, switchHref } = Astro.props;
+const otherHref = switchHref || localePath(otherLocale(locale), '/');
+const here = Astro.url.pathname;
+---
+<nav class="site-nav" aria-label={t(locale, 'nav.aria')}>
+  <a href={localePath(locale, '/')} class={current === 'catalog' ? 'is-on' : undefined} aria-current={current === 'catalog' ? 'page' : undefined}>{t(locale, 'nav.catalog')}</a>
+  <a href={localePath(locale, '/blog')} class={current === 'blog' ? 'is-on' : undefined} aria-current={current === 'blog' ? 'page' : undefined}>{t(locale, 'nav.blog')}</a>
+  <a href={localePath(locale, '/install')} class={current === 'install' ? 'is-on' : undefined} aria-current={current === 'install' ? 'page' : undefined}>{t(locale, 'nav.install')}</a>
+  <a href={localePath(locale, '/about')} class={current === 'about' ? 'is-on' : undefined} aria-current={current === 'about' ? 'page' : undefined}>{t(locale, 'nav.about')}</a>
+  <span class="lang-switch" aria-label={t(locale, 'lang.aria')}>
+    <a href={locale === 'en' ? here : otherHref} class={locale === 'en' ? 'is-on' : undefined} hreflang="en" lang="en">{t(locale, 'lang.en')}</a>
+    <span class="lang-sep" aria-hidden="true">|</span>
+    <a href={locale === 'zh' ? here : otherHref} class={locale === 'zh' ? 'is-on' : undefined} hreflang="zh" lang="zh">{t(locale, 'lang.zh')}</a>
+  </span>
+</nav>

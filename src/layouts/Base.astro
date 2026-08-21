@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer.astro';
+import { t, htmlLang, type Locale } from '../lib/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  nav?: 'catalog' | 'blog' | 'install' | 'about' | 'none';
+  bodyClass?: string;
+  locale: Locale;
+  switchHref?: string;
+}
+
+const {
+  locale,
+  title = t(locale, 'page.catalogTitle'),
+  description = t(locale, 'page.catalogDesc'),
+  nav = 'catalog',
+  bodyClass = '',
+  switchHref,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang={htmlLang(locale)}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body class={bodyClass}>
+    <div class="grain" aria-hidden="true"></div>
+    {nav !== 'none' && <SiteNav current={nav} locale={locale} switchHref={switchHref} />}
+    <div class="wrap">
+      <slot />
+      <Footer locale={locale}>
+        <slot name="footer" />
+      </Footer>
+    </div>
+  </body>
+</html>

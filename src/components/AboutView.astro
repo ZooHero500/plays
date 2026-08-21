@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<Base
+  title={t(locale, 'page.aboutTitle')}
+  description={t(locale, 'page.aboutDesc')}
+  nav="about"
+  locale={locale}
+  switchHref={localePath(otherLocale(locale), '/about')}
+>
+  <Mast locale={locale} />
+
+  {locale === 'zh' ? (
+    <article class="about">
+      <h2>这是什么</h2>
+      <p>这是非官方、编辑向的 Grok Bot 玩法导航，不是 prompt 货架，也不卖模板。</p>
+
+      <h2>收录</h2>
+      <p>每条必须有可点开的真实来源：公开帖或官方说明。没有来源的不写。现刊 33 条，收在 content/plays.json。</p>
+
+      <h2>数字</h2>
+      <p>不编造点赞、阅读或后台统计。卡片上不会出现这些数字。</p>
+
+      <h2>关系</h2>
+      <p>本站与 xAI / Grok 无关。</p>
+    </article>
+  ) : (
+    <article class="about">
+      <h2>What this is</h2>
+      <p>An unofficial, edited catalog of Grok Bot plays. Not a prompt shop. Nothing for sale.</p>
+
+      <h2>What’s here</h2>
+      <p>Every play needs a real, clickable source — a public post or official docs. No source, no entry. English plays are not up yet. The Chinese catalog has 33.</p>
+
+      <h2>Numbers</h2>
+      <p>We don’t invent likes, views, or dashboard stats. Cards don’t show those.</p>
+
+      <h2>Affiliation</h2>
+      <p>This site is not affiliated with xAI or Grok.</p>
+    </article>
+  )}
+</Base>

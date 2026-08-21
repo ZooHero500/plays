@@ -1,0 +1,27 @@
+---
+import { BotEngine } from '../lib/bloub/bot/engine';
+import { RAYON } from '../lib/bloub/bot/repere';
+import { BODY_FILL, EYE_FILL, FACE_PX, VIEWBOX } from '../lib/bloub/draw';
+
+const engine = new BotEngine(RAYON, 'idle');
+const frame = engine.sample(0);
+---
+<div class="bloub" data-bloub role="img" aria-label="Grok Bot">
+  <svg viewBox={VIEWBOX} width={FACE_PX} height={FACE_PX} aria-hidden="true">
+    <path class="bloub-body" d={frame.bodyPath} fill={BODY_FILL}></path>
+    {frame.eyes.map((eye) => (
+      <path
+        class="bloub-eye"
+        d={eye.d}
+        transform={eye.matrix}
+        opacity={eye.alpha}
+        fill={EYE_FILL}
+      ></path>
+    ))}
+  </svg>
+</div>
+<script>
+  import { mountBloub } from '../lib/bloub/mount';
+  const host = document.querySelector('[data-bloub]');
+  if (host instanceof HTMLElement) mountBloub(host);
+</script>

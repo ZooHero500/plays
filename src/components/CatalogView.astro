@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import Card from './Card.astro';
+import { catalogItem, PAGE_SIZE, FEATURED_ID, getPlays, categoriesFor } from '../lib/plays';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const plays = await getPlays(locale);
+const catalog = plays.map((p) => catalogItem(p, locale));
+const page1 = plays.slice(0, PAGE_SIZE);
+const allLabel = t(locale, 'chips.all');
+const categories = categoriesFor(locale, plays, allLabel);
+const empty = plays.length === 0;
+const count = empty
+  ? '0 / 0'
+  : `1–${Math.min(PAGE_SIZE, plays.length)} / ${plays.length}`;
+const config = {
+  plays: catalog,
+  locale,
+  base: localePath(locale, '/'),
+  playBase: `${localePath(locale, '/play')}/`,
+  pageSize: PAGE_SIZE,
+  featuredId: FEATURED_ID,
+  categories,
+  allCat: allLabel,
+  strings: {
+    emptyCatalog: t(locale, 'meta.emptyCatalog'),
+    emptyFilter: t(locale, 'meta.emptyFilter'),
+  },
+};
+---
+<Base
+  title={t(locale, 'page.catalogTitle')}
+  description={t(locale, 'page.catalogDesc')}
+  nav="catalog"
+  locale={locale}
+  switchHref={localePath(otherLocale(locale), '/')}
+>
+  <Mast locale={locale} bot />
+
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="4.5" stroke="#9A958C" stroke-width="1.5"></circle>
+      <path d="M10.5 10.5L14 14" stroke="#9A958C" stroke-width="1.5" stroke-linecap="round"></path>
+    </svg>
+    <input id="search" type="search" placeholder={t(locale, 'search.placeholder')} autocomplete="off" spellcheck="false" />
+  </div>
+
+  <nav class="chips" id="chips" aria-label={t(locale, 'chips.aria')}>
+    {categories.map((c) => (
+      <button type="button" class:list={['chip', { 'is-on': c === allLabel }]} data-cat={c}>{c}</button>
+    ))}
+  </nav>
+
+  <div class="meta-row">
+    <span id="count">{count}</span>
+    <span>{t(locale, 'meta.clickCards')}</span>
+  </div>
+
+  <main id="grid" class="grid">
+    {empty ? (
+      <div class="empty">{t(locale, 'meta.emptyCatalog')}</div>
+    ) : (
+      page1.map((p) => (
+        <Card play={p} featured={!!p.featured || p.id === FEATURED_ID} locale={locale} />
+      ))
+    )}
+  </main>
+
+  <nav id="pager" class="pager" hidden aria-label={t(locale, 'pager.aria')}></nav>
+</Base>
+
+<script is:inline define:vars={{ config }}>
+  window.__CATALOG = config;
+</script>
+<script src="../scripts/catalog.js"></script>

@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import { getPosts, postSlug } from '../lib/blog';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const posts = await getPosts(locale);
+---
+<Base
+  title={t(locale, 'page.blogTitle')}
+  description={t(locale, 'page.blogDesc')}
+  nav="blog"
+  locale={locale}
+  switchHref={localePath(otherLocale(locale), '/blog')}
+>
+  <Mast locale={locale} tagline="Blog" />
+
+  {posts.length === 0 ? (
+    <p class="empty">{t(locale, 'meta.emptyBlog')}</p>
+  ) : (
+    <div class="blog-list">
+      {posts.map((post) => (
+        <a href={localePath(locale, `/blog/${postSlug(post)}`)}>
+          {post.data.cover ? (
+            <span class="blog-list-shot">
+              <img src={post.data.cover} alt={post.data.title} />
+            </span>
+          ) : null}
+          <span class="blog-list-title">{post.data.title}</span>
+          <span class="blog-list-dek">{post.data.description}</span>
+        </a>
+      ))}
+    </div>
+  )}
+</Base>

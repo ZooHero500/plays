@@ -1,0 +1,22 @@
+---
+import { t, type Locale } from '../lib/i18n';
+import BloubFace from './BloubFace.astro';
+
+interface Props {
+  tagline?: string;
+  heading?: boolean;
+  locale: Locale;
+  bot?: boolean;
+}
+
+const { tagline = 'nav', heading = true, locale, bot = false } = Astro.props;
+const Word = heading ? 'h1' : 'p';
+const line = !tagline || tagline === 'nav' ? t(locale, 'mast.tagline') : tagline;
+---
+<header class="mast">
+  <div class="mast-row">
+    <Word class="wordmark">Plays</Word>
+    {bot && <BloubFace />}
+  </div>
+  <p class="tagline">{line}</p>
+</header>

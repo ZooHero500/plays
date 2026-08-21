@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<Base
+  title={t(locale, 'page.installTitle')}
+  description={t(locale, 'page.installDesc')}
+  nav="install"
+  locale={locale}
+  switchHref={localePath(otherLocale(locale), '/install')}
+>
+  <Mast locale={locale} heading={false} />
+
+  {locale === 'zh' ? (
+    <article class="post">
+      <a class="back" href={localePath(locale, '/blog')}>{t(locale, 'install.back')}</a>
+      <h1 class="detail-title">开始之前</h1>
+      <p>全站玩法都默认你会用 Grok Bot。这里只说一次。</p>
+      <p>Grok Bot 现在给 SuperGrok Heavy、Cursor Ultra、Cursor Teams Premium 用。已经在付 Cursor Ultra 的，用同一个账号登录就行。</p>
+      <p>
+        打开 <a class="source-link" href="https://x.ai/bot" target="_blank" rel="noopener noreferrer">x.ai/bot</a> 装桌面端。新建一个 bot，起个能看出职责的名字。
+      </p>
+      <p>登录、验证码、2FA 都在它自己的电脑上完成。密码不要贴进聊天。同一账号下的 bot 共用这台电脑和登录态。</p>
+      <p>对外发送、花钱、改生产，先开审批。玩法正文不再重复这些。</p>
+      <p class="note">
+        <a class="source-link" href={localePath(locale, '/')}>{t(locale, 'nav.catalog')}</a>
+        {' · '}
+        <a class="source-link" href={localePath(locale, '/blog/how-to-install')}>怎么安装（长文）</a>
+      </p>
+    </article>
+  ) : (
+    <article class="post">
+      <a class="back" href={localePath(locale, '/blog')}>{t(locale, 'install.back')}</a>
+      <h1 class="detail-title">Before you start</h1>
+      <p>Every play here assumes you already use Grok Bot. This page says that once.</p>
+      <p>Grok Bot is currently for SuperGrok Heavy, Cursor Ultra, and Cursor Teams Premium. If you already pay for Cursor Ultra, sign in with that same account.</p>
+      <p>
+        Open <a class="source-link" href="https://x.ai/bot" target="_blank" rel="noopener noreferrer">x.ai/bot</a> and install the desktop app. Make a bot. Name it after the job it does.
+      </p>
+      <p>Logins, captchas, and 2FA happen on its own computer. Don’t paste passwords into chat. Bots on one account share that machine and its sessions.</p>
+      <p>For anything that sends mail, spends money, or touches production, turn on approvals first. The play write-ups don’t repeat this.</p>
+      <p class="note">
+        <a class="source-link" href={localePath(locale, '/')}>{t(locale, 'nav.catalog')}</a>
+        {' · '}
+        <a class="source-link" href={localePath('zh', '/')}>中文 catalog</a>
+      </p>
+    </article>
+  )}
+</Base>

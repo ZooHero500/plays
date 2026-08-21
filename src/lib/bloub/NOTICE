@@ -1,0 +1,18 @@
+Bloub bot engine — vendored MIT source
+======================================
+
+Upstream: https://github.com/jeremy-prt/bloub
+Copyright (c) 2026 Jérémy Perret
+License: MIT (see LICENSE in this directory)
+
+Vendored here:
+  bot/   — engine, face, shape, states, math, eyefit, expressions,
+           skins, decor, profiles, repere (src/bot/ only)
+  gaze.ts — lookTarget + TURN_TIME, copied from src/ui/gaze.ts (no Vue)
+
+Not vendored: Vue, Tailwind, the customiser, GIF export, the 14-state
+montage UI, or defaultCycle playback.
+
+Catalog renderer (ours): draw.ts, mount.ts
+  Body fill #F29425. Eyes are solid #F2EFE8 paths on top of the body.
+  No <mask> holes. No cream paper backing path.

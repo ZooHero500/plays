@@ -1,0 +1,48 @@
+---
+import { coverOf, coverFallback, sourceLabel, blobStyle, hideHandle } from '../lib/plays';
+import type { PlayData } from '../lib/plays';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  play: PlayData;
+  featured?: boolean;
+  locale: Locale;
+}
+
+const { play, featured = false, locale } = Astro.props;
+const cover = coverOf(play);
+const fallback = coverFallback(play);
+const remote = cover.startsWith('http');
+const tags = (play.tags || []).slice(0, 3);
+const handle = hideHandle(play.authorHandle) ? '' : play.authorHandle;
+---
+<article class:list={['card', { featured }]} data-id={play.id} tabindex="0" role="link" aria-label={play.title}>
+  <div class="card-cover">
+    <img
+      src={cover}
+      alt={play.title}
+      referrerpolicy={remote ? 'no-referrer' : undefined}
+      data-fallback={fallback}
+      onerror="this.onerror=null;this.src=this.dataset.fallback"
+    />
+    <div class="mark-slot">
+      <span class="mark source">{sourceLabel(play.sourceUrl, locale)}</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{play.title}</h2>
+    <p class="card-desc">{play.summary}</p>
+    <div class="card-tags">
+      {tags.map((t) => (
+        <button type="button" class="tag" data-tag={t}>{t}</button>
+      ))}
+    </div>
+    <div class="card-foot">
+      <span class="blob" style={blobStyle(play.author)} aria-hidden="true"></span>
+      <span>
+        {play.author}
+        {handle && <span class="handle"> {handle}</span>}
+      </span>
+    </div>
+  </div>
+</article>

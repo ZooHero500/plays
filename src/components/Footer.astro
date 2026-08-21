@@ -1,0 +1,14 @@
+---
+import { t, SUBMIT_URL, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+<footer>
+  {t(locale, 'footer.disclaimer')}
+  <a href={SUBMIT_URL} target="_blank" rel="noopener noreferrer">{t(locale, 'nav.submit')}</a>
+  <slot />
+</footer>

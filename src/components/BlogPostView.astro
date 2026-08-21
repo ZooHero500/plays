@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import { renderBlogHtml, hasPost, postSlug } from '../lib/blog';
+import { PAGE_TITLE } from '../lib/plays';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  post: {
+    id: string;
+    body?: string;
+    data: { title: string; description: string; slug?: string; cover?: string };
+  };
+}
+
+const { locale, post } = Astro.props;
+const html = renderBlogHtml(post.body || '', locale);
+const slug = postSlug(post);
+const other = otherLocale(locale);
+const otherHas = await hasPost(other, slug);
+const switchHref = otherHas
+  ? localePath(other, `/blog/${slug}`)
+  : localePath(other, '/blog');
+---
+<Base
+  title={`${post.data.title} · ${PAGE_TITLE}`}
+  description={post.data.description}
+  nav="blog"
+  locale={locale}
+  switchHref={switchHref}
+>
+  <Mast locale={locale} tagline="Blog" heading={false} />
+
+  <article class="post">
+    <a class="back" href={localePath(locale, '/blog')}>{t(locale, 'blog.back')}</a>
+    {post.data.cover && (
+      <div class="post-cover">
+        <img src={post.data.cover} alt={post.data.title} />
+      </div>
+    )}
+    <h1 class="detail-title">{post.data.title}</h1>
+    <Fragment set:html={html} />
+    <p class="note">
+      <a class="source-link" href={localePath(locale, '/install')}>{t(locale, 'nav.install')}</a>
+      {' · '}
+      <a class="source-link" href={localePath(locale, '/')}>{t(locale, 'nav.catalog')}</a>
+    </p>
+  </article>
+</Base>

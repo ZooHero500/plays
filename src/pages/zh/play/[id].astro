@@ -1,0 +1,11 @@
+---
+import PlayView from '../../../components/PlayView.astro';
+import { playStaticPaths } from '../../../lib/plays';
+
+export function getStaticPaths() {
+  return playStaticPaths('zh');
+}
+
+const { play, plays } = Astro.props;
+---
+<PlayView locale="zh" play={play} plays={plays} />

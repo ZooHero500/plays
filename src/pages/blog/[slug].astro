@@ -1,0 +1,11 @@
+---
+import BlogPostView from '../../components/BlogPostView.astro';
+import { blogStaticPaths } from '../../lib/blog';
+
+export function getStaticPaths() {
+  return blogStaticPaths('en');
+}
+
+const { post } = Astro.props;
+---
+<BlogPostView locale="en" post={post} />
