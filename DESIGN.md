@@ -82,7 +82,7 @@ flex wrap，居中，gap 8。`padding 8px 16px`，半径 999，line-height 1。
 5. **点评** `.take` — 左边 1px `--line-hover`（不是粗色条），`padding-left 20`，16px `--text-2`，行高 1.7。一段短评。
 6. **提示词 / 起步说明** `.prompt-wrap` — 等宽可复制块：底 `#111`，边 1px `--line`，半径 14，padding 20。字体 `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`，13px，行高 1.65，`--text`，`white-space: pre-wrap`。右上角幽灵胶囊「复制」（芯片语汇，不要蓝按钮）。点一下 `clipboard.writeText`，文案变「已复制」约 1200ms 再改回；没有 clipboard 就选中 `pre`。JSON 还没有 `prompt` 时，kicker 写「起步说明」而不是「万能 prompt」。
 7. **不要底栏截图 gallery。** 截图只活在步骤里。没有真图就不渲染空 gallery。
-8. **同类玩法** — 小卡网格：封面（**16/9** `object-fit: cover`）+ 标题，分类可留 12px `--text-3`。 2 列 gap 16，半径 `--r`，底 `--surface`，边 `#1F1F1F`。悬停只抬 2px。这和步骤内截图必须能分开：步骤图是 contain、高度随图，同类卡才是 16:9 封面。文末 quiet note。相关标签可省略。
+8. **同类玩法** — 小卡网格：封面（**16/9** `object-fit: cover`）+ 标题，分类可留 12px `--text-3`。2 列 gap 16，半径 `--r`，底 `--surface`，边 `#1F1F1F`。悬停只抬 2px。这和步骤内截图必须能分开：步骤图是 contain、高度随图，同类卡才是 16:9 封面。文末 quiet note。相关标签可省略。
 
 `.detail-head` / `.section` max-width 680；head 顶距 36，section 顶距 64。注记 12px `--text-3`，`margin-top 48`。
 
