@@ -1,16 +1,10 @@
-# Editorial catalog — private, loaded at runtime, never commit.
-# History is not rewritten; these remain in old commits only.
+# Editorial catalog — private, never commit to the public repo.
 /content/plays.json
 /content/*.json
 !/content/plays.example.json
-/content/install.md
+/content/_*.json
 /content/SOURCES.md
-/content/*.md
-
-# Legacy embedded catalog
 /js/data.js
-
-# Local media and drafts
 /assets/covers/
 /shots/
 **/*draft*.json

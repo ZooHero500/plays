@@ -1,42 +1,78 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Unofficial public frontend for a Grok Bot plays directory. Catalog data is loaded at runtime and is not in this repo."
-    />
-    <meta name="plays-data-url" content="" />
-    <title>玩法 — 非官方 Grok Bot 目录</title>
-    <link rel="stylesheet" href="css/app.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">跳到内容</a>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot Plays</title>
+  <meta name="description" content="非官方 Grok Bot 玩法导航。条目均带来源链接，来自公开帖与 xAI 官方说明。">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="站点">
+    <a href="#/" id="nav-catalog" class="is-on">目录</a>
+    <a href="about.html" id="nav-about">关于</a>
+  </nav>
+  <div class="badge">Unofficial</div>
+
+  <div class="wrap">
     <header class="mast">
-      <div class="mast-brand">
-        <p class="eyebrow">Unofficial · 非官方</p>
-        <a class="wordmark" href="index.html">玩法</a>
-        <p class="lede">Grok Bot 玩法目录。前端公开，编目数据不在 git 里。</p>
-      </div>
-      <nav class="mast-nav" aria-label="站点">
-        <a href="index.html" aria-current="page">目录</a>
-        <a href="about.html">关于</a>
-      </nav>
+      <h1 class="wordmark">Plays</h1>
+      <p class="tagline">Grok Bot 玩法导航 <em>· 非官方</em></p>
     </header>
 
-    <main id="main">
-      <section id="catalog-status" class="status" hidden></section>
-      <div id="catalog-app"></div>
-    </main>
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="4.5" stroke="#9A958C" stroke-width="1.4"/>
+        <path d="M10.5 10.5L14 14" stroke="#9A958C" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <input id="search" type="search" placeholder="搜索玩法、标签或作者" autocomplete="off" spellcheck="false">
+    </div>
 
-    <footer class="colophon">
-      <p>静态前端。编目从 <code>content/plays.json</code> 或 <code>PLAYS_DATA_URL</code> 运行时读取。</p>
+    <nav class="chips" id="chips" aria-label="分类"></nav>
+
+    <div class="meta-row">
+      <span id="count"></span>
+      <span>点卡片看怎么做</span>
+    </div>
+
+    <main id="grid" class="grid"></main>
+
+    <nav id="pager" class="pager" hidden aria-label="分页"></nav>
+
+    <section id="detail" class="view" hidden></section>
+
+    <article id="about" class="about">
+      <h1>关于 Plays</h1>
+      <p class="lede">这是一份非官方的 Grok Bot 玩法目录。跟 xAI / Grok 没有隶属关系，也不使用官方 G 标。</p>
+
+      <h2>数据从哪来</h2>
+      <p>每一条都有 <code>sourceUrl</code>。打开详情可以跳到来源。目前 33 条，收在 <code>content/plays.json</code>。</p>
+      <ul>
+        <li>Ray Fernando 的 CTO 编制：<a href="https://x.com/RayFernando1337/status/2090195841822998888" target="_blank" rel="noopener noreferrer">X 原文</a></li>
+        <li>xAI 官方用例：<a href="https://x.ai/news/introducing-grok-bot" target="_blank" rel="noopener noreferrer">Introducing Grok Bot</a> 与 <a href="https://docs.x.ai/grok-bot/use-cases" target="_blank" rel="noopener noreferrer">docs use-cases</a></li>
+        <li>社区写法：Debbie O'Brien、Elie Steinbock、eric zakariasson、Dennis Yu、Rhys Sullivan、Jesse Hanley、Promptway。出处见 <a href="content/SOURCES.md">SOURCES.md</a>。</li>
+      </ul>
+
+      <h2>怎么用</h2>
+      <ul>
+        <li>芯片筛分类，搜索标题 / 标签 / 作者。</li>
+        <li>点卡片看「怎么做」，点标签会按标签回到网格。</li>
+        <li><kbd>Esc</kbd> 或「返回目录」会保住当前筛选。</li>
+      </ul>
+
+      <h2>不做什么</h2>
+      <p>不编造点赞、阅读、后台数字。没有核到来源的帖不会进目录。步骤是对公开说明的改写，不是 xAI 官方教程。</p>
+
+      <p style="margin-top:48px"><a href="#/">← 返回目录</a></p>
+    </article>
+
+    <footer id="home-foot">
+      Grok Bot Plays · 非官方目录，与 xAI / Grok 无关。每条玩法带来源链接；没有点赞或阅读数。
+      <a href="about.html">关于</a>
     </footer>
+  </div>
 
-    <script>
-      window.PLAYS_DATA_URL = window.PLAYS_DATA_URL || "";
-    </script>
-    <script src="js/app.js" defer></script>
-  </body>
+  <script src="js/app.js"></script>
+</body>
 </html>
