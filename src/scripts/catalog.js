@@ -33,6 +33,30 @@
     return state.cat === ALL_CAT && !state.q && !state.tag && state.page === 1;
   }
 
+  // Featured spans a full grid row. Page 1 therefore takes one extra card
+  // so the remaining 3-col (and 2-col) rows fill when another page exists.
+  function featuredPaging(list) {
+    return state.cat === ALL_CAT && !state.q && !state.tag && list.some(function (p) {
+      return p.featured;
+    });
+  }
+
+  function firstPageSize(list) {
+    return featuredPaging(list) ? PAGE_SIZE + 1 : PAGE_SIZE;
+  }
+
+  function pageStart(list, page) {
+    var first = firstPageSize(list);
+    if (page <= 1) return 0;
+    return first + (page - 2) * PAGE_SIZE;
+  }
+
+  function pageSlice(list, page) {
+    var start = pageStart(list, page);
+    var size = page <= 1 ? firstPageSize(list) : PAGE_SIZE;
+    return list.slice(start, start + size);
+  }
+
   function matches(p) {
     if (state.cat !== ALL_CAT && p.category !== state.cat) return false;
     if (state.tag && p.tags.indexOf(state.tag) === -1) return false;
@@ -49,8 +73,12 @@
     return PLAYS.filter(matches);
   }
 
-  function pageCount(n) {
-    return Math.max(1, Math.ceil(n / PAGE_SIZE));
+  function pageCount(list) {
+    var n = list.length;
+    if (!n) return 1;
+    var first = firstPageSize(list);
+    if (n <= first) return 1;
+    return 1 + Math.ceil((n - first) / PAGE_SIZE);
   }
 
   function clampPage(n, pages) {
@@ -199,7 +227,7 @@
   function renderGrid() {
     if (!gridEl || !countEl) return;
     var list = filtered();
-    var pages = list.length ? pageCount(list.length) : 1;
+    var pages = list.length ? pageCount(list) : 1;
     var nextPage = clampPage(state.page, pages);
     if (nextPage !== state.page) {
       state.page = nextPage;
@@ -217,8 +245,8 @@
       countEl.textContent = "0 / 0";
       return;
     }
-    var start = (state.page - 1) * PAGE_SIZE;
-    var slice = list.slice(start, start + PAGE_SIZE);
+    var slice = pageSlice(list, state.page);
+    var start = pageStart(list, state.page);
     gridEl.innerHTML = slice.map(cardHtml).join("");
     renderPager(pages);
     var from = start + 1;
@@ -254,7 +282,7 @@
   }
 
   function setPage(n) {
-    var pages = pageCount(filtered().length);
+    var pages = pageCount(filtered());
     var next = clampPage(n, pages);
     if (next === state.page) return;
     state.page = next;

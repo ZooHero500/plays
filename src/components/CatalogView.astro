@@ -12,13 +12,15 @@ interface Props {
 const { locale } = Astro.props;
 const plays = await getPlays(locale);
 const catalog = plays.map((p) => catalogItem(p, locale));
-const page1 = plays.slice(0, PAGE_SIZE);
+const featuredOnHome = plays.some((p) => p.featured || p.id === FEATURED_ID);
+const page1Size = featuredOnHome ? PAGE_SIZE + 1 : PAGE_SIZE;
+const page1 = plays.slice(0, page1Size);
 const allLabel = t(locale, 'chips.all');
 const categories = categoriesFor(locale, plays, allLabel);
 const empty = plays.length === 0;
 const count = empty
   ? '0 / 0'
-  : `1–${Math.min(PAGE_SIZE, plays.length)} / ${plays.length}`;
+  : `1–${Math.min(page1Size, plays.length)} / ${plays.length}`;
 const config = {
   plays: catalog,
   locale,
