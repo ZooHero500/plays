@@ -102,7 +102,6 @@
   }
 
   function shotsOf(p) {
-    // Real in-product screenshots only. Never cover / imageUrls[0] / assets/covers/*.
     var local = LOCAL_SHOTS[p.id];
     if (!local) return [];
     return local.filter(function (s) {
