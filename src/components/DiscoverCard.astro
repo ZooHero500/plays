@@ -36,11 +36,13 @@ const kind = post.coverUrl ? 'has-cover' : 'no-cover';
     </span>
   ) : null}
   <div class="card-body">
-    <p class="title">{line}</p>
+    <p class="title" title={line}>{line}</p>
     <div class="who">
       <span class="author-blob" style={`background:${blob}`} aria-hidden="true"></span>
-      <span class="name">{post.author}</span>
-      <span class="xlink">{post.viewLabel}</span>
+      <div class="who-text">
+        <span class="name">{post.author}</span>
+        <span class="xlink">{post.viewLabel}</span>
+      </div>
     </div>
   </div>
 </a>
