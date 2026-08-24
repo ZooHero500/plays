@@ -1,6 +1,6 @@
 ---
 id: "deryatr-x-notion-radar"
-title: "Scan X for AI and robotics, drop it in Notion"
+title: "I created a Grok Bot and gave it a task: scan X feeds from the past couple of days for new AI & robotics releases, then create a Notion database and add everything it finds."
 summary: "Derya Unutmaz asked one bot to scan recent X for AI and robotics releases, then stand up a Notion database. Now it runs every day and the database grows itself."
 category: "Growth"
 tags:

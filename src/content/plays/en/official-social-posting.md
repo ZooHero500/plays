@@ -1,6 +1,6 @@
 ---
 id: "official-social-posting"
-title: "Lock the voice, draft when it ships"
+title: "Introducing Grok Bot"
 summary: "A social bot reads real posting history, drafts when the product ships, and stops at draft."
 category: "Official"
 tags:

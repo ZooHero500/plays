@@ -1,6 +1,6 @@
 ---
 id: "remy-alfred-gordon-florence"
-title: "Alfred, Gordon, Florence: PA, content, brand deals"
+title: "what I’m actually using Grok Bot for..."
 summary: "Three named creator bots. The PA hands an NDA to brand deals. Content repurposes last week's letter."
 category: "Growth"
 tags:

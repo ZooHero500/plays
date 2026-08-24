@@ -1,6 +1,6 @@
 ---
 id: "gergely-stripe-support-refunds"
-title: "Hook support mail to Stripe refunds"
+title: "Stripe really is cooking."
 summary: "Point the bot at the support inbox. It connects to Stripe over the API and runs routine refunds."
 category: "Growth"
 tags:

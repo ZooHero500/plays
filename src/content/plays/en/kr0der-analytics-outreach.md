@@ -1,6 +1,6 @@
 ---
 id: "kr0der-analytics-outreach"
-title: "Two analytics bots, then one outreach bot per network"
+title: "i love Grok @bot"
 summary: "Anthony Kroeger runs five bots. One sends a daily product-analytics update. One sends a weekly Search Console report. Three find people to reach on LinkedIn, Reddit, and X."
 category: "Growth"
 tags:

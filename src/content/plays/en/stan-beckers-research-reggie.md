@@ -1,6 +1,6 @@
 ---
 id: "stan-beckers-research-reggie"
-title: "Teach Research Reggie the repo once"
+title: "Automating User Research with Grok Bot and Research Reggie"
 summary: "Stan stood up Research Reggie as a UXR ops agent. After one Zoom-and-repo teach, each interview becomes an anonymized .md in Git, plus a TL;DR he still shares himself."
 category: "Engineering"
 tags:

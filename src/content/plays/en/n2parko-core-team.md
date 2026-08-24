@@ -1,6 +1,6 @@
 ---
 id: "n2parko-core-team"
-title: "A product roster: CoS, EM, five ICs, data, PM Pete"
+title: "grok @bot has really changed how I build and work..."
 summary: "Name a chief of staff, an eng manager who delegates, five ICs who run cloud agents, a data analyst on the warehouse, and a PM for ideas."
 category: "Crew"
 tags:

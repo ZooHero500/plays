@@ -1,6 +1,6 @@
 ---
 id: "dannylimanseta-game-art-autopilot"
-title: "Scan the placeholders, then put card art on autopilot"
+title: "I’ve been using Grok Bot in early access for a little over a week now, and it has been a massive boost to my game dev workflow and my productivity in general."
 summary: "Danny Limanseta pointed the bot at his art tool and his codebase. It wrote a prompt per asset, cropped 74 transparent PNGs, and wired them back into the game."
 category: "Engineering"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "rhys-grocery-autopilot"
-title: "A week of meals, two store carts"
+title: "Grocery Autopilot"
 summary: "Plan the week's meals first. Bulk goes to Costco, fresh to Amazon. Every order waits."
 category: "Life"
 tags:

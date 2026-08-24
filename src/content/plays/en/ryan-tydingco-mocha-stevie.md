@@ -1,6 +1,6 @@
 ---
 id: "ryan-tydingco-mocha-stevie"
-title: "Mocha is the only chat. Stevie sits on replies"
+title: "GrokBot Review: Ease of Use and Limitations"
 summary: "Ryan already had agent markdowns. He put them in a GitHub repo, pasted the repo, and Grok Bot spun up about seventeen seats. Mocha is chief of staff. Stevie watches the inbox every five minutes for prospect replies. One more bot runs unpaid vendor invoices."
 category: "Growth"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "mikenevermiss-seven-agent-ops"
-title: "One CoS, six specialists, brief to invoice"
+title: "This is probably one of the craziest things I’ve used Grok Bot to do."
 summary: "Mike runs seven agents from one Chief of Staff. A job walks brief, research, draft, your yes, then invoice. He closed the laptop. The desk kept moving."
 category: "Crew"
 tags:

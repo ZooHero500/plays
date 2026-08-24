@@ -1,6 +1,6 @@
 ---
 id: "official-account-followup"
-title: "Keep accounts warm, park the send"
+title: "Introducing Grok Bot"
 summary: "Do not let accounts go cold. Notes, product updates, tickets — write them back into the tools you already use."
 category: "Official"
 tags:

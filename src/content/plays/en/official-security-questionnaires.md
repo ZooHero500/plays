@@ -1,6 +1,6 @@
 ---
 id: "official-security-questionnaires"
-title: "Fill the questionnaire, stop at review"
+title: "Introducing Grok Bot"
 summary: "A procurement bot fills vendor security portals from the trust center and past RFPs, then stops. It does not submit."
 category: "Official"
 tags:

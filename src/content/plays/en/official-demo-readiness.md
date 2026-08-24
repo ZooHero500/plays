@@ -1,6 +1,6 @@
 ---
 id: "official-demo-readiness"
-title: "Walk the demo overnight, land the ready list"
+title: "Introducing Grok Bot"
 summary: "Overnight, the bot walks the demo environment. It fixes broken example data. Before the meeting, you only read the list."
 category: "Official"
 tags:

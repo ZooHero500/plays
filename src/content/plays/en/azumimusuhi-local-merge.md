@@ -1,6 +1,6 @@
 ---
 id: "azumimusuhi-local-merge"
-title: "Say the repo name. Merge it back to the desk."
+title: "Grok Botが、隣で実装を走らせた"
 summary: "Tell the orchestrator the local repo. It opens the folder, runs a cloud agent, and merges the result onto your machine."
 category: "Engineering"
 tags:

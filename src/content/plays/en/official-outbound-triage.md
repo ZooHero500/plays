@@ -1,6 +1,6 @@
 ---
 id: "official-outbound-triage"
-title: "Morning yes-or-no on outbound replies"
+title: "Introducing Grok Bot"
 summary: "A bot works the auto-outbound replies every six hours. Morning is a yes-or-no pass."
 category: "Official"
 tags:

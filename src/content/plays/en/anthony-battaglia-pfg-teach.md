@@ -1,6 +1,6 @@
 ---
 id: "anthony-battaglia-pfg-teach"
-title: "Teach the cart on one restaurant. Run it on the other"
+title: "I’m Anthony Battaglia."
 summary: "Anthony Battaglia dropped Grok Bot into two Georgia restaurants. The first PFG cart from a handwritten chef sheet failed. He clicked Teach, built the cart himself, saved the rules, then let it order for the other house."
 category: "Crew"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "mindstudio-morning-slack-trigger"
-title: "Morning planner, then a Slack trigger that actually fires"
+title: "How to Set Up Grok Bot and Build Your First AI Agents"
 summary: "Narrow the first bot, share plugins across the fleet, invite Slack into the channel before you set a trigger."
 category: "Crew"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "aijoey-one-mission-article"
-title: "Park the per-app bots. One mission, two specialists"
+title: "I set Grok Bot up wrong."
 summary: "Joey hired a bot per app and still pasted between chats. Then he gave Chief one measurable mission — a sourced X article once a week — plus a writer and an account watcher. He still hits publish."
 category: "Crew"
 tags:

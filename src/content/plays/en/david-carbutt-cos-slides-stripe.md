@@ -1,6 +1,6 @@
 ---
 id: "david-carbutt-cos-slides-stripe"
-title: "CoS that briefs you, rebuilds slides, writes the sales rule"
+title: "Grok Bot is hands down one of the best products I have ever used."
 summary: "David Carbutt hired one chief of staff on a Tuesday. It reads Slack, email, Notion, and Stripe, then briefs him. It rebuilt 1080p slides the night of a shoot and wrote a live course discount."
 category: "Crew"
 tags:

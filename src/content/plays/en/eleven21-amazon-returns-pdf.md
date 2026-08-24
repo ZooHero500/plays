@@ -1,6 +1,6 @@
 ---
 id: "eleven21-amazon-returns-pdf"
-title: "Photo the pile, print the UPS QR"
+title: "Grok Bot for Amazon returns."
 summary: "John Schoenith photographs the return pile. The bot matches Amazon and Whole Foods orders, files the returns, and prints a UPS-store PDF with QR codes."
 category: "Life"
 tags:

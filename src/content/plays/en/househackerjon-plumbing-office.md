@@ -1,6 +1,6 @@
 ---
 id: "househackerjon-plumbing-office"
-title: "Intake the work order, then book the plumber"
+title: "I’m a plumbing company owner and I’m using Grok @bot to automate a ton of office manager work."
 summary: "Jon ONeill spent a night wiring intake across Gmail, Slack, ServiceTitan, Quo, and a facility portal. The next day a live lead went from work order to a booked tech."
 category: "Growth"
 tags:

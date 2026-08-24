@@ -1,6 +1,6 @@
 ---
 id: "shumer-researcher-writer-cos"
-title: "Researcher, writer, then a chief who runs them"
+title: "I’ve been testing Grok Bot for a couple of weeks, and I’ve been surprised by how much I’ve loved it."
 summary: "Stand up a researcher and a writer, then ask a Chief of Staff to put them on one project."
 category: "Crew"
 tags:

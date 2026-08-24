@@ -1,6 +1,6 @@
 ---
 id: "ray-cto-pstack"
-title: "One bot as CTO of the repo"
+title: "Turn Grok Bot Into Your CTO"
 summary: "One main bot owns the repo, then hires reports. You only talk to the main bot."
 category: "Crew"
 tags:

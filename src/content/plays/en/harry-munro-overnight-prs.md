@@ -1,6 +1,6 @@
 ---
 id: "harry-munro-overnight-prs"
-title: "PM, lead, review. Work until 7am"
+title: "Grok Bot Agents Deliver 52 PRs in 12 Hours with Improved Quality"
 summary: "Harry Munro put a product manager, a lead engineer, and a review engineer in one group chat on a roadmapped brownfield repo. The PM checks in every fifteen minutes. He woke up to fifty-two pull requests."
 category: "Engineering"
 tags:

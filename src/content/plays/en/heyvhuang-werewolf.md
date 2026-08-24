@@ -1,6 +1,6 @@
 ---
 id: "heyvhuang-werewolf"
-title: "Five player bots, one AI Gamemaster"
+title: "Heyvhuang/werewolf-gamemaster: A Grok Bot skill for running Werewolf with one AI Gamemaster, private roles and votes, and turn-safe player-posted speech."
 summary: "Give the Gamemaster the Werewolf skill. Make a group by hand. Players speak in public. Roles, night, and votes stay in 1:1."
 category: "Life"
 tags:

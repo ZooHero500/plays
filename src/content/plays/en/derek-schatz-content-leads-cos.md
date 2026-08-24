@@ -1,6 +1,6 @@
 ---
 id: "derek-schatz-content-leads-cos"
-title: "Content and Leads draft. You keep the veto"
+title: "Grok Bot Agent Setup for Efficient Workflows"
 summary: "Derek Schatz hired a Content bot for LinkedIn drafts, a Leads bot for people research and outreach drafts, and a chief of staff that runs both. Hard rule: nothing publishes or sends unless he says so."
 category: "Growth"
 tags:

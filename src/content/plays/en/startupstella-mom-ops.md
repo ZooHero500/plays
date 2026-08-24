@@ -1,6 +1,6 @@
 ---
 id: "startupstella-mom-ops"
-title: "School mail, gift cards, Zocdoc, Marketplace"
+title: "Goodbye mental load....hellooooo @bot !"
 summary: "Stella Garber handed Helen the household pile. School emails became a first-day list. Forgotten gift cards showed up. Zocdoc times waited for her yes. A wagon went back on Marketplace."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "official-pr-ci-triage"
-title: "Watch PRs, only pull humans for real calls"
+title: "Introducing Grok Bot"
 summary: "A bot watches open PRs, checks red CI and review-bot comments against intent, and leaves flaky noise off the human."
 category: "Official"
 tags:

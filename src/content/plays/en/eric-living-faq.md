@@ -1,6 +1,6 @@
 ---
 id: "eric-living-faq"
-title: "Call questions into a living FAQ"
+title: "Living FAQ"
 summary: "Every morning, new questions from calls merge into the FAQ. Duplicates collapse. Answers that fight the shipped page get flagged."
 category: "Growth"
 tags:

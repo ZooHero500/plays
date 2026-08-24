@@ -1,6 +1,6 @@
 ---
 id: "jenna-nanpei-sports-vip"
-title: "Trendspotter, WTD, and one bot per live partnership"
+title: "Grok Bot is now available!"
 summary: "Jenna Nanpei handed sports partnerships and VIP work to named bots. Trendspotter watches culture. WTD turns calls and Slack into one living plan. Bing Bong holds the Garden. Mini Me and Donna keep the day after every call."
 category: "Growth"
 tags:

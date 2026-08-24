@@ -1,6 +1,6 @@
 ---
 id: "official-pipeline-ops"
-title: "Land a Monday scoreboard, park the writes"
+title: "Introducing Grok Bot"
 summary: "The bot watches CRM hygiene and stalled deals. Monday, a scoreboard lands."
 category: "Official"
 tags:

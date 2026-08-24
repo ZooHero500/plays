@@ -1,6 +1,6 @@
 ---
 id: "dork-matter-monday-hire-outbound"
-title: "Monday hire scan, then an Apollo note"
+title: "Really like Grok Bot."
 summary: "Alex hangs a Monday morning job: scan local news for new hires in the vertical he sells to, research the person, find the email in Apollo, and leave a short note for him."
 category: "Growth"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "anushkaa1407-content-four"
-title: "Scout, drafter, lead magnet, Notion bank"
+title: "Grok @bot for socials is really good"
 summary: "Anushka Gupta runs four content seats. Scout picks the morning idea, drafter writes it, lead magnet only fires when the idea is worth a doc, and the Notion bank holds the queue."
 category: "Growth"
 tags:

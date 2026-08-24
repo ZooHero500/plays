@@ -1,6 +1,6 @@
 ---
 id: "box-credit-committee"
-title: "A credit-committee pack that writes itself back into Box"
+title: "🆕@SpaceXAI just launched Grok Bot, a personal AI assistant built for complex knowledge work."
 summary: "Point a bot at the deal folder through Box MCP. It reconciles the files and saves a cited brief with deal metadata."
 category: "Official"
 tags:

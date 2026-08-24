@@ -1,6 +1,6 @@
 ---
 id: "official-chief-of-staff"
-title: "Map yesterday to your priorities. Change nothing."
+title: "Use cases"
 summary: "Against your priorities, the bot folds yesterday into a morning brief. It does not send messages. It does not change meetings."
 category: "Crew"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "eric-100-use-cases"
-title: "A hundred uses he saw. Pick one"
+title: "Grok Bot is in beta!"
 summary: "On launch day he wrote a hundred things he had seen. Pick one job you already have this week. Do not stand up a hundred bots."
 category: "Growth"
 tags:

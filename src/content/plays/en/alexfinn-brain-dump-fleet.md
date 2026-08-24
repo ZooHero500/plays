@@ -1,6 +1,6 @@
 ---
 id: "alexfinn-brain-dump-fleet"
-title: "Brain-dump first, then let one bot hire the rest"
+title: "Grok Bot has taken over the entire internet."
 summary: "Dump yourself into the first agent, let it design the crew, then let it stand the crew up."
 category: "Crew"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "nwtseira-media-buyer"
-title: "Give it one job: media buyer"
+title: "fuck it, i decided to choose grok @bot instead.."
 summary: "Arie pointed one bot at ads, sheets, and analytics, then told it to come back only when something needed him. It flagged burns, suggested pauses, moved budget, and wrote new hooks."
 category: "Growth"
 tags:

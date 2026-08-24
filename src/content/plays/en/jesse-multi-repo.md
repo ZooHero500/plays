@@ -1,6 +1,6 @@
 ---
 id: "jesse-multi-repo"
-title: "One request across the repos"
+title: "Multi-Repository Dev Orchestrator"
 summary: "One request splits across repos and goes to cloud agents. You approve merge and deploy."
 category: "Engineering"
 tags:

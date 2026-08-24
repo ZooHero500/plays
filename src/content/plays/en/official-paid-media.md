@@ -1,6 +1,6 @@
 ---
 id: "official-paid-media"
-title: "Watch the spend, leave the budget"
+title: "Use cases"
 summary: "Compare spend to budget and CAC. Recommend reallocations. The bot does not touch the budget."
 category: "Growth"
 tags:

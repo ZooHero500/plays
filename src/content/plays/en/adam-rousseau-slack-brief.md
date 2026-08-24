@@ -1,6 +1,6 @@
 ---
 id: "adam-rousseau-slack-brief"
-title: "A 9am Slack brief, then Granola into Ashby"
+title: "Grok Bot Live: AI-Powered Recruiting Tool"
 summary: "Adam's bot drops a 9am Slack brief on product milestones and competitors. A wrap-up bot ranks EOD actions. Another sits next to Granola and turns notes into Ashby pitches."
 category: "Crew"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "official-cloud-agent-orchestration"
-title: "Launch cloud agents, come back with a branch"
+title: "Introducing Grok Bot"
 summary: "A bot launches cloud coding agents on the right repo, watches stuck runs, and comes back with path, risk, and a mergeable branch."
 category: "Official"
 tags:

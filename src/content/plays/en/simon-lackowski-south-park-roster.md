@@ -1,6 +1,6 @@
 ---
 id: "simon-lackowski-south-park-roster"
-title: "Cartman queries Databricks, then delegates"
+title: "SpaceXAI Grok Bot Launches with Customizable AI Assistants"
 summary: "Simon Lackowski made Cartman chief of staff. Each morning Cartman queries Databricks, ranks the signals, and hands work to Kenny for research, Stan for writing, and Kyle for taught workflows."
 category: "Crew"
 tags:

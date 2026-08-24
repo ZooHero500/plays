@@ -1,6 +1,6 @@
 ---
 id: "debbie-coding-github"
-title: "Find the issue. Then close it"
+title: "How to Get Started with Grok Bot"
 summary: "Stand up a coding bot for one repo. It finds the issue. Once GitHub is connected, it actually closes it."
 category: "Engineering"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "official-spec-ticket-handoff"
-title: "Write it in Notion, open it in Linear"
+title: "Introducing Grok Bot"
 summary: "A bot writes the request back into Notion and opens the ticket in Linear, where the work already lives."
 category: "Official"
 tags:

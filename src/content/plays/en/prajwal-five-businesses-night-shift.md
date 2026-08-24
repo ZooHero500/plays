@@ -1,6 +1,6 @@
 ---
 id: "prajwal-five-businesses-night-shift"
-title: "Hire the night shift, one job each"
+title: "I Thought Grok Bot Was Hype. Then I Tested It on 5 Businesses."
 summary: "Staff watching jobs: night moderator, 15-minute X patrol, junior QA, research packets, tone-trained repurposing. No crews until a solo bot works."
 category: "Crew"
 tags:

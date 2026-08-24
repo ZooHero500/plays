@@ -1,6 +1,6 @@
 ---
 id: "eric-community-ops"
-title: "A community ops fleet on a weekly beat"
+title: "Community Ops Crew"
 summary: "Events and the member database stay aligned. The weekly summary shadows for a week before it posts."
 category: "Growth"
 tags:

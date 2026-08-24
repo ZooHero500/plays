@@ -1,6 +1,6 @@
 ---
 id: "promptway-overnight-job"
-title: "Stand the overnight post. Then close the laptop"
+title: "Jobs I Would Let a Grok Bot Run After I Close the Laptop"
 summary: "One outcome, one charter, a first task, a hard stop line. Skill first, overnight second."
 category: "Crew"
 tags:

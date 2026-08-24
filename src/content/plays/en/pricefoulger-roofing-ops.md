@@ -1,6 +1,6 @@
 ---
 id: "pricefoulger-roofing-ops"
-title: "Permit, inspection, proposal. The roof still needs you"
+title: "I am a roofing contractor🔨, and this is how I used Grok"
 summary: "Price Foulger is a roofing contractor. In two days Grok Bot pulled a permit, booked an inspection, notified insurance, staged a proposal, and wrote the sub work order and materials list."
 category: "Growth"
 tags:

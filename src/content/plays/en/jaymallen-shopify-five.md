@@ -1,6 +1,6 @@
 ---
 id: "jaymallen-shopify-five"
-title: "Five store seats. You still push live"
+title: "Doing an interesting test."
 summary: "Jay Allen staffed a small Shopify with an ops lead, merch, growth intel, a site engineer, and QA. People still approve live, priority, and vendor images."
 category: "Growth"
 tags:

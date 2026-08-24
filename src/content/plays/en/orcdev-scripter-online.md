@@ -1,6 +1,6 @@
 ---
 id: "orcdev-scripter-online"
-title: "Chronically Online pings Scripter. Three scripts wait"
+title: "Here is my Grok @bot use case 👇"
 summary: "OrcDev hired two bots. Chronically Online watches models, shadcn, and tech news, then digests Discord twice a day. It pings Scripter Orc, who already knows the channel, and three video scripts are sitting in Notion."
 category: "Growth"
 tags:

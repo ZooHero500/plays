@@ -1,6 +1,6 @@
 ---
 id: "nateherk-nine-hacks-klaus"
-title: "Klaus is the only bot you talk to"
+title: "A Week of Grok Bot Lessons in 10 Mins "
 summary: "Nate Herk, not Nate B Jones. Grill Me first. Klaus delegates to Motion, Eyes, Miner, Coffee, Views. Log work. Teach one visual path. Reuse the signed-in profile."
 category: "Crew"
 tags:

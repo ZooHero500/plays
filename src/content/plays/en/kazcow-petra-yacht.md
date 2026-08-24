@@ -1,6 +1,6 @@
 ---
 id: "kazcow-petra-yacht"
-title: "Feed Petra the manuals. Ask haul-out, not buy"
+title: "We've just setup Grok @bot 's - one as Chief of Staff."
 summary: "Kaz hired a Chief of Staff, then Petra as the boat's technical assistant. Every device PDF and every service invoice went in. She tracks intervals, finds superseded part numbers, and waits on the buy."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "debbie-content-flywheel"
-title: "One home post. Then the flywheel"
+title: "Grok Bot Just Dropped and I Had to Try It"
 summary: "The article goes live on your site first. Then DEV.to with the canonical URL. Then social drafts."
 category: "Growth"
 tags:

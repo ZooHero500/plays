@@ -1,6 +1,6 @@
 ---
 id: "av1dlive-obsidian-wiki"
-title: "Obsidian vault on the CoS computer, then a daily loop"
+title: "grok bot + obsidian is basically superhuman mode..."
 summary: "Avid stood up one Obsidian vault on the chief of staff computer. Hunt folders take scout notes. Ship folders hold drafts. A daily IST loop writes the score. Nothing posts or pays."
 category: "Engineering"
 tags:

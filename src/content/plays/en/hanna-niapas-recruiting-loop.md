@@ -1,6 +1,6 @@
 ---
 id: "hanna-niapas-recruiting-loop"
-title: "One morning briefing, then notes into scorecards"
+title: "Grok Bot Boosts Recruiting Efficiency with Automation"
 summary: "Hanna's bot reads Ashby, Gmail, Calendar, and the pipeline each morning, turns notes into scorecards, drafts candidate email, and does an EOD miss pass."
 category: "Crew"
 tags:

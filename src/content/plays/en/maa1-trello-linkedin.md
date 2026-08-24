@@ -1,6 +1,6 @@
 ---
 id: "maa1-trello-linkedin"
-title: "Trello planner and a LinkedIn draft, from your phone"
+title: "Grok Bot (Product Review)"
 summary: "A planner bot reshuffles the day on Trello. A draft bot writes LinkedIn. Voice is enough."
 category: "Life"
 tags:

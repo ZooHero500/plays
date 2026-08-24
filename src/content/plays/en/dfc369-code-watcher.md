@@ -1,6 +1,6 @@
 ---
 id: "dfc369-code-watcher"
-title: "Watch the official pages. Stay quiet if nothing moved"
+title: "I built a Grok Bot that watches building codes so I don’t have to"
 summary: "DFC369 named Code Watcher. Official publisher pages only. First run saves a snapshot. Weekdays it diffs the state table. Once a week it diffs the rest. Mail yourself first. Never invent an amendment."
 category: "Engineering"
 tags:

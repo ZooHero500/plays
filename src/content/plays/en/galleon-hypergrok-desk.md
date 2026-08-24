@@ -1,6 +1,6 @@
 ---
 id: "galleon-hypergrok-desk"
-title: "A 7-bot Hyperliquid desk"
+title: "galleonlabs/hypergrok-trading-desk: Turn your Grok Bot into a 7-agent Hyperliquid trading desk. Roles, system prompts and skills your Bots use to research, size, execute and review."
 summary: "Stand up Desk Lead, two analysts, Strategist, Risk, one Execution Trader, and a Reviewer. Idea, evidence, risk, your approve, one send."
 category: "Growth"
 tags:

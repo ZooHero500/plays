@@ -1,6 +1,6 @@
 ---
 id: "joebenson-five-bots-coach"
-title: "Chief, Mailman, Poster, Scribe, and Coach"
+title: "I’ve created 5 Grok Bots (@bot) so far."
 summary: "Joe Benson talks to Chief. Mailman briefs three inboxes. Poster pulls X ideas from Slack. Scribe builds the Wednesday agenda. Coach books the soccer games."
 category: "Crew"
 tags:

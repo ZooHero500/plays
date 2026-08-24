@@ -1,6 +1,6 @@
 ---
 id: "matthew-silberman-juno-revops"
-title: "Capture the desk. Juno talks the data problem through"
+title: "Grok Bot is live today, and I’ve been thinking about it less as a collection of Bots and more as a system for getting things done."
 summary: "Matthew Silberman, GTM Systems at Cursor, runs one capture Bot across email, calendars, Slack, and notes. A chief of staff turns that into tasks and pulls specialists. Juno, the RevOps Bot, talks the logic through, documents the decision, then turns it into work."
 category: "Crew"
 tags:

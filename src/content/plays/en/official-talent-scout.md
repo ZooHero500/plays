@@ -1,6 +1,6 @@
 ---
 id: "official-talent-scout"
-title: "Scout the role, park the outreach"
+title: "Use cases"
 summary: "Find people for the role. Draft the outreach. Do not contact anyone yet."
 category: "Official"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "masa-wunder-teach-slack"
-title: "Teach one search, then a Slack pun loop"
+title: "Grok Bot の使い方と実機レビュー。AI に専用クラウド PC を渡せる時代が来た"
 summary: "Record a short search-to-list. Then fire a test-channel Routine that replies with a pun and waits."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "michelle-freitas-pulse-honey"
-title: "Pulse writes the scorecard. Honey runs hiring ops."
+title: "Grok Bot Boosts Interview Efficiency with AI Assistants"
 summary: "Michelle trained Pulse on Field Engineer and Field CTO interviews. It drafts the scorecard, asks four questions, then submits when she says go. Honey is chief of staff on Slack, email, and hiring ops."
 category: "Crew"
 tags:

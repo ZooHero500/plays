@@ -1,6 +1,6 @@
 ---
 id: "jjcm-vietnam-fabric"
-title: "Forty mills, one lock, a pattern in .ai"
+title: "Grok Bot"
 summary: "A sourcing bot talks to Vietnam fabric mills. A prototyper sends a .ai file to the one you lock."
 category: "Growth"
 tags:

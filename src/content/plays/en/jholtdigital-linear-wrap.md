@@ -1,6 +1,6 @@
 ---
 id: "jholtdigital-linear-wrap"
-title: "8pm commits become Linear, then a Discord wrap"
+title: "I built my first real agent automation using Grok Bot."
 summary: "Jason Holt is bad at Linear and still promised a daily wrap. An Ops manager bot reads the day's commits at 8pm, creates or updates the issues, and he runs /wrap in Discord before bed."
 category: "Engineering"
 tags:

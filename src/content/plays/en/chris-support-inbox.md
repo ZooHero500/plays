@@ -1,6 +1,6 @@
 ---
 id: "chris-support-inbox"
-title: "Watch the support inbox. Draft. Wait."
+title: "I Built a 24/7 Customer Support AI Agent Using Grok Bot in 19 Minutes (Step by Step Guide)"
 summary: "Point a bot at the support mailbox. It reads new mail against a knowledge base and parks a reply for you."
 category: "Growth"
 tags:

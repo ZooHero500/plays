@@ -1,6 +1,6 @@
 ---
 id: "ed-dale-yellow-pad-newsletter"
-title: "Draw the seats. Hire Head of Talent first"
+title: "I drew the jobs on a yellow pad. Then I hired them."
 summary: "Ed Dale drew the jobs on a yellow pad, then hired them. Head of Talent gates new seats. Reporter finds the day's story. Editor protects your voice. Printer gets it to Substack and X. An EA answers what's next."
 category: "Crew"
 tags:

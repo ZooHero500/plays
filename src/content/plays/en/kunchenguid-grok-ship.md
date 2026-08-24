@@ -1,6 +1,6 @@
 ---
 id: "kunchenguid-grok-ship"
-title: "Firstmate runs a scout-vs-ship factory"
+title: "kunchenguid/grok-ship: Turn your Grok Bot into a software factory."
 summary: "Point a bot at GROK_SHIP.md. After that you talk only to Firstmate. Scout writes a report. Ship opens a PR after review. You merge."
 category: "Engineering"
 tags:

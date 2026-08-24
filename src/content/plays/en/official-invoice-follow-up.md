@@ -1,6 +1,6 @@
 ---
 id: "official-invoice-follow-up"
-title: "Chase unpaid invoices, escalate the stuck ones"
+title: "Introducing Grok Bot"
 summary: "A bot scans portals and email for unpaid invoices, chases in the other party's voice, and escalates only the stuck or disputed ones."
 category: "Official"
 tags:

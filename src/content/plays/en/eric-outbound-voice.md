@@ -1,6 +1,6 @@
 ---
 id: "eric-outbound-voice"
-title: "Outbound in the voice of your sent mail"
+title: "Outbound In Your Voice"
 summary: "It learns how you write from sent mail. Every day it researches people and drafts. The first ten wait for you."
 category: "Growth"
 tags:

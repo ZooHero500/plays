@@ -1,6 +1,6 @@
 ---
 id: "nate-theme-not-task"
-title: "Twelve bots on one computer, each owns a theme"
+title: "Grok Bot Review: Is the $200 AI Agent Team Worth It?"
 summary: "Name each bot after a theme, give it a finished-thing outcome, and let it message the next specialist."
 category: "Crew"
 tags:

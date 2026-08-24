@@ -1,6 +1,6 @@
 ---
 id: "heresmyeth-tesla-calendar-manager"
-title: "7am Tesla routine from the calendar"
+title: "Made Grok @bot my Tesla manager with @TeslrBot"
 summary: "heresmy made a Tesla manager on Teslr. At 7am it reads the calendar. A meeting in the next 90 minutes gets the cabin to 72°. Eight minutes out, the car unlocks. Every action comes back with battery and range."
 category: "Life"
 tags:

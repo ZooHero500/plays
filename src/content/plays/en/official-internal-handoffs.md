@@ -1,6 +1,6 @@
 ---
 id: "official-internal-handoffs"
-title: "Split three lanes, take only the calls"
+title: "Introducing Grok Bot"
 summary: "Sales fills notes. Ops handles invoices. Engineering reproduces bugs. Three lanes. One chief of staff above them."
 category: "Official"
 tags:

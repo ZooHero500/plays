@@ -1,6 +1,6 @@
 ---
 id: "official-teach-routine"
-title: "Teach it first. Then let it run overnight."
+title: "Skills and routines"
 summary: "Run it once. Save it as a skill. Then let it run on a schedule. Do not schedule first."
 category: "Official"
 tags:

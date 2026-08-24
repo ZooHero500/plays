@@ -1,6 +1,6 @@
 ---
 id: "debbie-linkedin"
-title: "Lock the voice. Then dump the note"
+title: "How to Get Started with Grok Bot"
 summary: "It reads your recent posts and locks the voice. You dump a messy note. Review, then it posts."
 category: "Growth"
 tags:

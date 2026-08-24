@@ -1,6 +1,6 @@
 ---
 id: "karanc12-lead-teach-skill"
-title: "Screen-share how you work a lead. Then it runs the morning"
+title: "I screen-shared with Grok Bot for 8 minutes and just walked it through how I research + reply to high-value leads."
 summary: "KC screen-shared eight minutes of how he researches a high-value lead and replies. The bot saved it as a skill. Each morning it finds leads, scores them, drafts in his voice, and only pings the ones worth sending."
 category: "Growth"
 tags:

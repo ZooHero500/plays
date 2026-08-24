@@ -1,6 +1,6 @@
 ---
 id: "official-sales-outbound"
-title: "Research overnight, park the drafts"
+title: "Introducing Grok Bot"
 summary: "Overnight the bot researches accounts and drafts outreach. Morning, you only approve the drafts."
 category: "Official"
 tags:

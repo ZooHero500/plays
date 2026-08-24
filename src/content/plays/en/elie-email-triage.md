@@ -1,6 +1,6 @@
 ---
 id: "elie-email-triage"
-title: "One short list. Not seventy unread"
+title: "Important Email Triage"
 summary: "It scans the inbox on a loop. It only flags what is actually waiting on your reply."
 category: "Life"
 tags:

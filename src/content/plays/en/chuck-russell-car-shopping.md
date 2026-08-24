@@ -1,6 +1,6 @@
 ---
 id: "chuck-russell-car-shopping"
-title: "Three bots run a reverse-auction car lease"
+title: "My Agents Went Car Shopping"
 summary: "Chuck Russell stood up one bot per SUV, held every dealer to email, and let them grind nine stores into one comparison table. He signed the Genesis himself."
 category: "Life"
 tags:

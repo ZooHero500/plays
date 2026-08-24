@@ -1,6 +1,6 @@
 ---
 id: "official-inbox-triage"
-title: "Shared inbox: mark urgent, park the reply"
+title: "Introducing Grok Bot"
 summary: "A community shared inbox mixes students, partners, and event replies. The bot marks urgent, drafts in the team voice, and parks the send."
 category: "Official"
 tags:

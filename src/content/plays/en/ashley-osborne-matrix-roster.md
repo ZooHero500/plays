@@ -1,6 +1,6 @@
 ---
 id: "ashley-osborne-matrix-roster"
-title: "Smith briefs. Architect ships. Weekend planner books the vineyard"
+title: "Grok Bot AI Teammates for Work Automation"
 summary: "Ashley Osborne named her Cursor desk after the Matrix. Smith scans mail and preps meetings. Architect reviews GitHub and kicks cloud agents. A weekend planner booked the vineyard by email."
 category: "Crew"
 tags:

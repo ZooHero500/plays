@@ -1,6 +1,6 @@
 ---
 id: "dennis-ops-desk"
-title: "One desk. Not twelve on day one"
+title: "How I Use Grok Bot as One Ops Desk"
 summary: "Stand up one desk. Skills come from the public pack. Do not lay out twelve desks on day one."
 category: "Crew"
 tags:

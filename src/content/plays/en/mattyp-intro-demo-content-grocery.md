@@ -1,6 +1,6 @@
 ---
 id: "mattyp-intro-demo-content-grocery"
-title: "Demo Bot, Content Bot, then the Friday cart"
+title: "Intro to Grok Bot"
 summary: "Bookmarks become a demo. Slack ships become drafts. Two grocery carts get compared."
 category: "Crew"
 tags:

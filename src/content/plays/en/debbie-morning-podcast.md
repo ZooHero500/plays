@@ -1,6 +1,6 @@
 ---
 id: "debbie-morning-podcast"
-title: "One morning podcast. Not two apps first"
+title: "How to Get Started with Grok Bot"
 summary: "Calendar and mail become one short morning brief. In a meeting, just ask for the link."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "priya-bhatia-deep-thought"
-title: "Exceptions before 5am. You still walk the 1:1"
+title: "Grok Bot: A new kind of colleague"
 summary: "Priya named Deep Thought, Guide, Eddie, Marvin. Weekdays before 5am, Deep Thought hits Databricks read-only and drops who dipped, who spiked, who went quiet in Slack. Ask one account, get a risk one-pager. Marvin keeps every draft until she says yes."
 category: "Growth"
 tags:

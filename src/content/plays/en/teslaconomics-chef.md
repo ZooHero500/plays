@@ -1,6 +1,6 @@
 ---
 id: "teslaconomics-chef"
-title: "Name the dish. Name the headcount"
+title: "I just made the world's best Chef Grok Bot."
 summary: "Teslaconomics built Chef as bot seven. You name a homemade dish and how many people. It returns a store-ready buy list, then restaurant steps a tired cook can follow once."
 category: "Life"
 tags:

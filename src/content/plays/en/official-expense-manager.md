@@ -1,6 +1,6 @@
 ---
 id: "official-expense-manager"
-title: "Reconcile the week, park the chase"
+title: "Use cases"
 summary: "Weekly reconcile. Match receipts. Flag exceptions. Do not change reimbursements. Do not send chases."
 category: "Official"
 tags:

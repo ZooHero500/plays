@@ -1,6 +1,6 @@
 ---
 id: "axel-refund-case-desk"
-title: "A refund inbox and a sheet of open cases"
+title: "I’ve spent enough time this year chasing support teams for money that was already mine.."
 summary: "Axel Bitblaze got tired of chasing support for money that was already his. He gave a bot its own inbox and a sheet of every open refund, delayed payment, and stuck case."
 category: "Life"
 tags:

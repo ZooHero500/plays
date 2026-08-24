@@ -1,6 +1,6 @@
 ---
 id: "yunta-calendar-reservations"
-title: "Scan the calendar, then book the table from the lot"
+title: "Grok Bot was able to a) go through the calendars and find out anything I need to make reservations for beforehand that I haven’t done yet, b) determine the best time to make reservations, and c) navigate the reservations on a website."
 summary: "A bot finds the reservations you still owe, picks a time, and walks the booking site while you walk to the car."
 category: "Life"
 tags:

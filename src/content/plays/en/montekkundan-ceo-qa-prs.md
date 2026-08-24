@@ -1,6 +1,6 @@
 ---
 id: "montekkundan-ceo-qa-prs"
-title: "Talk to the CEO. QA hits staging. Dev opens draft PRs"
+title: "I run a small agent org inside Grok Bot for the AI chat we ship at work."
 summary: "Montek runs the AI chat they ship with one CEO bot. QA hits the same staging URL. The developer opens draft PRs with Linear IDs. Specialists report to the CEO, not to him."
 category: "Engineering"
 tags:

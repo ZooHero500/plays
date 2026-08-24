@@ -1,6 +1,6 @@
 ---
 id: "jorgediazapps-voice-typefully"
-title: "Walk, talk, then Typefully drafts in two languages"
+title: "I built a Grok Bot use case I actually run."
 summary: "jorgediazapps talks into Letterly on a walk. The note lands on Grok Bot. A skill writes one English X post and a Spanish thread plus LinkedIn. Typefully holds the drafts."
 category: "Growth"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "savipww-shopify-six"
-title: "One router, six store bots, one 6am note"
+title: "Grok Bot is a legal cheat code"
 summary: "savip pointed Grok Bot at a Shopify store and stopped opening admin. Watcher, pricing, writer, support, orders, and payout sit under one router. He reads one message at 6am."
 category: "Growth"
 tags:

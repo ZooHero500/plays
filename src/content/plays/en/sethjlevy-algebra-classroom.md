@@ -1,6 +1,6 @@
 ---
 id: "sethjlevy-algebra-classroom"
-title: "Give it the syllabus. It posts next week's homework"
+title: "I teach an algebra class at the school my wife started."
 summary: "Seth teaches algebra at the school his wife started. He pointed one bot at the syllabus, the digital textbook, and Google Classroom. It posted this week's homework and matching videos. Then he told it to do that every week."
 category: "Life"
 tags:

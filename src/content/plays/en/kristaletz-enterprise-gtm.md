@@ -1,6 +1,6 @@
 ---
 id: "kristaletz-enterprise-gtm"
-title: "Staff a GTM desk you can teach once"
+title: "Grok Bot for GTM"
 summary: "Krista Letz runs enterprise GTM at SpaceXAI with a chief of staff, overnight prospecting, one bot per account, live Figma slides, and a sales coach. She teaches a path once and turns it into a skill."
 category: "Growth"
 tags:

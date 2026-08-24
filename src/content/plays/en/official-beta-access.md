@@ -1,6 +1,6 @@
 ---
 id: "official-beta-access"
-title: "Invites, NDAs, then access with a trail"
+title: "Introducing Grok Bot"
 summary: "A beta bot sends invites, follows up, updates the CRM, collects NDA signatures, then coordinates access."
 category: "Official"
 tags:

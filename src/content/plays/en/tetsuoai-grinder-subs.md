@@ -1,6 +1,6 @@
 ---
 id: "tetsuoai-grinder-subs"
-title: "Inbox finds the subs. Grinder sits on the cancel button"
+title: "I devised a plan to have @grok @bot pay for itself."
 summary: "tetsuo hired two bots so Grok Bot would pay for itself. One reads billing mail and builds the subscription table. Grinder opens support, asks for a cheaper keep, and stops on cancel."
 category: "Life"
 tags:

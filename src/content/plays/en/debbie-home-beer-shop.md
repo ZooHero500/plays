@@ -1,6 +1,6 @@
 ---
 id: "debbie-home-beer-shop"
-title: "A home bot that shops, and a cart that waits"
+title: "I Sent Grok Bot to Buy My Gluten-Free Beer"
 summary: "A home bot keeps the school list. It can fill Amazon and Alcampo. Pay stays with you when the site gets sticky."
 category: "Life"
 tags:

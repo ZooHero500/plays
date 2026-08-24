@@ -1,6 +1,6 @@
 ---
 id: "rundown-cos-team"
-title: "A chief of staff, then one debrief at the end of the day"
+title: "Hand Off Real Work Across Your Apps With Grok Bot…"
 summary: "Stand up a small team under a Chief of Staff. Ask for one daily report: done, still going, needs you."
 category: "Crew"
 tags:

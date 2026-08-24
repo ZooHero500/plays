@@ -1,6 +1,6 @@
 ---
 id: "official-feature-requests"
-title: "Who asked for what, tied to a customer"
+title: "Introducing Grok Bot"
 summary: "A bot mines Slack and calls for who asked for what, then keeps a living list tied to customers."
 category: "Official"
 tags:

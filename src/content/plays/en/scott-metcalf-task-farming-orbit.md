@@ -1,6 +1,6 @@
 ---
 id: "scott-metcalf-task-farming-orbit"
-title: "Farm the transcript into Linear. Orbit runs the desk"
+title: "Grok Bot is live."
 summary: "Scott Metcalf records almost every meeting. A bot reads the transcript, turns commitments into Linear tasks, tracks them, and closes them. Orbit is chief of staff. Others draft email, watch for GTM hires, and log a son's Strava runs to a coach sheet."
 category: "Crew"
 tags:

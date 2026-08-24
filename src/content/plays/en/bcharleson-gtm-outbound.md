@@ -1,6 +1,6 @@
 ---
 id: "bcharleson-gtm-outbound"
-title: "Hand the bot a GTM repo, then approve the sends"
+title: "bcharleson/grokbot-for-gtm: Open-source Grok Bot playbook for a complete outbound GTM motion (Instantly, HeyReach, and list/enrichment CLIs)"
 summary: "Give the bot the outbound playbook. It interviews you, builds the list, and drafts Instantly and HeyReach. You turn send on."
 category: "Growth"
 tags:

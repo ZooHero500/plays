@@ -1,6 +1,6 @@
 ---
 id: "mindstudio-youtube-social"
-title: "YouTube manager pings social when a transcript lands"
+title: "Grok Bot vs Claude Code: Which AI Coding Agent Wins?"
 summary: "A YouTube bot watches Notion for new transcripts. A social bot turns them into posts. They talk without you."
 category: "Growth"
 tags:

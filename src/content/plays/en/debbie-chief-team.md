@@ -1,6 +1,6 @@
 ---
 id: "debbie-chief-team"
-title: "One chief first. Then the fleet"
+title: "How to Get Started with Grok Bot"
 summary: "Stand up one chief of staff. Let it look at you and the bots you already have, then decide rename, merge, or add."
 category: "Crew"
 tags:

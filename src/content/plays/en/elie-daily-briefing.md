@@ -1,6 +1,6 @@
 ---
 id: "elie-daily-briefing"
-title: "One 7am brief. Not five reminders"
+title: "Daily Briefing"
 summary: "Weekdays at 7am, one message: calls in order, who and why, what moved overnight, the one thing to prepare."
 category: "Life"
 tags:

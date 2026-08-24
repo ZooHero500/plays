@@ -1,6 +1,6 @@
 ---
 id: "official-event-logistics"
-title: "Invite guests, chase vendors, push the list"
+title: "Introducing Grok Bot"
 summary: "For events, a bot invites and approves guests, registers attendance, chases vendors, and pushes the checklist forward."
 category: "Official"
 tags:

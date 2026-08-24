@@ -1,6 +1,6 @@
 ---
 id: "liam-fallen-one-cos-first"
-title: "Start with one Chief of Staff"
+title: "How to get started with Grok Bot."
 summary: "Liam Fallen starts with one CoS, dumps the goals, and lets it name the roster. Each specialist gets one job. Then you teach once and hang a routine."
 category: "Crew"
 tags:

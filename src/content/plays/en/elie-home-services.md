@@ -1,6 +1,6 @@
 ---
 id: "elie-home-services"
-title: "Photo the fault. Stop before you spend"
+title: "Home Services Autopilot"
 summary: "Photo the fault and describe it. It finds people and compares quotes. Appointment mail is drafted. It stops before contact or spend."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "farzad-named-roster"
-title: "Webby, Shotry, Writey, and a Master"
+title: "Here's my Grok Bot team:"
 summary: "Name specialists like people. A Master bot runs the roster: web, short-form, articles, scripts, ideas."
 category: "Growth"
 tags:

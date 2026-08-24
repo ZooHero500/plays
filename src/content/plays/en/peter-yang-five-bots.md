@@ -1,6 +1,6 @@
 ---
 id: "peter-yang-five-bots"
-title: "Five seats: advisor, YouTube, X, cleanup, travel"
+title: "Grok Bot: 5 Must-Try Use Cases for Work and Life (Full Tutorial)"
 summary: "An advisor hires the rest. Then a YouTube researcher, an X scout, a cleanup bot for mail and paid subs, and a travel concierge."
 category: "Life"
 tags:

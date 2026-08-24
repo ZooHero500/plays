@@ -1,6 +1,6 @@
 ---
 id: "eric-recruiting-reviewer"
-title: "One pass, three buckets for applicants"
+title: "Recruiting Reviewer"
 summary: "One pass sorts applications into strong, mid, and no. Two sentences of reason each. Spot-check ten per bucket."
 category: "Crew"
 tags:

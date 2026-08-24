@@ -1,6 +1,6 @@
 ---
 id: "official-vendor-portals"
-title: "Click the same vendor path every week"
+title: "Introducing Grok Bot"
 summary: "Ops runs renewals, seats, and procurement on portals with no clean API. The bot clicks the same path and brings back exceptions."
 category: "Official"
 tags:

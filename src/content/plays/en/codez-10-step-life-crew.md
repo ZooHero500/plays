@@ -1,6 +1,6 @@
 ---
 id: "codez-10-step-life-crew"
-title: "Hire a crew, then prune it weekly"
+title: "Grok Bot Agents: how to automate your life in 10 Steps (Full-tutorial)"
 summary: "Name a Chief, hire specialists with charters, then kill the routines you would not miss."
 category: "Crew"
 tags:

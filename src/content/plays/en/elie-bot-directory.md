@@ -1,6 +1,6 @@
 ---
 id: "elie-bot-directory"
-title: "One listing this week. Not a bookmark pile"
+title: "Elie Steinbock launches Bot Directory for one-prompt Grok Bots"
 summary: "Public plays become one catalog. GitHub is the store. Tag a tweet and it can open a PR."
 category: "Crew"
 tags:

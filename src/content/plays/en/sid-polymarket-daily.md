@@ -1,6 +1,6 @@
 ---
 id: "sid-polymarket-daily"
-title: "A daily read on markets that settle tomorrow"
+title: "grok @bot use case of the day:"
 summary: "Every day, scan Polymarket for 70 to 90 percent markets that settle in 24 hours. Look up context. Write a clean read."
 category: "Growth"
 tags:

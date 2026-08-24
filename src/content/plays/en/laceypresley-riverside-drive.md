@@ -1,6 +1,6 @@
 ---
 id: "laceypresley-riverside-drive"
-title: "Point it at Drive. Sort. Don't rename"
+title: "I pointed Grok Bot at my Drive."
 summary: "Lacey pointed Grok Bot at Drive. One hundred thirty Riverside files sat in Downloads. It filed videos and audio into named folders, put sixteen Elon clips aside, and left every filename alone. Twice a day it checks so new sessions do not pile up."
 category: "Life"
 tags:

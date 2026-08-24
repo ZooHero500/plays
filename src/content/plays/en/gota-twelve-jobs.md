@@ -1,6 +1,6 @@
 ---
 id: "gota-twelve-jobs"
-title: "Twelve jobs on one roster, from images to canceling subs"
+title: "Grok Bot、エージェントの複雑な設定周りをよくあそこまでシンプルなユーザーインターフェイスに落とし込んでるなと感銘を受けっぱなし！"
 summary: "Specialists for images, research, travel talk, subscription cleanup, a local model on the VM, and ticket dates on the calendar."
 category: "Life"
 tags:

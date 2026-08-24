@@ -1,6 +1,6 @@
 ---
 id: "demkinn-org-chart-roster"
-title: "Give Atlas an org chart, not a to-do list"
+title: "I stopped using Grok Bot like a chatbot and gave it an org chart instead."
 summary: "Demkinn stopped chatting and staffed an org chart. You talk to Atlas. Scout, Quill, Pitch, Vault, and Ledger each speak in first person. Teach by recording, not a giant prompt."
 category: "Crew"
 tags:

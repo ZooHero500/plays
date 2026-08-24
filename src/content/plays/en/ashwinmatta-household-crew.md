@@ -1,6 +1,6 @@
 ---
 id: "ashwinmatta-household-crew"
-title: "A named household crew for flights and boxes"
+title: "Grok Bot is mind blowing!"
 summary: "Ashwin Matta named a household staff. Bossy assigns. Pointy handles travel. Shoppy watches Amazon and Costco. The useful jobs: flight check-in, special meals, one package summary."
 category: "Life"
 tags:

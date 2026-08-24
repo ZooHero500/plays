@@ -1,6 +1,6 @@
 ---
 id: "chsrbrts-ridewithgps"
-title: "Watch the webinar, then brief the ride in one line"
+title: "I've been testing Grok Bot, and I'm blown away."
 summary: "Chase Roberts sent Grok Bot a Ride with GPS webinar, then started briefing rides in one line. Two published road routes came back."
 category: "Life"
 tags:

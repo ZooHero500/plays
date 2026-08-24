@@ -1,6 +1,6 @@
 ---
 id: "official-playtest"
-title: "Brute-force the path, bring back the failures"
+title: "Introducing Grok Bot"
 summary: "When APIs are not enough, the bot tests the product path on its computer, captures failures, and returns a short findings pack."
 category: "Official"
 tags:

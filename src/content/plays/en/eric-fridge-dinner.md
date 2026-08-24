@@ -1,6 +1,6 @@
 ---
 id: "eric-fridge-dinner"
-title: "A fridge photo, a week of dinners"
+title: "Fridge To Dinner Plan"
 summary: "One fridge photo plans a week of dinners. Only missing items go in the cart. The cart waits for you."
 category: "Life"
 tags:

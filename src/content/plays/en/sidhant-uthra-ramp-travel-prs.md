@@ -1,6 +1,6 @@
 ---
 id: "sidhant-uthra-ramp-travel-prs"
-title: "File Ramp from Gmail. Ping me only on a decision"
+title: "Excited for the launch of Grok Bot!"
 summary: "Sidhant Uthra's bots found receipts in Gmail, filed Ramp expenses and watched them to approval, planned loyalty travel onto the calendar, and traced logs into PRs. A chief of staff only pings when a decision is needed."
 category: "Crew"
 tags:

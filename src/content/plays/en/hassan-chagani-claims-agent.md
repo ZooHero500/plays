@@ -1,6 +1,6 @@
 ---
 id: "hassan-chagani-claims-agent"
-title: "Record one clean submit. Freeze if the tab dies"
+title: "Introducing Grok Bot"
 summary: "Hassan stood up a claims agent on a Drive folder, a spreadsheet tracker, and a health-insurer portal with no API. Teach one clean submit. One tab. One session. The CoS only pulls you for a dead tab. File the complete ones. Name the holes."
 category: "Life"
 tags:

@@ -1,6 +1,6 @@
 ---
 id: "joe-competitor-research"
-title: "One research bot, three competitors, four minutes"
+title: "I Just Tested (New) Grok Bot (Now I Understand the $200 Price Tag)"
 summary: "Name a Research Bot and send it after Operator, Claude Code, and Devin. It comes back with a comparison."
 category: "Engineering"
 tags:

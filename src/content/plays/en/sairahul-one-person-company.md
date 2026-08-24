@@ -1,6 +1,6 @@
 ---
 id: "sairahul-one-person-company"
-title: "Six seats for a one-person company"
+title: "How To Build a One-Person Company Using Grok Bot "
 summary: "Hire a chief, a scout, a writer, an engineer, a customer guide, and a ledger. Give each a charter. Put them in one group."
 category: "Crew"
 tags:

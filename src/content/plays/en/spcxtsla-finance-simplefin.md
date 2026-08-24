@@ -1,6 +1,6 @@
 ---
 id: "spcxtsla-finance-simplefin"
-title: "A finance bot that reads SimpleFin"
+title: "I created a finance Grok @Bot and have been exploring the best way to feed banking and credit card info to it so that it can monitor spend, balances, payment dates etc."
 summary: "Peter stood up a finance bot and feeds it through SimpleFin. It watches spend, balances, and due dates across institutions, then answers a question instead of opening five bank apps."
 category: "Life"
 tags:

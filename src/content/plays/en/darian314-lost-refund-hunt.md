@@ -1,6 +1,6 @@
 ---
 id: "darian314-lost-refund-hunt"
-title: "Hunt unrefunded returns in mail"
+title: "asked grok @bot to pay its monthly fee by looking through my email for lost money and it emailed 5 merchants that hadn't refunded me for returns."
 summary: "Darian Shirazi asked a bot to scan his email for lost money. It wrote five merchants who had not refunded his returns, and recovered more than the monthly fee."
 category: "Life"
 tags:

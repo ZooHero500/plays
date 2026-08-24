@@ -1,6 +1,6 @@
 ---
 id: "cryptorover-personal-cfo"
-title: "Personal CFO. Morning brief. You still make the call"
+title: "I built a personal CFO inside Grok Bot."
 summary: "cryptorover named one bot Personal CFO. A sheet of holdings, one hand run, a saved briefing skill, a weekday routine. It flags drift. It does not trade."
 category: "Life"
 tags:

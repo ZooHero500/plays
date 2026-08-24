@@ -1,6 +1,6 @@
 ---
 id: "vincent-tellier-king-leads"
-title: "Name King. One job: find work"
+title: "We gave Grok Bot one job: find us a paying customer for our website factory business."
 summary: "Vincent Tellier named King to find paying customers for a website factory. Google the local trades. Draft the proposal. Stop for review. Weekday morning at 8:56."
 category: "Growth"
 tags:

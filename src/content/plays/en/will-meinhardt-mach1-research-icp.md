@@ -1,6 +1,6 @@
 ---
 id: "will-meinhardt-mach1-research-icp"
-title: "Summarize the library. Review the CSV in chat"
+title: "Grok Bot Review: Automating Workflows at Mach 1"
 summary: "Will Meinhardt, Head of Sales at Mach 1, handed Grok Bot the reactive jobs: summarize a YouTube library, pull research into CSV or Markdown, and find ICP accounts from news events. He reviews the file in the bot conversation."
 category: "Growth"
 tags:

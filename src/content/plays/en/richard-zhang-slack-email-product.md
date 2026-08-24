@@ -1,6 +1,6 @@
 ---
 id: "richard-zhang-slack-email-product"
-title: "Four chiefs: Slack, email, product, then the morning brief"
+title: "I've been using Grok Bot in my own workflows and it's been a HUGE timesaver."
 summary: "Richard Zhang hired a Slack watcher that drafts if he has not replied by end of day, an email triage bot in his voice, a product bot on Cursor shipping, and a chief of staff that pulls one morning brief."
 category: "Crew"
 tags:

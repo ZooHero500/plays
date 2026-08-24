@@ -1,6 +1,6 @@
 ---
 id: "aditi-three-test-bots"
-title: "Three tiny jobs: seed rounds, a flight, five stores"
+title: "Grokbot Honest Review: Is xAI and Cursor's Computer-Use Agent Worth $200 a Month?"
 summary: "Stand up three narrow bots. Use them to learn the shared-computer blast radius before you give anyone real money."
 category: "Life"
 tags:

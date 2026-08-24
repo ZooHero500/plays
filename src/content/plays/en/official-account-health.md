@@ -1,6 +1,6 @@
 ---
 id: "official-account-health"
-title: "Rank the watch list, contact nobody"
+title: "Use cases"
 summary: "Across usage, tickets, and renewals, land a ranked watch list with evidence. Do not contact customers. Do not edit the CRM."
 category: "Growth"
 tags:

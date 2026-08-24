@@ -1,6 +1,6 @@
 ---
 id: "official-prototype-builder"
-title: "A request in, a clickable URL back"
+title: "Introducing Grok Bot"
 summary: "A bot turns a product request into a clickable prototype and an MVP, then comes back with screenshots and a live URL."
 category: "Official"
 tags:
