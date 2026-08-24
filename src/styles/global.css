@@ -2056,7 +2056,6 @@ body.lock-j .discover-feed {
   display: block;
   column-count: 4;
   column-gap: 20px;
-  gap: 0;
   max-width: 1200px;
   margin-top: 0;
 }
