@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import DiscoverCard from '../../components/DiscoverCard.astro';
+import { getDiscoverPosts, SCENES, sceneSlug } from '../../lib/discover';
+
+export async function getStaticPaths() {
+  const posts = await getDiscoverPosts();
+  return SCENES.map((scene) => ({
+    params: { slug: sceneSlug(scene) },
+    props: { scene, posts: posts.filter((p) => p.category === scene) },
+  }));
+}
+
+const { scene, posts } = Astro.props;
+---
+<Base
+  title={`${scene} · Plays`}
+  description={`Public X posts filed under ${scene}.`}
+  nav="categories"
+  locale="en"
+  chrome="topbar"
+  bodyClass="lock-j"
+  lockJ
+>
+  <div class="discover-head">
+    <p class="discover-kicker"><a href="/categories">Categories</a> / {scene}</p>
+    <p class="discover-dek">{posts.length} posts</p>
+  </div>
+  <main class="discover-feed">
+    {posts.map((p) => <DiscoverCard post={p} />)}
+  </main>
+</Base>

@@ -1,0 +1,46 @@
+---
+import type { DiscoverPost } from '../lib/discover';
+
+interface Props {
+  post: DiscoverPost;
+}
+
+const HUES = [20, 40, 80, 140, 200, 260] as const;
+
+function authorHue(name: string): number {
+  let h = 0;
+  const s = name || '';
+  for (let i = 0; i < s.length; i++) h = Math.imul(h, 31) + s.charCodeAt(i);
+  return HUES[(h >>> 0) % HUES.length];
+}
+
+const { post } = Astro.props;
+const handle = post.handle.replace(/^@/, '');
+const hay = [post.title, post.author, post.excerpt, handle].filter(Boolean).join(' ').toLowerCase();
+const line = (post.title || post.excerpt || '').trim();
+const blob = `hsl(${authorHue(post.author)} 12% 82%)`;
+const kind = post.coverUrl ? 'has-cover' : 'no-cover';
+---
+<a
+  class={`card discover-card ${kind}`}
+  href={post.permalink}
+  target="_blank"
+  rel="noreferrer"
+  data-card
+  data-category={post.category}
+  data-hay={hay}
+>
+  {post.coverUrl ? (
+    <span class="cover-frame">
+      <img class="cover" src={post.coverUrl} alt="" loading="lazy" />
+    </span>
+  ) : null}
+  <div class="card-body">
+    <p class="title">{line}</p>
+    <div class="who">
+      <span class="author-blob" style={`background:${blob}`} aria-hidden="true"></span>
+      <span class="name">{post.author}</span>
+      <span class="xlink">{post.viewLabel}</span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import DiscoverCard from './DiscoverCard.astro';
+import { getDiscoverPosts, SCENES } from '../lib/discover';
+import { t } from '../lib/i18n';
+
+const posts = await getDiscoverPosts();
+const chips = ['All', ...SCENES] as const;
+---
+<Base
+  title={t('en', 'page.discoverTitle')}
+  description={t('en', 'page.discoverDesc')}
+  nav="discover"
+  locale="en"
+  chrome="topbar"
+  bodyClass="lock-j"
+  lockJ
+>
+  <nav class="chips discover-scenes" id="discover-chips" aria-label="Categories">
+    {chips.map((c) => (
+      <button type="button" class:list={['chip', { 'is-on': c === 'All' }]} data-cat={c}>{c}</button>
+    ))}
+  </nav>
+  <main id="feed" class="discover-feed">
+    {posts.map((p) => (
+      <DiscoverCard post={p} />
+    ))}
+  </main>
+</Base>
+
+<script>
+  const search = document.getElementById('search');
+  const chips = document.querySelectorAll('#discover-chips [data-cat]');
+  const cards = document.querySelectorAll('[data-card]');
+  let cat = 'All';
+
+  function apply() {
+    const q = (search instanceof HTMLInputElement ? search.value : '').trim().toLowerCase();
+    cards.forEach((el) => {
+      const hay = el.getAttribute('data-hay') || '';
+      const c = el.getAttribute('data-category') || '';
+      const okCat = cat === 'All' || c === cat;
+      const okQ = !q || hay.includes(q);
+      el.classList.toggle('is-off', !(okCat && okQ));
+    });
+  }
+
+  chips.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      cat = btn.getAttribute('data-cat') || 'All';
+      chips.forEach((b) => b.classList.toggle('is-on', b === btn));
+      apply();
+    });
+  });
+
+  search?.addEventListener('input', apply);
+</script>

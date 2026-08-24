@@ -16,9 +16,10 @@ const posts = await getPosts(locale);
   description={t(locale, 'page.blogDesc')}
   nav="blog"
   locale={locale}
+  chrome={locale === 'en' ? 'topbar' : 'nav'}
   switchHref={localePath(otherLocale(locale), '/blog')}
 >
-  <Mast locale={locale} tagline="Blog" compact />
+  {locale !== 'en' && <Mast locale={locale} tagline="Blog" compact />}
 
   {posts.length === 0 ? (
     <p class="empty">{t(locale, 'meta.emptyBlog')}</p>

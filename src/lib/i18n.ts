@@ -52,13 +52,16 @@ export function bareContentId(id: string): string {
 
 const en = {
   "nav.catalog": "Catalog",
+  "nav.discover": "Discover",
+  "nav.categories": "Categories",
+  "nav.articles": "Articles",
   "nav.blog": "Blog",
   "nav.install": "Install",
   "nav.about": "About",
   "nav.submit": "Submit",
   "nav.aria": "Site",
   "footer.disclaimer":
-    "Grok Bot Plays · Unofficial catalog, not affiliated with xAI / Grok. Every play has a source link; no likes or view counts.",
+    "Plays is an unofficial discovery feed of public Grok Bot posts, not affiliated with xAI / Grok. Cards link to real X permalinks. We do not invent likes, views, or result numbers. We aim to refresh about every 6 hours on weekdays.",
   "search.placeholder": "Search plays, tags, or authors",
   "chips.all": "All",
   "chips.aria": "Categories",
@@ -90,6 +93,12 @@ const en = {
   "page.catalogTitle": "Grok Bot Plays",
   "page.catalogDesc":
     "Unofficial Grok Bot play catalog. Every entry has a source link, from public posts and xAI docs.",
+  "page.discoverTitle": "Plays",
+  "page.discoverDesc": "Latest public X posts about Grok Bot. Every card is a real permalink.",
+  "page.categoriesTitle": "Categories · Plays",
+  "page.categoriesDesc": "Five categories of public Grok Bot posts.",
+  "page.submitTitle": "Submit · Plays",
+  "page.submitDesc": "Send a public X post for ingest review. It does not appear on Latest automatically.",
   "page.blogTitle": "Blog · Grok Bot Plays",
   "page.blogDesc": "Short notes on what Grok Bot is, how to install it, and how this site works.",
   "page.installTitle": "Install · Grok Bot Plays",
@@ -103,13 +112,16 @@ const en = {
 
 const zh: Record<keyof typeof en, string> = {
   "nav.catalog": "目录",
+  "nav.discover": "Latest",
+  "nav.categories": "Categories",
+  "nav.articles": "Articles",
   "nav.blog": "Blog",
   "nav.install": "安装",
   "nav.about": "关于",
   "nav.submit": "投稿",
   "nav.aria": "站点",
   "footer.disclaimer":
-    "Grok Bot Plays · 非官方目录，与 xAI / Grok 无关。每条玩法带来源链接；没有点赞或阅读数。",
+    "Plays 是非官方发现流，与 xAI / Grok 无关。卡片指向真实 X 链接。不编造点赞、阅读或结果数字。工作日大约每 6 小时刷新一次。",
   "search.placeholder": "搜索玩法、标签或作者",
   "chips.all": "全部",
   "chips.aria": "分类",
@@ -141,6 +153,12 @@ const zh: Record<keyof typeof en, string> = {
   "page.catalogTitle": "Grok Bot Plays",
   "page.catalogDesc":
     "非官方 Grok Bot 玩法导航。条目均带来源链接，来自公开帖与 xAI 官方说明。",
+  "page.discoverTitle": "Plays",
+  "page.discoverDesc": "Latest public X posts about Grok Bot.",
+  "page.categoriesTitle": "Categories · Plays",
+  "page.categoriesDesc": "Five categories of public Grok Bot posts.",
+  "page.submitTitle": "Submit · Plays",
+  "page.submitDesc": "Send a public X post for ingest review.",
   "page.blogTitle": "Blog · Grok Bot Plays",
   "page.blogDesc": "编辑随笔：Grok Bot 是什么、怎么装、怎么编队、密码别进聊天。",
   "page.installTitle": "开始之前 · Grok Bot Plays",

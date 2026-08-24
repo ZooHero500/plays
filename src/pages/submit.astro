@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import { GITHUB_INGEST_ISSUE } from '../lib/discover';
+import { t } from '../lib/i18n';
+---
+<Base
+  title={t('en', 'page.submitTitle')}
+  description={t('en', 'page.submitDesc')}
+  nav="submit"
+  locale="en"
+  chrome="topbar"
+>
+  <div class="discover-head">
+    <p class="discover-kicker">Submit a public X post</p>
+    <p class="discover-dek">This does not add the post to Latest. It opens a GitHub issue we can review.</p>
+  </div>
+
+  <form class="submit-form" id="submit-form">
+    <label for="xurl">Public X URL</label>
+    <input id="xurl" name="url" type="url" required placeholder="https://x.com/handle/status/123" autocomplete="off" />
+    <label for="notes">Notes <span class="optional">(optional)</span></label>
+    <textarea id="notes" name="notes" rows="3" placeholder="Anything an editor should know"></textarea>
+    <p class="submit-error" id="submit-error" hidden></p>
+    <button type="submit">Open ingest issue</button>
+    <p class="submit-ok" id="submit-ok" hidden>Queued as a GitHub issue. Nothing was added to Latest.</p>
+  </form>
+</Base>
+
+<script is:inline define:vars={{ issueBase: GITHUB_INGEST_ISSUE }}>
+  (function () {
+    var form = document.getElementById('submit-form');
+    var urlEl = document.getElementById('xurl');
+    var notesEl = document.getElementById('notes');
+    var err = document.getElementById('submit-error');
+    var ok = document.getElementById('submit-ok');
+    var re = /^https?:\/\/(?:www\.)?(?:x\.com|twitter\.com)\/[^/?#]+\/status\/\d+/i;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var url = (urlEl.value || '').trim();
+      var notes = (notesEl.value || '').trim();
+      if (!re.test(url)) {
+        err.hidden = false;
+        err.textContent = 'Need a public x.com or twitter.com status URL.';
+        ok.hidden = true;
+        return;
+      }
+      err.hidden = true;
+      var body = url + (notes ? '\n\n' + notes : '');
+      var href = issueBase + '?title=' + encodeURIComponent('Ingest posts:') + '&body=' + encodeURIComponent(body);
+      window.open(href, '_blank', 'noopener,noreferrer');
+      ok.hidden = false;
+    });
+  })();
+</script>

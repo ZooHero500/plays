@@ -1,14 +1,17 @@
 ---
 import '../styles/global.css';
 import SiteNav from '../components/SiteNav.astro';
+import TopBar from '../components/TopBar.astro';
 import Footer from '../components/Footer.astro';
 import { t, htmlLang, type Locale } from '../lib/i18n';
 
 interface Props {
   title?: string;
   description?: string;
-  nav?: 'catalog' | 'blog' | 'install' | 'about' | 'none';
+  nav?: 'discover' | 'categories' | 'blog' | 'submit' | 'catalog' | 'install' | 'about' | 'none';
+  chrome?: 'nav' | 'topbar';
   bodyClass?: string;
+  lockJ?: boolean;
   locale: Locale;
   switchHref?: string;
 }
@@ -18,7 +21,9 @@ const {
   title = t(locale, 'page.catalogTitle'),
   description = t(locale, 'page.catalogDesc'),
   nav = 'catalog',
+  chrome = 'nav',
   bodyClass = '',
+  lockJ = false,
   switchHref,
 } = Astro.props;
 
@@ -53,9 +58,10 @@ const ogAbs = new URL('/og.png', Astro.site).href;
   </head>
   <body class={bodyClass}>
     <div class="grain" aria-hidden="true"></div>
+    {nav !== 'none' && chrome === 'topbar' && <TopBar current={nav} locale={locale} lockJ={lockJ} />}
     <div class="page">
       <div class="wrap">
-        {nav !== 'none' && <SiteNav current={nav} locale={locale} switchHref={switchHref} />}
+        {nav !== 'none' && chrome !== 'topbar' && <SiteNav current={nav} locale={locale} switchHref={switchHref} />}
         <slot />
         <Footer locale={locale}>
           <slot name="footer" />
