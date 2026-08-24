@@ -34,3 +34,14 @@ const { current = 'discover', locale, lockJ = false } = Astro.props;
   {!lockJ && <span class="grow"></span>}
   <a class="gh" href={GITHUB_REPO} target="_blank" rel="noreferrer">GitHub</a>
 </header>
+{lockJ && (
+  <script is:inline>
+    (() => {
+      const bar = document.querySelector('.j-topbar');
+      if (!bar) return;
+      const sync = () => bar.classList.toggle('is-scrolled', window.scrollY > 8);
+      sync();
+      window.addEventListener('scroll', sync, { passive: true });
+    })();
+  </script>
+)}
