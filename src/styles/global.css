@@ -2307,21 +2307,70 @@ body.lock-j .category-count { color: var(--text-muted); }
     padding-inline: max(16px, env(safe-area-inset-left, 0px))
       max(16px, env(safe-area-inset-right, 0px));
   }
+  .j-topbar {
+    display: flex;
+    height: 44px;
+    gap: 10px;
+    padding-inline: max(16px, env(safe-area-inset-left, 0px))
+      max(16px, env(safe-area-inset-right, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .j-topbar .brand { gap: 10px; }
+  .j-topbar .word { font-size: 18px; }
+  .j-topbar .face { width: 24px; height: 24px; }
+  .j-search {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
+    height: 32px;
+    justify-self: stretch;
+  }
+  .j-search svg { width: 14px; height: 14px; inset-inline-start: 10px; }
+  body.lock-j .j-search input,
+  body.lock-j #search {
+    height: 32px;
+    padding-inline: 30px 12px;
+    font-size: 13px;
+  }
+  .j-topbar .gh { display: none; }
   body.lock-j .chips.discover-scenes {
     flex-wrap: wrap;
-    row-gap: 10px;
-    column-gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    row-gap: 8px;
+    margin: 8px 0 12px;
   }
   body.lock-j .chips.discover-scenes .chip-cats {
+    display: flex;
     flex-wrap: wrap;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
+    gap: 6px;
+    row-gap: 8px;
   }
   body.lock-j .chips.discover-scenes .chip-sort {
-    flex: 1 1 100%;
-    justify-content: flex-end;
-    margin-left: 0;
+    display: flex;
     flex-wrap: nowrap;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    margin-left: 0;
+    gap: 6px;
+  }
+  body.lock-j .chips.discover-scenes .chip-sort::before {
+    content: "";
+    width: 1px;
+    height: 14px;
+    margin: 0 3px;
+    background: rgba(17, 20, 24, 0.12);
+    flex: 0 0 auto;
+  }
+  body.lock-j .chips.discover-scenes .chip {
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    line-height: 28px;
   }
   body.lock-j .discover-feed { column-count: 1; }
   body.lock-j .discover-feed a.discover-card,
@@ -2331,14 +2380,6 @@ body.lock-j .category-count { color: var(--text-muted); }
     max-width: 100%;
     min-width: 0;
   }
-  .j-topbar {
-    grid-template-columns: auto 1fr auto;
-    padding-inline: max(16px, env(safe-area-inset-left, 0px))
-      max(16px, env(safe-area-inset-right, 0px));
-    padding-top: env(safe-area-inset-top, 0px);
-  }
-  .j-search { width: 100%; max-width: none; }
-  .j-topbar .gh { display: none; }
 }
 
 body.lock-j .j-chips {
