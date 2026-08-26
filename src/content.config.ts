@@ -27,6 +27,8 @@ const plays = defineCollection({
     authorHandle: z.string().default(''),
     sourceUrl: z.string(),
     date: z.string().default(''),
+    published: z.string().optional(),
+    sourceDate: z.string().optional(),
     audience: z.string().default(''),
     outcome: z.string().default(''),
     commentary: z.string().default(''),

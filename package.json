@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --port 4321",
     "build": "astro build",
-    "preview": "astro preview --host 127.0.0.1 --port 4321"
+    "preview": "astro preview --host 127.0.0.1 --port 4321",
+    "pages:dev": "astro build && npx wrangler@3.114.15 pages dev dist --d1 PLAYS_DB=plays-stats",
+    "d1:local": "npx wrangler@3.114.15 d1 execute plays-stats --local --file=migrations/0001_plays_stats.sql"
   },
   "dependencies": {
     "astro": "^5"

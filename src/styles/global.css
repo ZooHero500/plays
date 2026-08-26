@@ -2088,10 +2088,21 @@ body.lock-j footer a:hover { color: var(--ink); }
 
 body.lock-j .chips.discover-scenes {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
   justify-content: flex-start;
   gap: 8px;
   margin: 16px 0 20px;
+}
+body.lock-j .chips.discover-scenes .chip-cats,
+body.lock-j .chips.discover-scenes .chip-sort {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+body.lock-j .chips.discover-scenes .chip-sort {
+  margin-left: auto;
 }
 body.lock-j .chips.discover-scenes .chip {
   height: 36px;

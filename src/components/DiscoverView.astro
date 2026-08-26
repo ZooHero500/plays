@@ -17,9 +17,15 @@ const chips = ['All', ...SCENES] as const;
   lockJ
 >
   <nav class="chips discover-scenes" id="discover-chips" aria-label="Categories">
-    {chips.map((c) => (
-      <button type="button" class:list={['chip', { 'is-on': c === 'All' }]} data-cat={c}>{c}</button>
-    ))}
+    <div class="chip-cats">
+      {chips.map((c) => (
+        <button type="button" class:list={['chip', { 'is-on': c === 'All' }]} data-cat={c}>{c}</button>
+      ))}
+    </div>
+    <div class="chip-sort">
+      <button type="button" class="chip" data-sort="trending">Trending</button>
+      <button type="button" class="chip" data-sort="newest">Newest</button>
+    </div>
   </nav>
   <main id="feed" class="discover-feed">
     {posts.map((p) => (
@@ -30,13 +36,17 @@ const chips = ['All', ...SCENES] as const;
 
 <script>
   const search = document.getElementById('search');
-  const chips = document.querySelectorAll('#discover-chips [data-cat]');
-  const cards = document.querySelectorAll('[data-card]');
+  const catBtns = document.querySelectorAll('#discover-chips [data-cat]');
+  const sortBtns = document.querySelectorAll('#discover-chips [data-sort]');
+  const feed = document.getElementById('feed');
+  const cards = () => Array.from(document.querySelectorAll<HTMLElement>('#feed [data-card]'));
+  const homeOrder = cards();
   let cat = 'All';
+  let sort: 'home' | 'trending' | 'newest' = 'home';
 
-  function apply() {
+  function filterCards() {
     const q = (search instanceof HTMLInputElement ? search.value : '').trim().toLowerCase();
-    cards.forEach((el) => {
+    cards().forEach((el) => {
       const hay = el.getAttribute('data-hay') || '';
       const c = el.getAttribute('data-category') || '';
       const okCat = cat === 'All' || c === cat;
@@ -45,13 +55,98 @@ const chips = ['All', ...SCENES] as const;
     });
   }
 
-  chips.forEach((btn) => {
+  function setOn() {
+    catBtns.forEach((b) => b.classList.toggle('is-on', sort === 'home' && b.getAttribute('data-cat') === cat));
+    sortBtns.forEach((b) => b.classList.toggle('is-on', b.getAttribute('data-sort') === sort));
+  }
+
+  function applyHomeOrder() {
+    if (!feed) return;
+    homeOrder.forEach((el) => feed.appendChild(el));
+  }
+
+  function applyNewest() {
+    if (!feed) return;
+    cards()
+      .slice()
+      .sort((a, b) => {
+        const da = a.getAttribute('data-sort-date') || '';
+        const db = b.getAttribute('data-sort-date') || '';
+        if (da !== db) return db.localeCompare(da);
+        return (a.getAttribute('data-id') || '').localeCompare(b.getAttribute('data-id') || '');
+      })
+      .forEach((el) => feed.appendChild(el));
+  }
+
+  async function applyTrending() {
+    if (!feed) return;
+    try {
+      const res = await fetch('/api/trending', { headers: { accept: 'application/json' } });
+      const data = await res.json();
+      const ids: string[] = Array.isArray(data?.ids) ? data.ids : [];
+      const rank = new Map(ids.map((id, i) => [id, i]));
+      cards()
+        .slice()
+        .sort((a, b) => {
+          const ia = rank.has(a.getAttribute('data-id') || '') ? rank.get(a.getAttribute('data-id') || '')! : 1e9;
+          const ib = rank.has(b.getAttribute('data-id') || '') ? rank.get(b.getAttribute('data-id') || '')! : 1e9;
+          if (ia !== ib) return ia - ib;
+          return (a.getAttribute('data-id') || '').localeCompare(b.getAttribute('data-id') || '');
+        })
+        .forEach((el) => feed.appendChild(el));
+    } catch {
+      /* keep current order */
+    }
+  }
+
+  function apply() {
+    setOn();
+    if (sort === 'newest') applyNewest();
+    else if (sort === 'trending') void applyTrending();
+    else applyHomeOrder();
+    filterCards();
+  }
+
+  catBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       cat = btn.getAttribute('data-cat') || 'All';
-      chips.forEach((b) => b.classList.toggle('is-on', b === btn));
+      sort = 'home';
       apply();
     });
   });
 
-  search?.addEventListener('input', apply);
+  sortBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      sort = (btn.getAttribute('data-sort') as 'trending' | 'newest') || 'home';
+      cat = 'All';
+      apply();
+    });
+  });
+
+  search?.addEventListener('input', filterCards);
+
+  feed?.addEventListener(
+    'click',
+    (e) => {
+      const a = (e.target as HTMLElement | null)?.closest?.('[data-card]');
+      if (!a) return;
+      const id = a.getAttribute('data-id');
+      if (!id) return;
+      const body = JSON.stringify({ id });
+      const blob = new Blob([body], { type: 'application/json' });
+      try {
+        const ok = navigator.sendBeacon ? navigator.sendBeacon('/api/click', blob) : false;
+        if (!ok) {
+          fetch('/api/click', { method: 'POST', body: blob, keepalive: true, headers: { 'content-type': 'application/json' } }).catch(() => {});
+        }
+      } catch {
+        try {
+          fetch('/api/click', { method: 'POST', body: blob, keepalive: true, headers: { 'content-type': 'application/json' } }).catch(() => {});
+        } catch {
+          /* never block navigation */
+        }
+      }
+    },
+    true,
+  );
 </script>

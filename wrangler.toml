@@ -1,0 +1,8 @@
+name = "grok-bot-plays"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "PLAYS_DB"
+database_name = "plays-stats"
+database_id = "6c979efe-eb00-40e6-b94b-109987297d37"

@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import { statSync } from "node:fs";
 import { filterByLocale } from "./i18n";
 
 export const SCENES = [
@@ -12,6 +13,8 @@ export const SCENES = [
 export type Scene = (typeof SCENES)[number];
 
 export type DiscoverPost = {
+  id: string;
+  sortDate: string;
   statusId: string;
   permalink: string;
   handle: string;
@@ -123,6 +126,43 @@ export function formatWhen(iso: string, now = new Date()): string {
   return short;
 }
 
+
+function dayOnly(raw: string): string {
+  const m = (raw || "").trim().match(/^(\d{4}-\d{2}-\d{2})/);
+  return m ? m[1] : "";
+}
+
+function snowflakeDay(statusId: string): string {
+  try {
+    const ms = Number((BigInt(statusId) >> 22n) + 1288834974657n);
+    if (!Number.isFinite(ms) || ms < 1e12) return "";
+    return new Date(ms).toISOString().slice(0, 10);
+  } catch {
+    return "";
+  }
+}
+
+function fileDay(entry: { filePath?: string }): string {
+  try {
+    const fp = entry.filePath;
+    if (!fp) return "";
+    return new Date(statSync(fp).mtimeMs).toISOString().slice(0, 10);
+  } catch {
+    return "";
+  }
+}
+
+function resolveSortDate(entry: { data: Record<string, unknown>; filePath?: string }, source: string, parsed: { statusId: string } | null): string {
+  const d = entry.data as { published?: string; date?: string; sourceDate?: string };
+  const fromFm = dayOnly(d.published || "") || dayOnly(d.date || "") || dayOnly(d.sourceDate || "");
+  if (fromFm) return fromFm;
+  if (parsed) {
+    const snow = snowflakeDay(parsed.statusId);
+    if (snow) return snow;
+  }
+  return fileDay(entry) || "1970-01-01";
+}
+
 function handleFromAuthor(authorHandle: string, parsedHandle: string): string {
   const raw = (authorHandle || "").replace(/^@/, "").trim();
   if (raw && raw.toLowerCase() !== "bot") return raw;
@@ -140,8 +180,11 @@ export async function getDiscoverPosts(): Promise<DiscoverPost[]> {
     const parsed = parseXStatusUrl(source);
     const handle = handleFromAuthor(entry.data.authorHandle, parsed?.handle || "");
     const category = normalizeCategory(entry.data.category);
+    const playId = (entry.data.id || entry.id.split("/").pop() || entry.id).trim();
     posts.push({
-      statusId: parsed?.statusId || entry.id,
+      id: playId,
+      sortDate: resolveSortDate(entry as { data: Record<string, unknown>; filePath?: string }, source, parsed),
+      statusId: parsed?.statusId || playId,
       permalink: source,
       handle,
       author: entry.data.author,

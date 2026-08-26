@@ -9,3 +9,5 @@ STATUS.md
 .env.*
 !.env.example
 .skills/
+
+.wrangler/

@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS plays_stats (
+  id TEXT PRIMARY KEY,
+  clicks INTEGER NOT NULL DEFAULT 0,
+  tweet_views INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL
+);
