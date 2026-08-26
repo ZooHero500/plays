@@ -1934,6 +1934,10 @@ body.is-about .pager { display: none; }
 
 
 /* --- lock J: matrix.build light tokens, DESIGN.md §1 as written --- */
+html:has(body.lock-j) {
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
 body.lock-j {
   --ink: #111418;
   --ink-rgb: 17, 20, 24;
@@ -1951,14 +1955,15 @@ body.lock-j {
   --border-strong: rgba(17, 20, 24, 0.26);
   --shadow-subtle: 0 1px 2px rgba(17, 20, 24, 0.05), 0 12px 34px rgba(17, 20, 24, 0.08);
   --r-cards: 12px;
-  --bg: var(--surface-base);
+  --bg: #FFFFFF;
   --text: var(--ink);
   --text-2: var(--text-soft);
   --text-3: var(--text-muted);
   --surface: var(--surface-card);
   --line: var(--border-subtle);
-  background: var(--surface-card);
+  background: #FFFFFF;
   color: var(--ink);
+  overflow-x: hidden;
 }
 body.lock-j .grain { display: none; }
 body.lock-j :focus-visible {
@@ -2092,6 +2097,7 @@ body.lock-j .chips.discover-scenes {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+  row-gap: 10px;
   margin: 16px 0 20px;
 }
 body.lock-j .chips.discover-scenes .chip-cats,
@@ -2297,11 +2303,38 @@ body.lock-j .category-count { color: var(--text-muted); }
   .j-search { width: 280px; }
 }
 @media (max-width: 560px) {
+  body.lock-j .page {
+    padding-inline: max(16px, env(safe-area-inset-left, 0px))
+      max(16px, env(safe-area-inset-right, 0px));
+  }
+  body.lock-j .chips.discover-scenes {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 8px;
+  }
+  body.lock-j .chips.discover-scenes .chip-cats {
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  body.lock-j .chips.discover-scenes .chip-sort {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    margin-left: 0;
+    flex-wrap: nowrap;
+  }
   body.lock-j .discover-feed { column-count: 1; }
+  body.lock-j .discover-feed a.discover-card,
+  body.lock-j .discover-feed a.card,
+  body.lock-j .discover-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
   .j-topbar {
     grid-template-columns: auto 1fr auto;
-    padding-inline: max(12px, env(safe-area-inset-left, 0px))
-      max(12px, env(safe-area-inset-right, 0px));
+    padding-inline: max(16px, env(safe-area-inset-left, 0px))
+      max(16px, env(safe-area-inset-right, 0px));
     padding-top: env(safe-area-inset-top, 0px);
   }
   .j-search { width: 100%; max-width: none; }
