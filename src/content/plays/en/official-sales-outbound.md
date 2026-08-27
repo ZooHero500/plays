@@ -44,5 +44,5 @@ prompts:
   - title: "岗位简介"
     text: "You own account research, contact prioritization, and review-ready outreach. Work from our CRM, product-intent sources, company websites, email, and professional networks as their terms allow. Score accounts against our ICP and recent intent, draft email and LinkedIn in the seller's voice, and stop at a review list. Do not send or enroll anyone."
     source: "改写自 https://docs.x.ai/grok-bot/use-cases"
-featured: false
+featured: true
 ---
