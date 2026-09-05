@@ -63,6 +63,7 @@ jaymallen-shopify-five	https://x.com/JayMAllen/status/2090082960888221883
 jayneil-video-production	https://x.com/jayneil/status/2093871635954610193
 jholtdigital-linear-wrap	https://x.com/jholtdigital/status/2090060501048786958
 joebenson-five-bots-coach	https://x.com/joebenson/status/2089740352983060793
+jollyroger-linux-agent-computer	https://x.com/jollyroger1480/status/2096021521311441064
 jorgediazapps-voice-typefully	https://x.com/jorgediazapps/status/2089149453613875392
 joshkim-work-101-four-bots	https://x.com/joshkim/status/2095633918611636627
 jrazucena-cos-task-channels	https://x.com/JRAzucena_/status/2094967599541158096
@@ -74,7 +75,10 @@ ken-linkwell-assessment	https://x.com/Ken_LinkWell/status/2092963695164829865
 kenonews-four-part-internal	https://x.com/kenonews/status/2095606309093859659
 kettlebelldan-arduino-connect	https://x.com/KettlebellDan/status/2089387837204693202
 kettlebelldan-arduino-updates	https://x.com/KettlebellDan/status/2089920364419874937
+khemaridh-github-notion-context	https://x.com/khemaridh/status/2096003811974529038
 kiaraplds-meeting-notes	https://x.com/kiaraplds/status/2088321112073547835
+kocer-eth-cos-charter-trim	https://x.com/kocer_eth/status/2095884639256596760
+kocer-eth-cos-stop-list	https://x.com/kocer_eth/status/2095957764212166920
 kr0der-analytics-outreach	https://x.com/kr0der/status/2090545415473246560
 krika2810-grokbot-miner	https://x.com/krika2810/status/2094589208530952513
 kristaletz-enterprise-gtm	https://x.com/kristaletz/status/2089103618121314689
@@ -91,6 +95,7 @@ mattyp-enterprise-five-steps	https://x.com/mattyp/status/2095626442990297310
 mattyp-getting-started	https://x.com/mattyp/status/2092286281266962681
 mattyp-intro-demo-content-grocery	https://x.com/mattyp/status/2087252657589412119
 mattyp-templates-share	https://x.com/mattyp/status/2094046731143164207
+mediaking-cease-desist-stevie	https://x.com/MediaKing/status/2096046895126794653
 michael-fenech-real-assistant	https://x.com/Michael_Fenech_/status/2091135546089451983
 michaelsayber-nonprofit-grc	https://x.com/MichaelSayber/status/2094605248228721074
 mikenevermiss-seven-agent-ops	https://x.com/mikenevermiss/status/2090684627081920995
@@ -105,6 +110,7 @@ nateherk-nine-hacks-klaus	https://x.com/nateherk/status/2089917020087210160
 noahhorner-top-bots	https://x.com/noahhorner_/status/2094124025307861001
 nwtseira-media-buyer	https://x.com/nwtseira/status/2090689291236282371
 official-buy-things	https://x.com/bot/status/2093419921007108385
+official-haggle-bot-marketplace	https://x.com/bot/status/2095954887205138597
 official-outlook-plugins	https://x.com/bot/status/2094543253811183943
 official-share-templates	https://x.com/bot/status/2093376523919323618
 official-supergrok-access	https://x.com/bot/status/2092664183334846840
@@ -125,6 +131,7 @@ ray-cto-pstack	https://x.com/RayFernando1337/status/2090195841822998888
 realpatmcd-gmail-triage	https://x.com/realpatmcd/status/2094606451322786118
 ryan-staley-140-bookmarks	https://x.com/Ryan_Staley1/status/2091135093112774904
 sairahul-one-person-company	https://x.com/sairahul1/status/2089995692874068433
+saradu-ando-qa-tutorial	https://x.com/saradu/status/2095713529009729819
 savipww-shopify-six	https://x.com/savipww/status/2090701532660646047
 scottybeamio-cybertruck-nine	https://x.com/ScottyBeamIO/status/2095487462357217753
 sethjlevy-algebra-classroom	https://x.com/sethjlevy/status/2087880835173081411
