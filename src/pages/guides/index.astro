@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { GUIDES, guidePath } from '../../lib/guides';
+---
+<Base
+  title="Guides · Grok Bot Plays"
+  description="Short English guides for Grok Bot: how to use it, templates, and sales or engineering use cases."
+  nav="guides"
+  locale="en"
+  chrome="topbar"
+  bodyClass="lock-j"
+>
+  <article class="guide" data-guide-index="true">
+    <p class="guide-kicker">Guides</p>
+    <h1 class="detail-title">Guides</h1>
+    <p class="guide-lede">
+      Three English how-tos. Not a second Discover shelf. Each page links a short curated set of plays.
+    </p>
+    <ul class="guide-index">
+      {GUIDES.map((g) => (
+        <li>
+          <a href={guidePath(g.slug)}>{g.h1}</a>
+          <span class="guide-play-by">{g.description}</span>
+        </li>
+      ))}
+    </ul>
+  </article>
+</Base>

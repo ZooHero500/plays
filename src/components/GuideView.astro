@@ -1,0 +1,211 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  allGuidePlayIds,
+  assertGuidePlayCaps,
+  guidePath,
+  loadGuidePlays,
+  type GuideDef,
+  type GuideSlug,
+} from '../lib/guides';
+import type { PlayData } from '../lib/plays';
+
+interface Props {
+  guide: GuideDef;
+}
+
+const { guide } = Astro.props;
+assertGuidePlayCaps(guide);
+
+const playIds = allGuidePlayIds(guide);
+const loaded = await loadGuidePlays(playIds);
+const byId = new Map(loaded.map((p) => [p.id, p]));
+
+function picks(ids: string[] | undefined): PlayData[] {
+  return (ids || []).map((id) => byId.get(id)!);
+}
+
+const defaultPlays = picks(guide.plays.default);
+const salesPlays = picks(guide.plays.sales);
+const engineeringPlays = picks(guide.plays.engineering);
+
+const origin = Astro.site ? String(Astro.site).replace(/\/$/, '') : 'https://grokbotplays.com';
+const pageUrl = `${origin}${guidePath(guide.slug)}`;
+const guidesUrl = `${origin}/guides/`;
+const homeUrl = `${origin}/`;
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: guide.h1,
+  name: guide.title,
+  description: guide.description,
+  inLanguage: 'en',
+  datePublished: guide.datePublished,
+  mainEntityOfPage: pageUrl,
+  url: pageUrl,
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: guidesUrl },
+    { '@type': 'ListItem', position: 3, name: guide.h1, item: pageUrl },
+  ],
+};
+
+const howtoLd =
+  guide.howto.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: guide.h1,
+        description: guide.description,
+        step: guide.howto.map((step, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      }
+    : null;
+
+const others = (['how-to-use-grok-bot', 'grok-bot-templates', 'grok-bot-use-cases'] as GuideSlug[]).filter(
+  (slug) => slug !== guide.slug,
+);
+
+const otherLabel: Record<GuideSlug, string> = {
+  'how-to-use-grok-bot': 'How to use Grok Bot',
+  'grok-bot-templates': 'Grok Bot templates',
+  'grok-bot-use-cases': 'Grok Bot use cases',
+};
+
+---
+<Base
+  title={guide.title}
+  description={guide.description}
+  nav="guides"
+  locale="en"
+  chrome="topbar"
+  bodyClass="lock-j"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  {howtoLd && <script slot="head" type="application/ld+json" set:html={JSON.stringify(howtoLd)} />}
+
+  <article class="guide" data-guide-page={guide.slug} data-guide-scaffold="true">
+    <p class="guide-kicker">Guide · draft / scaffold</p>
+    <h1 class="detail-title">{guide.h1}</h1>
+    <p class="guide-lede">{guide.description}</p>
+    <p class="guide-draft">
+      Body copy below follows the H2 outline. Final editor drafts are not in <code>seo/guides/</code> yet. No traffic numbers or minute promises.
+    </p>
+
+    {guide.sections.map((section) => (
+      <section class="guide-block">
+        <h2>{section.h2}</h2>
+        <p>{section.body}</p>
+
+        {section.h2 === 'First plays' && defaultPlays.length > 0 && (
+          <ul class="guide-plays" data-guide-section="default">
+            {defaultPlays.map((p) => (
+              <li>
+                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
+                <span class="guide-play-by">{p.author}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {section.h2 === 'Template plays' && defaultPlays.length > 0 && (
+          <ul class="guide-plays" data-guide-section="default">
+            {defaultPlays.map((p) => (
+              <li>
+                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
+                <span class="guide-play-by">{p.author}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {section.h2 === 'Sales' && salesPlays.length > 0 && (
+          <ul class="guide-plays" data-guide-section="sales">
+            {salesPlays.map((p) => (
+              <li>
+                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
+                <span class="guide-play-by">{p.author}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {section.h2 === 'Engineering' && engineeringPlays.length > 0 && (
+          <ul class="guide-plays" data-guide-section="engineering">
+            {engineeringPlays.map((p) => (
+              <li>
+                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
+                <span class="guide-play-by">{p.author}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {section.h2 === 'Related guides' && (
+          <p class="guide-next">
+            {others.map((slug, i) => (
+              <>
+                {i > 0 && ' · '}
+                <a href={guidePath(slug)}>{otherLabel[slug]}</a>
+              </>
+            ))}
+            {guide.slug === 'how-to-use-grok-bot' && (
+              <>
+                {' · '}
+                <a href="/install">Install</a>
+                {' · '}
+                <a href="/about">About</a>
+              </>
+            )}
+            {guide.slug === 'grok-bot-templates' && (
+              <>
+                {' · '}
+                <a href="/install">Install</a>
+              </>
+            )}
+            {' · '}
+            <a href="/">More on Discover</a>
+            {guide.slug === 'grok-bot-use-cases' ? (
+              <>
+                {' · '}
+                <a href="/categories/growth">More in Growth</a>
+                {' · '}
+                <a href="/categories/engineering">More in Engineering</a>
+              </>
+            ) : (
+              <>
+                {' · '}
+                <a href="/categories">More in Categories</a>
+              </>
+            )}
+          </p>
+        )}
+      </section>
+    ))}
+
+    {guide.howto.length > 0 && (
+      <section class="guide-block" data-guide-howto="true">
+        <h2>Steps</h2>
+        <ol class="guide-howto">
+          {guide.howto.map((step) => (
+            <li>
+              <strong>{step.name}.</strong>{' '}
+              {step.text}
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+  </article>
+</Base>

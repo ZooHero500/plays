@@ -5,8 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --port 4321",
-    "build": "astro build",
+    "build": "astro build && node scripts/verify-guides.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
+    "test": "astro build && node scripts/verify-guides.mjs",
+    "verify:guides": "node scripts/verify-guides.mjs",
     "pages:dev": "astro build && npx wrangler@3.114.15 pages dev dist --d1 PLAYS_DB=plays-stats",
     "pages:deploy": "astro build && npx wrangler@3.114.15 pages deploy dist --project-name grok-bot-plays --branch main --commit-dirty=true",
     "d1:local": "npx wrangler@3.114.15 d1 execute plays-stats --local --file=migrations/0001_plays_stats.sql"

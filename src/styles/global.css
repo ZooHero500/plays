@@ -2428,3 +2428,112 @@ body.lock-j .j-masonry a.card {
 @media (max-width: 560px) {
   body.lock-j .j-masonry { column-count: 1; }
 }
+
+/* --- guides (editorial, not a shelf) --- */
+.guide {
+  max-width: 680px;
+  margin-inline: auto;
+  margin-top: 48px;
+}
+.guide-kicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.guide .detail-title {
+  margin: 0 0 16px;
+}
+.guide-lede {
+  margin: 0 0 16px;
+  font-size: 17px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.guide-draft {
+  margin: 0 0 36px;
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.6;
+}
+.guide-draft code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}
+.guide-block {
+  margin: 36px 0 0;
+}
+.guide-block h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.guide-block p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.guide-plays,
+.guide-index,
+.guide-howto {
+  margin: 16px 0 0;
+  padding-inline-start: 18px;
+}
+.guide-plays li,
+.guide-index li,
+.guide-howto li {
+  margin: 8px 0;
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.guide-plays a,
+.guide-index a,
+.guide-next a {
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+.guide-plays a:hover,
+.guide-index a:hover,
+.guide-next a:hover {
+  border-color: var(--line-hover);
+}
+.guide-play-by {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+.guide-next {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+.guide-howto strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+body.lock-j .topbar {
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom-color: var(--border-subtle);
+}
+body.lock-j .topbar .word,
+body.lock-j .topbar .gh {
+  color: var(--ink);
+}
+body.lock-j .topbar .gh {
+  color: var(--text-muted);
+}
+body.lock-j .topbar .gh:hover {
+  color: var(--ink);
+}
+body.lock-j .site-nav.site-nav-inline a.is-on {
+  background: var(--surface-interactive);
+  color: var(--ink);
+}
