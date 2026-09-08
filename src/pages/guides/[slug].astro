@@ -1,0 +1,11 @@
+---
+import GuideView from '../../components/GuideView.astro';
+import { guideStaticPaths } from '../../lib/guides';
+
+export function getStaticPaths() {
+  return guideStaticPaths();
+}
+
+const { guide, doc } = Astro.props;
+---
+<GuideView guide={guide} doc={doc} />

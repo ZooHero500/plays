@@ -2,7 +2,7 @@
 import { t, type Locale } from '../lib/i18n';
 
 interface Props {
-  current?: 'discover' | 'categories' | 'blog' | 'submit' | 'catalog' | 'install' | 'about' | 'none';
+  current?: 'discover' | 'categories' | 'blog' | 'guides' | 'submit' | 'catalog' | 'install' | 'about' | 'none';
   locale: Locale;
   switchHref?: string;
   inline?: boolean;
@@ -14,5 +14,6 @@ const { current = 'discover', locale, inline = false } = Astro.props;
   <a href="/" class={current === 'discover' ? 'is-on' : undefined} aria-current={current === 'discover' ? 'page' : undefined}>{t('en', 'nav.discover')}</a>
   <a href="/categories" class={current === 'categories' ? 'is-on' : undefined} aria-current={current === 'categories' ? 'page' : undefined}>{t('en', 'nav.categories')}</a>
   <a href="/blog" class={current === 'blog' ? 'is-on' : undefined} aria-current={current === 'blog' ? 'page' : undefined}>{t('en', 'nav.articles')}</a>
+  <a href="/guides/" class={current === 'guides' ? 'is-on' : undefined} aria-current={current === 'guides' ? 'page' : undefined}>{t('en', 'nav.guides')}</a>
   <a href="/submit" class={current === 'submit' ? 'is-on' : undefined} aria-current={current === 'submit' ? 'page' : undefined}>{t('en', 'nav.submit')}</a>
 </nav>

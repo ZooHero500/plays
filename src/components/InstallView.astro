@@ -46,8 +46,14 @@ const { locale } = Astro.props;
       </p>
       <p>Logins, captchas, and 2FA happen on its own computer. Don’t paste passwords into chat. Bots on one account share that machine and its sessions.</p>
       <p>For anything that sends mail, spends money, or touches production, turn on approvals first. The play write-ups don’t repeat this.</p>
+      <p>
+        <a class="source-link" href="/guides/how-to-use-grok-bot/">Full how-to</a>
+        — install, first task, and plugins.
+      </p>
       <p class="note">
         <a class="source-link" href={localePath(locale, '/')}>{t(locale, 'nav.catalog')}</a>
+        {' · '}
+        <a class="source-link" href="/guides/how-to-use-grok-bot/">Full how-to</a>
         {' · '}
         <a class="source-link" href={localePath('zh', '/')}>中文 catalog</a>
       </p>

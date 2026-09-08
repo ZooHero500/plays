@@ -1,0 +1,61 @@
+{
+  "caps": {
+    "how-to-use-grok-bot": { "total": 8 },
+    "grok-bot-templates": { "total": 8 },
+    "grok-bot-use-cases": { "total": 12, "sales": 6, "engineering": 6 }
+  },
+  "guides": [
+    {
+      "slug": "how-to-use-grok-bot",
+      "kicker": "Getting started",
+      "crumb": "How to use Grok Bot",
+      "plays": {
+        "default": [
+          "mattyp-getting-started",
+          "arianlooterking-ten-minute-first-bot",
+          "official-teach-routine",
+          "0xcarnagee-memory-trigger-verify-loop",
+          "4rblaber-20-page-operator-guide",
+          "spectnfa-65-min-setup-playbook"
+        ]
+      }
+    },
+    {
+      "slug": "grok-bot-templates",
+      "kicker": "Templates",
+      "crumb": "Grok Bot templates",
+      "plays": {
+        "default": [
+          "official-share-templates",
+          "arianlooterking-share-templates",
+          "voxyz-share-template",
+          "mattyp-templates-share",
+          "ncsuian-ship-bot-as-link",
+          "p10ns11y-botify-templates",
+          "daniel-farinax-bring-bot-template"
+        ]
+      }
+    },
+    {
+      "slug": "grok-bot-use-cases",
+      "kicker": "Sales · Engineering",
+      "crumb": "Use cases",
+      "plays": {
+        "sales": [
+          "official-sales-outbound",
+          "kristaletz-enterprise-gtm",
+          "bcharleson-gtm-outbound",
+          "noelxroberts-gtm-scout-outbound",
+          "coldemailchris-gtm-bot-fleet"
+        ],
+        "engineering": [
+          "harry-munro-overnight-prs",
+          "jasonkiesel-github-code-reviews",
+          "montekkundan-ceo-qa-prs",
+          "hopeunblemished-cloud-agent-handoff",
+          "0xshoopy-cursor-workshop-team"
+        ]
+      }
+    }
+  ]
+}
