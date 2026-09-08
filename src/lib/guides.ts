@@ -1,20 +1,11 @@
 import { getPlays, type PlayData } from "./plays";
 import raw from "../data/guides.json";
+import { loadGuideMarkdown, type ParsedGuide } from "./guide-md";
 
 export type GuideSlug =
   | "how-to-use-grok-bot"
   | "grok-bot-templates"
   | "grok-bot-use-cases";
-
-export type GuideSection = {
-  h2: string;
-  body: string;
-};
-
-export type GuideHowToStep = {
-  name: string;
-  text: string;
-};
 
 export type GuidePlayBuckets = {
   default?: string[];
@@ -24,12 +15,8 @@ export type GuidePlayBuckets = {
 
 export type GuideDef = {
   slug: GuideSlug;
-  h1: string;
-  title: string;
-  description: string;
-  datePublished: string;
-  howto: GuideHowToStep[];
-  sections: GuideSection[];
+  kicker: string;
+  crumb: string;
   plays: GuidePlayBuckets;
 };
 
@@ -107,12 +94,17 @@ export async function loadGuidePlays(ids: string[]): Promise<PlayData[]> {
   return ids.map((id) => byId.get(id)!);
 }
 
+export function loadGuideDoc(guide: GuideDef): ParsedGuide {
+  return loadGuideMarkdown(guide.slug);
+}
+
 export function guideStaticPaths() {
   return GUIDES.map((guide) => {
     assertGuidePlayCaps(guide);
+    const doc = loadGuideDoc(guide);
     return {
       params: { slug: guide.slug },
-      props: { guide },
+      props: { guide, doc },
     };
   });
 }

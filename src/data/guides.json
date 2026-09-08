@@ -7,58 +7,8 @@
   "guides": [
     {
       "slug": "how-to-use-grok-bot",
-      "h1": "How to use Grok Bot",
-      "title": "How to Use Grok Bot: Install, First Task, Plugins",
-      "description": "Install Grok Bot, run a first task, and add plugins only when the job needs them. Approvals stay on for send, spend, and production.",
-      "datePublished": "2026-09-08",
-      "howto": [
-        {
-          "name": "Install the desktop app",
-          "text": "Open x.ai/bot, install the desktop app, and sign in with the SuperGrok Heavy, Cursor Ultra, or Cursor Teams Premium account you already pay for."
-        },
-        {
-          "name": "Create and name a bot",
-          "text": "Make one bot and name it after the job it does. Write two lines on what it owns and what must wait for you."
-        },
-        {
-          "name": "Run a first task",
-          "text": "Give it one bounded job you can check. Do not start with send, spend, or production changes."
-        },
-        {
-          "name": "Add a plugin only if the job needs it",
-          "text": "Connect an app when that first job cannot finish without it. Review what the plugin can read and write."
-        },
-        {
-          "name": "Turn on approvals",
-          "text": "Before mail, money, or production, require your approval. Do not leave those actions unattended."
-        }
-      ],
-      "sections": [
-        {
-          "h2": "Install",
-          "body": "Draft / scaffold. Open x.ai/bot and install the desktop app. Sign in with the same SuperGrok Heavy, Cursor Ultra, or Cursor Teams Premium account you already use. Create one bot. Name it after the job, not “assistant.” Logins, captchas, and 2FA happen on the bot’s own computer. Do not paste passwords into chat. This section is a stub until editor copy lands in seo/guides/."
-        },
-        {
-          "h2": "First task",
-          "body": "Draft / scaffold. Start with one job you can review by hand. Teach the bot the lane, then let it draft. Do not promise a finish time. Do not invent traffic or result numbers. A first task is done when you can check the output, not when a dashboard looks busy."
-        },
-        {
-          "h2": "Plugins",
-          "body": "Draft / scaffold. Add a plugin when the first job needs a specific app. Review scopes before you connect. Bots on one account share the machine and its sessions. Take back access you do not want shared. Plugins are not a second catalog of plays."
-        },
-        {
-          "h2": "Approvals",
-          "body": "Draft / scaffold. Anything that sends mail, spends money, or touches production waits for you. Default is human approval. This guide does not describe unattended cold email or automatic CRM stage changes."
-        },
-        {
-          "h2": "First plays",
-          "body": "Draft / scaffold. A short curated set from the catalog. These are starting points, not a feed. For more, use Discover or Categories — this page does not list the whole catalog."
-        },
-        {
-          "h2": "Related guides",
-          "body": "Draft / scaffold. Templates and use cases sit next to this how-to. About explains what this unofficial catalog is."
-        }
-      ],
+      "kicker": "Getting started",
+      "crumb": "How to use Grok Bot",
       "plays": {
         "default": [
           "mattyp-getting-started",
@@ -72,33 +22,8 @@
     },
     {
       "slug": "grok-bot-templates",
-      "h1": "Grok Bot templates",
-      "title": "Grok Bot Templates: Share, Install, and Reuse Safely",
-      "description": "Share a Grok Bot as a template, install one someone else published, and reuse it only after you review what it can do.",
-      "datePublished": "2026-09-08",
-      "howto": [],
-      "sections": [
-        {
-          "h2": "Share",
-          "body": "Draft / scaffold. A template is a bot you can hand to someone else as a starting point. Share the job, the steps, and the limits — not passwords, session cookies, or live customer lists. This section is a stub until editor copy lands in seo/guides/."
-        },
-        {
-          "h2": "Install",
-          "body": "Draft / scaffold. Install a shared template into your own account, then rename it for your desk. Read what it connects to before you run it. If you still need the desktop app, use the how-to guide or the short Install page."
-        },
-        {
-          "h2": "Reuse safely",
-          "body": "Draft / scaffold. Treat a template as someone else’s draft of a job, not a finished employee. Review sends, spend, and production writes. Keep human approval on. Do not paste secrets into chat to “make the template work.”"
-        },
-        {
-          "h2": "Template plays",
-          "body": "Draft / scaffold. A short curated set from the catalog. Not a browse-all shelf. For more templates later, use Discover or Categories."
-        },
-        {
-          "h2": "Related guides",
-          "body": "Draft / scaffold. How to use Grok Bot covers install and a first task. Use cases covers sales and engineering plays."
-        }
-      ],
+      "kicker": "Templates",
+      "crumb": "Grok Bot templates",
       "plays": {
         "default": [
           "official-share-templates",
@@ -113,29 +38,8 @@
     },
     {
       "slug": "grok-bot-use-cases",
-      "h1": "Grok Bot use cases for sales and engineering",
-      "title": "Grok Bot Use Cases: Sales and Engineering Plays",
-      "description": "Sales and engineering Grok Bot use cases from public plays. Outreach and CRM writes wait for a person. Engineering plays stop at review unless you take the call.",
-      "datePublished": "2026-09-08",
-      "howto": [],
-      "sections": [
-        {
-          "h2": "How to read these",
-          "body": "Draft / scaffold. These are public plays, not a promise of results. We do not invent traffic, reply rates, or time-to-done. Use a play as a job description you can check. This page is not a third discovery shelf."
-        },
-        {
-          "h2": "Sales",
-          "body": "Draft / scaffold. Sales plays here research accounts, draft outreach, or staff a GTM desk. They do not send cold email unattended. They do not move CRM stages on their own. Default is human approval before anything leaves the desk."
-        },
-        {
-          "h2": "Engineering",
-          "body": "Draft / scaffold. Engineering plays here watch repos, review diffs, open draft PRs, or hand work to a cloud agent. You still take production calls. A draft PR is not a merge."
-        },
-        {
-          "h2": "Related guides",
-          "body": "Draft / scaffold. How to use Grok Bot is the install and first-task path. Templates covers share and reuse. For more plays, use Discover or the Growth and Engineering category pages — not an embedded catalog on this page."
-        }
-      ],
+      "kicker": "Sales · Engineering",
+      "crumb": "Use cases",
       "plays": {
         "sales": [
           "official-sales-outbound",

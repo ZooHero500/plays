@@ -1,26 +1,39 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { GUIDES, guidePath } from '../../lib/guides';
+import { GUIDES, guidePath, loadGuideDoc } from '../../lib/guides';
+
+const items = GUIDES.map((g) => {
+  const doc = loadGuideDoc(g);
+  return { guide: g, doc };
+});
 ---
 <Base
   title="Guides · Grok Bot Plays"
-  description="Short English guides for Grok Bot: how to use it, templates, and sales or engineering use cases."
+  description="English guides for Grok Bot: how to use it, templates, and sales or engineering use cases."
   nav="guides"
   locale="en"
   chrome="topbar"
-  bodyClass="lock-j"
 >
-  <article class="guide" data-guide-index="true">
+  <article class="guide-page" data-guide-index="true">
+    <nav class="guide-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span>
+      Guides
+    </nav>
     <p class="guide-kicker">Guides</p>
-    <h1 class="detail-title">Guides</h1>
+    <h1 class="guide-h1">Guides</h1>
     <p class="guide-lede">
-      Three English how-tos. Not a second Discover shelf. Each page links a short curated set of plays.
+      Three English how-tos. Method pages, not a second Discover shelf. Each one links a short curated set of plays.
     </p>
-    <ul class="guide-index">
-      {GUIDES.map((g) => (
+    <div class="guide-related">
+      {items.map(({ guide, doc }) => (
+        <a class="guide-chip" href={guidePath(guide.slug)}>{doc.fm.title}</a>
+      ))}
+    </div>
+    <ul class="guide-index-list">
+      {items.map(({ guide, doc }) => (
         <li>
-          <a href={guidePath(g.slug)}>{g.h1}</a>
-          <span class="guide-play-by">{g.description}</span>
+          <a href={guidePath(guide.slug)}>{doc.fm.title}</a>
+          <span>{doc.fm.metaDescription}</span>
         </li>
       ))}
     </ul>

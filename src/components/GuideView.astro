@@ -8,26 +8,26 @@ import {
   type GuideDef,
   type GuideSlug,
 } from '../lib/guides';
+import type { ParsedGuide } from '../lib/guide-md';
 import type { PlayData } from '../lib/plays';
 
 interface Props {
   guide: GuideDef;
+  doc: ParsedGuide;
 }
 
-const { guide } = Astro.props;
+const { guide, doc } = Astro.props;
 assertGuidePlayCaps(guide);
 
-const playIds = allGuidePlayIds(guide);
+const playIds = [...new Set([...allGuidePlayIds(guide), ...doc.blocks.flatMap((b) =>
+  b.type === 'picks' ? b.items.map((p) => p.id) : [],
+)])];
 const loaded = await loadGuidePlays(playIds);
 const byId = new Map(loaded.map((p) => [p.id, p]));
 
-function picks(ids: string[] | undefined): PlayData[] {
-  return (ids || []).map((id) => byId.get(id)!);
+function playOf(id: string): PlayData | undefined {
+  return byId.get(id);
 }
-
-const defaultPlays = picks(guide.plays.default);
-const salesPlays = picks(guide.plays.sales);
-const engineeringPlays = picks(guide.plays.engineering);
 
 const origin = Astro.site ? String(Astro.site).replace(/\/$/, '') : 'https://grokbotplays.com';
 const pageUrl = `${origin}${guidePath(guide.slug)}`;
@@ -37,11 +37,11 @@ const homeUrl = `${origin}/`;
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: guide.h1,
-  name: guide.title,
-  description: guide.description,
+  headline: doc.fm.title,
+  name: doc.fm.metaTitle,
+  description: doc.fm.metaDescription,
   inLanguage: 'en',
-  datePublished: guide.datePublished,
+  datePublished: doc.fm.published,
   mainEntityOfPage: pageUrl,
   url: pageUrl,
 };
@@ -52,160 +52,147 @@ const breadcrumbLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
     { '@type': 'ListItem', position: 2, name: 'Guides', item: guidesUrl },
-    { '@type': 'ListItem', position: 3, name: guide.h1, item: pageUrl },
+    { '@type': 'ListItem', position: 3, name: guide.crumb, item: pageUrl },
   ],
 };
 
-const howtoLd =
-  guide.howto.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
-        name: guide.h1,
-        description: guide.description,
-        step: guide.howto.map((step, i) => ({
-          '@type': 'HowToStep',
-          position: i + 1,
-          name: step.name,
-          text: step.text,
-        })),
-      }
-    : null;
-
-const others = (['how-to-use-grok-bot', 'grok-bot-templates', 'grok-bot-use-cases'] as GuideSlug[]).filter(
-  (slug) => slug !== guide.slug,
-);
+const nextLinks = doc.blocks.find((b) => b.type === 'next');
+const related = nextLinks && nextLinks.type === 'next'
+  ? nextLinks.links.filter((l) => l.href.startsWith('/guides/'))
+  : [];
+const ctaSubs = nextLinks && nextLinks.type === 'next'
+  ? nextLinks.links.filter((l) => !l.href.startsWith('/guides/') && l.href !== '/')
+  : [];
 
 const otherLabel: Record<GuideSlug, string> = {
   'how-to-use-grok-bot': 'How to use Grok Bot',
   'grok-bot-templates': 'Grok Bot templates',
-  'grok-bot-use-cases': 'Grok Bot use cases',
+  'grok-bot-use-cases': 'Use cases',
 };
-
 ---
 <Base
-  title={guide.title}
-  description={guide.description}
+  title={doc.fm.metaTitle}
+  description={doc.fm.metaDescription}
   nav="guides"
   locale="en"
   chrome="topbar"
-  bodyClass="lock-j"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
-  {howtoLd && <script slot="head" type="application/ld+json" set:html={JSON.stringify(howtoLd)} />}
 
-  <article class="guide" data-guide-page={guide.slug} data-guide-scaffold="true">
-    <p class="guide-kicker">Guide · draft / scaffold</p>
-    <h1 class="detail-title">{guide.h1}</h1>
-    <p class="guide-lede">{guide.description}</p>
-    <p class="guide-draft">
-      Body copy below follows the H2 outline. Final editor drafts are not in <code>seo/guides/</code> yet. No traffic numbers or minute promises.
-    </p>
+  <article class="guide-page" data-guide-page={guide.slug}>
+    <nav class="guide-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span>
+      <a href="/guides/">Guides</a><span>/</span>
+      {guide.crumb}
+    </nav>
 
-    {guide.sections.map((section) => (
-      <section class="guide-block">
-        <h2>{section.h2}</h2>
-        <p>{section.body}</p>
+    <p class="guide-kicker">{guide.kicker}</p>
+    <h1 class="guide-h1">{doc.fm.title}</h1>
+    <div class="guide-lede" set:html={doc.ledeHtml} />
 
-        {section.h2 === 'First plays' && defaultPlays.length > 0 && (
-          <ul class="guide-plays" data-guide-section="default">
-            {defaultPlays.map((p) => (
+    {doc.blocks.map((block) => {
+      if (block.type === 'h2') {
+        return <h2 class="guide-h2">{block.text}</h2>;
+      }
+      if (block.type === 'h3') {
+        return <h3 class="guide-h3">{block.text}</h3>;
+      }
+      if (block.type === 'prose') {
+        return <div class="guide-prose" set:html={block.html} />;
+      }
+      if (block.type === 'ul') {
+        return (
+          <ul class="guide-ul">
+            {block.items.map((item) => <li set:html={item} />)}
+          </ul>
+        );
+      }
+      if (block.type === 'steps') {
+        return (
+          <ol class="guide-steps">
+            {block.items.map((step, idx) => (
               <li>
-                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
-                <span class="guide-play-by">{p.author}</span>
+                <span class="n">{String(idx + 1).padStart(2, '0')}</span>
+                <div>
+                  {step.title ? <strong>{step.title}</strong> : null}
+                  <p set:html={step.body} />
+                </div>
               </li>
             ))}
-          </ul>
-        )}
-
-        {section.h2 === 'Template plays' && defaultPlays.length > 0 && (
-          <ul class="guide-plays" data-guide-section="default">
-            {defaultPlays.map((p) => (
-              <li>
-                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
-                <span class="guide-play-by">{p.author}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {section.h2 === 'Sales' && salesPlays.length > 0 && (
-          <ul class="guide-plays" data-guide-section="sales">
-            {salesPlays.map((p) => (
-              <li>
-                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
-                <span class="guide-play-by">{p.author}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {section.h2 === 'Engineering' && engineeringPlays.length > 0 && (
-          <ul class="guide-plays" data-guide-section="engineering">
-            {engineeringPlays.map((p) => (
-              <li>
-                <a href={`/play/${p.id}`} data-guide-play={p.id}>{p.title}</a>
-                <span class="guide-play-by">{p.author}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {section.h2 === 'Related guides' && (
-          <p class="guide-next">
-            {others.map((slug, i) => (
-              <>
-                {i > 0 && ' · '}
-                <a href={guidePath(slug)}>{otherLabel[slug]}</a>
-              </>
-            ))}
-            {guide.slug === 'how-to-use-grok-bot' && (
-              <>
-                {' · '}
-                <a href="/install">Install</a>
-                {' · '}
-                <a href="/about">About</a>
-              </>
+          </ol>
+        );
+      }
+      if (block.type === 'picks') {
+        return (
+          <div class="guide-picks-wrap">
+            {block.more && (
+              <p class="guide-picks-more">
+                <a href={block.more.href}>{block.more.label}</a>
+              </p>
             )}
-            {guide.slug === 'grok-bot-templates' && (
-              <>
-                {' · '}
-                <a href="/install">Install</a>
-              </>
-            )}
-            {' · '}
-            <a href="/">More on Discover</a>
-            {guide.slug === 'grok-bot-use-cases' ? (
-              <>
-                {' · '}
-                <a href="/categories/growth">More in Growth</a>
-                {' · '}
-                <a href="/categories/engineering">More in Engineering</a>
-              </>
-            ) : (
-              <>
-                {' · '}
-                <a href="/categories">More in Categories</a>
-              </>
-            )}
-          </p>
-        )}
-      </section>
-    ))}
+            <div class="guide-picks" data-guide-section={block.section}>
+              {block.items.map((item) => {
+                const play = playOf(item.id);
+                return (
+                  <a
+                    class="guide-pick"
+                    href={`/play/${item.id}`}
+                    data-guide-play={item.id}
+                    data-guide-section={block.section}
+                  >
+                    <div class="thumb" aria-hidden="true">Play</div>
+                    <div>
+                      <p class="title">{play?.title || item.id}</p>
+                      <p class="why">{item.why}</p>
+                    </div>
+                    <span class="go">Open →</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        );
+      }
+      if (block.type === 'faq') {
+        return (
+          <div class="guide-faq">
+            {block.items.map((item, idx) => (
+              <details open={idx === 0}>
+                <summary>{item.q}</summary>
+                <p set:html={item.a} />
+              </details>
+            ))}
+          </div>
+        );
+      }
+      return null;
+    })}
 
-    {guide.howto.length > 0 && (
-      <section class="guide-block" data-guide-howto="true">
-        <h2>Steps</h2>
-        <ol class="guide-howto">
-          {guide.howto.map((step) => (
-            <li>
-              <strong>{step.name}.</strong>{' '}
-              {step.text}
-            </li>
+    <div class="guide-related">
+      {(related.length
+        ? related
+        : (['how-to-use-grok-bot', 'grok-bot-templates', 'grok-bot-use-cases'] as GuideSlug[])
+            .filter((slug) => slug !== guide.slug)
+            .map((slug) => ({ href: guidePath(slug), label: otherLabel[slug] }))
+      ).map((l) => (
+        <a class="guide-chip" href={l.href}>{l.label}</a>
+      ))}
+    </div>
+
+    <div class="guide-cta">
+      <p>Ready to browse more plays?</p>
+      <a class="guide-btn" href="/">Back to Plays</a>
+      {ctaSubs.length > 0 && (
+        <span class="sub">
+          {ctaSubs.map((l, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={l.href}>{l.label}</a>
+            </>
           ))}
-        </ol>
-      </section>
-    )}
+        </span>
+      )}
+    </div>
   </article>
 </Base>

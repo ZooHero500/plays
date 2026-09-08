@@ -6,6 +6,6 @@ export function getStaticPaths() {
   return guideStaticPaths();
 }
 
-const { guide } = Astro.props;
+const { guide, doc } = Astro.props;
 ---
-<GuideView guide={guide} />
+<GuideView guide={guide} doc={doc} />

@@ -47,19 +47,13 @@ function playHrefs(html) {
 }
 
 function markedPlays(html, section) {
-  const re = section
-    ? new RegExp(
-        `data-guide-section="${section}"[\\s\\S]*?<\\/ul>`,
-        "g",
-      )
-    : /data-guide-play="([^"]+)"/g;
-  if (!section) {
-    return [...html.matchAll(re)].map((m) => m[1]);
-  }
-  const blocks = [...html.matchAll(re)].map((m) => m[0]);
   const ids = [];
-  for (const block of blocks) {
-    ids.push(...[...block.matchAll(/data-guide-play="([^"]+)"/g)].map((m) => m[1]));
+  const tags = html.match(/<a\b[^>]*>/g) || [];
+  for (const tag of tags) {
+    const play = tag.match(/data-guide-play="([^"]+)"/);
+    if (!play) continue;
+    if (section && !tag.includes(`data-guide-section="${section}"`)) continue;
+    ids.push(play[1]);
   }
   return ids;
 }
@@ -198,6 +192,14 @@ if (!existsSync(dist)) {
     } else {
       ok(`${guide.slug}: no DiscoverView / category waterfall`);
     }
+    if (/Draft \/ scaffold|data-guide-scaffold/i.test(html)) {
+      fail(`${guide.slug}: still rendering scaffold placeholder copy`);
+    } else {
+      ok(`${guide.slug}: writer copy, not scaffold`);
+    }
+    const md = join(root, "seo/guides", `${guide.slug}.md`);
+    if (!existsSync(md)) fail(`writer markdown missing: ${md}`);
+    else ok(`writer markdown present: ${guide.slug}.md`);
 
     if (!/"@type":"Article"/.test(html) && !/"@type": "Article"/.test(html)) {
       fail(`${guide.slug}: missing Article JSON-LD`);
