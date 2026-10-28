@@ -1,3 +1,4 @@
+import { Marked } from "marked";
 import { getCollection } from "astro:content";
 import {
   bareContentId,
@@ -94,20 +95,21 @@ function inlineMd(text: string, locale: Locale) {
 
 /** Blank-line paragraphs; sentences on single newlines are joined (no <br>). */
 export function renderBlogHtml(body: string, locale: Locale = "zh") {
-  const src = body.replace(/^#\s+.*\n+/, "");
-  const blocks = src
+  const src = body
+    .replace(/^\s*#\s+.*\n+/, "")
     .split(/\n\n+/)
-    .map((s) => s.trim())
-    .filter(Boolean)
-    .filter((b) => !/^配图[:：]/.test(b));
-  return blocks
-    .map((block) => {
-      const joined = block
-        .split("\n")
-        .map((l) => l.trim())
-        .filter(Boolean)
-        .join("");
-      return `<p>${inlineMd(joined, locale)}</p>`;
-    })
-    .join("\n");
+    .filter((b) => !/^配图[:：]/.test(b.trim()))
+    .join("\n\n");
+  const md = new Marked({ gfm: true });
+  md.use({
+    renderer: {
+      link({ href, text }) {
+        const h = rewriteHref(href, locale);
+        const ext = /^https?:\/\//i.test(h);
+        const extra = ext ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return `<a class="source-link" href="${esc(h)}"${extra}>${text}</a>`;
+      },
+    },
+  });
+  return md.parse(src, { async: false }) as string;
 }
