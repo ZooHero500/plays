@@ -99,7 +99,9 @@ export function renderBlogHtml(body: string, locale: Locale = "zh") {
     .replace(/^\s*#\s+.*\n+/, "")
     .split(/\n\n+/)
     .filter((b) => !/^配图[:：]/.test(b.trim()))
-    .join("\n\n");
+    .join("\n\n")
+    // Join soft line breaks between CJK characters so they don't render as spaces.
+    .replace(/([\u3000-\u303f\u3400-\u9fff\uff00-\uffef])[ \t]*\n[ \t]*(?=[\u3000-\u303f\u3400-\u9fff\uff00-\uffef])/g, "$1");
   const md = new Marked({ gfm: true });
   md.use({
     renderer: {
