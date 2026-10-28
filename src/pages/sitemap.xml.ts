@@ -20,6 +20,7 @@ export const GET: APIRoute = async ({ site }) => {
     getPlays("zh"),
     getPosts("zh"),
   ]);
+  const enPosts = await getPosts("en");
 
   const parts = [
     url(origin, "/", "hourly", "1.0"),
@@ -30,6 +31,7 @@ export const GET: APIRoute = async ({ site }) => {
     url(origin, "/install/", "monthly", "0.7"),
     url(origin, "/about/", "monthly", "0.5"),
     url(origin, "/blog/", "weekly", "0.5"),
+    ...enPosts.map((p) => url(origin, `/blog/${postSlug(p)}/`, "monthly", "0.6")),
     url(origin, "/submit/", "monthly", "0.3"),
     ...enPlays.map((p) => url(origin, `/play/${p.id}/`, "weekly", "0.6")),
     url(origin, "/zh/", "daily", "0.5"),

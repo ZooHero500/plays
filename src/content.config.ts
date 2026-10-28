@@ -48,6 +48,9 @@ const blog = defineCollection({
     description: z.string(),
     slug: z.string(),
     cover: z.string().optional(),
+    date: z.coerce.date().optional(),
+    updated: z.coerce.date().optional(),
+    draft: z.boolean().default(false),
   }),
 });
 

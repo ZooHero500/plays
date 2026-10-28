@@ -29,8 +29,14 @@ export const BLOG_PATH_MAP: Record<string, string> = {
 export async function getPosts(locale: Locale) {
   const entries = await getCollection("blog");
   const filtered = filterByLocale(entries, locale);
-  const byBare = Object.fromEntries(filtered.map((e) => [bareContentId(e.id), e]));
-  return BLOG_ORDER.map((id) => byBare[id]).filter(Boolean);
+  const live = filtered.filter((e) => !e.data.draft);
+  const byBare = Object.fromEntries(live.map((e) => [bareContentId(e.id), e]));
+  const pinned = BLOG_ORDER.map((id) => byBare[id]).filter(Boolean);
+  const rest = live
+    .filter((e) => !BLOG_ORDER.includes(bareContentId(e.id)))
+    .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+  // New posts (dated) first, then the original pinned set.
+  return [...rest, ...pinned];
 }
 
 export async function blogStaticPaths(locale: Locale) {
