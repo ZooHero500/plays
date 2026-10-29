@@ -34,7 +34,10 @@ const jsonLd = [{
   jsonLd={jsonLd}
   crumbs={[{ name: locale === 'zh' ? '博客' : 'Blog', path: localePath(locale, '/blog/') }]}
 >
-  {locale !== 'en' && <Mast locale={locale} tagline="Blog" compact />}
+  {locale !== 'en' && <Mast locale={locale} tagline="Blog" heading={false} compact />}
+  <div class="discover-head discover-feed-head">
+    <h1 class="discover-h1">{locale === 'zh' ? 'Grok Bot 博客' : 'Grok Bot Plays blog'}</h1>
+  </div>
 
   {posts.length === 0 ? (
     <p class="empty">{t(locale, 'meta.emptyBlog')}</p>

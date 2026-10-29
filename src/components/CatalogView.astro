@@ -61,7 +61,8 @@ const config = {
   alternates={{ en: '/', zh: '/zh/' }}
   jsonLd={jsonLd}
 >
-  <Mast locale={locale} bot dek={locale === 'en'} />
+  <Mast locale={locale} bot dek={locale === 'en'} heading={false} />
+  <h1 class="discover-h1">{locale === 'zh' ? 'Grok Bot 玩法：真实用法与提示词' : 'Grok Bot Plays: real use cases & prompts'}</h1>
 
   <div class="search-wrap">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
