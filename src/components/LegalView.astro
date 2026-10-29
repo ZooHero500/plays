@@ -38,7 +38,7 @@ const title = titles[kind];
     {kind === 'privacy' && (zh ? (
       <>
         <section class="about-block"><h2>站点类型</h2><p>本站是静态网站。没有账号、登录或表单，不收集姓名、邮箱或密码。</p></section>
-        <section class="about-block"><h2>访问统计</h2><p>页面加载自托管的 Umami 统计脚本（analysis.zoohero.me），用于统计页面浏览量。Umami 不设置 Cookie。</p></section>
+        <section class="about-block"><h2>访问统计</h2><p>页面加载自托管的 Umami 统计脚本（analysis.zoohero.me），用于统计页面浏览量。我们在 2026-10-30 检查过：该脚本不写 Cookie，服务器也不返回 Set-Cookie；它只读取 localStorage 里的 umami.disabled 退出开关。</p></section>
         <section class="about-block"><h2>点击计数</h2><p>首页点开某个玩法时，会把该玩法的 id 发送到 /api/click，只累加一个匿名点击数，用于“热门”排序。不记录你是谁。</p></section>
         <section class="about-block"><h2>托管</h2><p>站点托管在 Cloudflare Pages，Cloudflare 作为托管方可能按其政策处理常规请求日志。外链（X、GitHub 等）适用各自的隐私政策。</p></section>
         <section class="about-block"><h2>疑问</h2><p>请在 <a href={ISSUES}>GitHub issues</a> 提出。</p></section>
@@ -46,7 +46,7 @@ const title = titles[kind];
     ) : (
       <>
         <section class="about-block"><h2>What this site is</h2><p>A static website. There are no accounts, logins, or forms, and it does not collect names, emails, or passwords.</p></section>
-        <section class="about-block"><h2>Analytics</h2><p>Pages load a self-hosted Umami analytics script (analysis.zoohero.me) to count page views. Umami does not set cookies.</p></section>
+        <section class="about-block"><h2>Analytics</h2><p>Pages load a self-hosted Umami analytics script (analysis.zoohero.me) to count page views. We checked on 2026-10-30: the script writes no cookies and the server returns no Set-Cookie header; it only reads an opt-out flag (umami.disabled) from localStorage.</p></section>
         <section class="about-block"><h2>Click counts</h2><p>When you open a play from the home page, its id is sent to /api/click, which only increments an anonymous click count used for “trending” order. It does not record who you are.</p></section>
         <section class="about-block"><h2>Hosting</h2><p>The site is hosted on Cloudflare Pages; Cloudflare may process standard request logs under its own policies. Outbound links (X, GitHub and others) follow their own privacy policies.</p></section>
         <section class="about-block"><h2>Questions</h2><p>Open an issue on <a href={ISSUES}>GitHub</a>.</p></section>

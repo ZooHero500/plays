@@ -53,9 +53,9 @@ export const GET: APIRoute = async ({ site }) => {
   const enPosts = await getPosts("en");
 
   const postDate = (p: any) =>
-    isoDate(p.data?.updated) || isoDate(p.data?.date) || gitDate(p.filePath || "");
+    isoDate(p.data?.updated) || gitDate(p.filePath || "");
   const playDate = (locale: string, p: any) =>
-    isoDate(p.updated) || isoDate(p.date) || gitDate(`src/content/plays/${locale}/${p.id}.md`);
+    isoDate((p as any).updated) || gitDate(`src/content/plays/${locale}/${p.id}.md`);
 
   const parts = [
     url(origin, "/", "hourly", "1.0", gitDate("src/pages/index.astro", "src/components/DiscoverView.astro", "src/content/plays/en")),
