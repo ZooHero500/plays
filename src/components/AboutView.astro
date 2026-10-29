@@ -15,6 +15,7 @@ const { locale } = Astro.props;
   nav="about"
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/about')}
+  alternates={{ en: '/about/', zh: '/zh/about/' }}
 >
   <Mast locale={locale} compact />
 

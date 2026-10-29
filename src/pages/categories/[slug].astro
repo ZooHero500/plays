@@ -12,6 +12,13 @@ export async function getStaticPaths() {
 }
 
 const { scene, posts } = Astro.props;
+const jsonLd = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${scene} · Grok Bot Plays`,
+  numberOfItems: posts.length,
+  itemListElement: posts.slice(0, 50).map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: p.permalink, name: p.title || undefined })),
+}];
 ---
 <Base
   title={`${scene} · Plays`}
@@ -21,9 +28,12 @@ const { scene, posts } = Astro.props;
   chrome="topbar"
   bodyClass="lock-j"
   lockJ
+  jsonLd={jsonLd}
+  crumbs={[{ name: 'Categories', path: '/categories/' }, { name: scene, path: `/categories/${sceneSlug(scene)}/` }]}
 >
   <div class="discover-head">
     <p class="discover-kicker"><a href="/categories">Categories</a> / {scene}</p>
+    <h1 class="discover-h1">{scene} Grok Bot plays</h1>
     <p class="discover-dek">{posts.length} posts</p>
   </div>
   <main class="discover-feed">

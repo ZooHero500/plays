@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Page not found · Grok Bot Plays"
+  description="This page does not exist."
+  nav="discover"
+  locale="en"
+  chrome="topbar"
+  crumbs={false}
+>
+  <Fragment slot="head"><meta name="robots" content="noindex" /></Fragment>
+  <div class="discover-head">
+    <h1 class="discover-h1">Page not found</h1>
+    <p class="discover-dek">That URL is not on Grok Bot Plays. <a href="/">Back to the latest plays</a> · <a href="/zh/">中文</a></p>
+  </div>
+</Base>

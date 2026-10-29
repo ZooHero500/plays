@@ -14,6 +14,12 @@ interface Props {
   lockJ?: boolean;
   locale: Locale;
   switchHref?: string;
+  /** Paths (e.g. '/about/' and '/zh/about/') of language versions that exist. Only set when both exist. */
+  alternates?: { en: string; zh: string };
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: Record<string, unknown>[];
+  /** Breadcrumb trail (name + path), excluding Home. Omit to derive; false to skip. */
+  crumbs?: { name: string; path: string }[] | false;
 }
 
 const {
@@ -25,7 +31,34 @@ const {
   bodyClass = '',
   lockJ = false,
   switchHref,
+  alternates,
+  jsonLd = [],
+  crumbs,
 } = Astro.props;
+
+const SITE = 'https://grokbotplays.com';
+const slashed = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+const abs = (p: string) => new URL(slashed(p), SITE).href;
+const homePath = locale === 'zh' ? '/zh/' : '/';
+const isHome = slashed(Astro.url.pathname) === homePath;
+const crumbName = (title.split(' · ')[0] || title).trim();
+let trail: { name: string; path: string }[] = [];
+if (crumbs !== false && !isHome) {
+  trail = crumbs ?? [{ name: crumbName, path: Astro.url.pathname }];
+}
+const breadcrumbLd = trail.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ name: locale === 'zh' ? '首页' : 'Home', path: homePath }, ...trail].map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: abs(c.path),
+      })),
+    }
+  : null;
+const ldBlocks = [...jsonLd, ...(breadcrumbLd ? [breadcrumbLd] : [])];
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogAbs = new URL('/og.png', Astro.site).href;
@@ -39,6 +72,10 @@ const ogAbs = new URL('/og.png', Astro.site).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    {alternates && <link rel="alternate" hreflang="en" href={abs(alternates.en)} />}
+    {alternates && <link rel="alternate" hreflang="zh-Hans" href={abs(alternates.zh)} />}
+    {alternates && <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />}
+    {ldBlocks.map((b) => <script type="application/ld+json" set:html={JSON.stringify(b).replace(/</g, '\\u003c')} />)}
     <slot name="head" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />

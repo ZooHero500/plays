@@ -10,7 +10,7 @@ interface Props {
   post: {
     id: string;
     body?: string;
-    data: { title: string; description: string; slug?: string; cover?: string };
+    data: { title: string; description: string; slug?: string; cover?: string; date?: Date; updated?: Date };
   };
 }
 
@@ -22,6 +22,22 @@ const otherHas = await hasPost(other, slug);
 const switchHref = otherHas
   ? localePath(other, `/blog/${slug}`)
   : localePath(other, '/blog');
+const selfPath = `${localePath(locale, `/blog/${slug}`)}/`;
+const url = new URL(selfPath, 'https://grokbotplays.com').href;
+const articleLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  url,
+  mainEntityOfPage: url,
+  inLanguage: locale === 'zh' ? 'zh-Hans' : 'en',
+  publisher: { '@type': 'Organization', name: 'Grok Bot Plays', url: 'https://grokbotplays.com/' },
+};
+if (post.data.date) articleLd.datePublished = post.data.date.toISOString().slice(0, 10);
+if (post.data.updated) articleLd.dateModified = post.data.updated.toISOString().slice(0, 10);
+if (post.data.cover) articleLd.image = new URL(post.data.cover, 'https://grokbotplays.com').href;
+const alternates = otherHas ? { en: `/blog/${slug}/`, zh: `/zh/blog/${slug}/` } : undefined;
 ---
 <Base
   title={`${post.data.title} · ${PAGE_TITLE}`}
@@ -29,6 +45,9 @@ const switchHref = otherHas
   nav="blog"
   locale={locale}
   switchHref={switchHref}
+  alternates={alternates}
+  jsonLd={[articleLd]}
+  crumbs={[{ name: locale === 'zh' ? '博客' : 'Blog', path: localePath(locale, '/blog/') }, { name: post.data.title, path: selfPath }]}
 >
   <Mast locale={locale} tagline="Blog" heading={false} compact />
 

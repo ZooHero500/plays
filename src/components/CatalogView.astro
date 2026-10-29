@@ -21,6 +21,22 @@ const empty = plays.length === 0;
 const count = empty
   ? '0 / 0'
   : `1–${Math.min(page1Size, plays.length)} / ${plays.length}`;
+const homeUrl = new URL(localePath(locale, '/'), 'https://grokbotplays.com').href;
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Grok Bot Plays', url: homeUrl, inLanguage: locale === 'zh' ? 'zh-Hans' : 'en' },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Grok Bot Plays',
+    numberOfItems: plays.length,
+    itemListElement: plays.slice(0, 50).map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.title,
+      url: new URL(`${localePath(locale, '/play')}/${p.id}/`, 'https://grokbotplays.com').href,
+    })),
+  },
+];
 const config = {
   plays: catalog,
   locale,
@@ -42,6 +58,8 @@ const config = {
   nav="catalog"
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/')}
+  alternates={{ en: '/', zh: '/zh/' }}
+  jsonLd={jsonLd}
 >
   <Mast locale={locale} bot dek={locale === 'en'} />
 

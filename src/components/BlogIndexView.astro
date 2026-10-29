@@ -10,6 +10,18 @@ interface Props {
 
 const { locale } = Astro.props;
 const posts = await getPosts(locale);
+const jsonLd = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: t(locale, 'page.blogTitle'),
+  numberOfItems: posts.length,
+  itemListElement: posts.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.data.title,
+    url: new URL(`${localePath(locale, `/blog/${postSlug(p)}`)}/`, 'https://grokbotplays.com').href,
+  })),
+}];
 ---
 <Base
   title={t(locale, 'page.blogTitle')}
@@ -18,6 +30,9 @@ const posts = await getPosts(locale);
   locale={locale}
   chrome={locale === 'en' ? 'topbar' : 'nav'}
   switchHref={localePath(otherLocale(locale), '/blog')}
+  alternates={{ en: '/blog/', zh: '/zh/blog/' }}
+  jsonLd={jsonLd}
+  crumbs={[{ name: locale === 'zh' ? '博客' : 'Blog', path: localePath(locale, '/blog/') }]}
 >
   {locale !== 'en' && <Mast locale={locale} tagline="Blog" compact />}
 

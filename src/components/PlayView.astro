@@ -10,9 +10,10 @@ import {
   pad,
   hasText,
   PAGE_TITLE,
+  hasPlay,
 } from '../lib/plays';
 import type { PlayData } from '../lib/plays';
-import { t, localePath, type Locale } from '../lib/i18n';
+import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
@@ -39,13 +40,15 @@ for (const s of shots) {
 }
 const related = plays.filter((x) => x.category === play.category && x.id !== play.id).slice(0, 4);
 const catalogHref = localePath(locale, '/');
+const otherHasPlay = await hasPlay(otherLocale(locale), play.id);
+const alternates = otherHasPlay ? { en: `/play/${play.id}/`, zh: `/zh/play/${play.id}/` } : undefined;
 
 function stepTitleBody(s: string | { title: string; body: string }) {
   if (typeof s === 'string') return { title: '', body: s };
   return { title: s.title || '', body: s.body || '' };
 }
 ---
-<Base title={`${play.title} · ${PAGE_TITLE}`} description={play.summary} nav="none" bodyClass="is-detail" locale={locale}>
+<Base title={`${play.title} · ${PAGE_TITLE}`} description={play.summary} nav="none" bodyClass="is-detail" locale={locale} alternates={alternates}>
   <a class="back" id="back" href={catalogHref} data-base={catalogHref} data-locale={locale}>{t(locale, 'detail.back')}</a>
 
   <div class="hero-cover">

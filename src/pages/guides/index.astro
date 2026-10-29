@@ -6,6 +6,13 @@ const items = GUIDES.map((g) => {
   const doc = loadGuideDoc(g);
   return { guide: g, doc };
 });
+const jsonLd = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Grok Bot guides',
+  numberOfItems: items.length,
+  itemListElement: items.map(({ guide, doc }, i) => ({ '@type': 'ListItem', position: i + 1, name: doc.fm.title, url: new URL(guidePath(guide.slug), 'https://grokbotplays.com').href })),
+}];
 ---
 <Base
   title="Guides · Grok Bot Plays"
@@ -13,6 +20,8 @@ const items = GUIDES.map((g) => {
   nav="guides"
   locale="en"
   chrome="topbar"
+  jsonLd={jsonLd}
+  crumbs={[{ name: 'Guides', path: '/guides/' }]}
 >
   <article class="guide-page" data-guide-index="true">
     <nav class="guide-crumb" aria-label="Breadcrumb">

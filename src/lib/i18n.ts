@@ -94,7 +94,7 @@ const en = {
   "page.catalogTitle": "Grok Bot Plays",
   "page.catalogDesc":
     "Unofficial Grok Bot play catalog. Every entry has a source link, from public posts and xAI docs.",
-  "page.discoverTitle": "Plays",
+  "page.discoverTitle": "Grok Bot Plays – Real Grok Bot Use Cases & Prompts",
   "page.discoverDesc": "Latest public X posts about Grok Bot. Every card is a real permalink.",
   "page.categoriesTitle": "Categories · Plays",
   "page.categoriesDesc": "Five categories of public Grok Bot posts.",
@@ -154,7 +154,7 @@ const zh: Record<keyof typeof en, string> = {
   "lang.en": "EN",
   "lang.zh": "中文",
   "lang.aria": "语言",
-  "page.catalogTitle": "Grok Bot Plays",
+  "page.catalogTitle": "Grok Bot Plays – 真实的 Grok Bot 用法与提示词",
   "page.catalogDesc":
     "非官方 Grok Bot 玩法导航。条目均带来源链接，来自公开帖与 xAI 官方说明。",
   "page.discoverTitle": "Plays",

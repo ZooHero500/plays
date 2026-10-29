@@ -15,6 +15,7 @@ const { locale } = Astro.props;
   nav="install"
   locale={locale}
   switchHref={localePath(otherLocale(locale), '/install')}
+  alternates={{ en: '/install/', zh: '/zh/install/' }}
 >
   <Mast locale={locale} heading={false} compact />
 

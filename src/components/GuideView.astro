@@ -76,6 +76,7 @@ const otherLabel: Record<GuideSlug, string> = {
   nav="guides"
   locale="en"
   chrome="topbar"
+  crumbs={false}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
