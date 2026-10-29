@@ -1,15 +1,20 @@
 ---
-title: "Grok Bot vs Muse: what each agent actually does (checked Oct 28, 2026)"
+title: "Grok Bot vs Muse: what each agent actually does (checked Oct 29, 2026)"
 description: "Grok Bot vs Muse, side by side: who makes them, what they cost, where they run, how approvals work, and which jobs fit each. Every row links to its source."
 slug: "grok-bot-vs-muse"
 date: 2026-10-28
+updated: 2026-10-29
 ---
 
 # Grok Bot vs Muse: what each agent actually does
 
-Grok Bot and Muse are both AI agents that keep working on a cloud computer after you close the app, but they aim at different jobs. Grok Bot (from xAI, running on Cursor's cloud) gives you several named Bots that share one computer and run scheduled routines for work. Muse (from Meta) is one personal agent for everyday life, with a free tier, paid plans at $20 and $100 a month, and chat inside WhatsApp. Pick by the job, where you live, and what you already pay for.
+Grok Bot (xAI, running on Cursor's cloud) is a team of named Bots that share one cloud computer and run scheduled or event-triggered routines, while Muse (Meta) is one personal agent with a free tier, $20 and $100 monthly plans, and chat inside WhatsApp ([xAI docs](https://docs.x.ai/grok-bot), [Meta newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/), [Meta help](https://www.meta.com/help/subscriptions/1021145227643680/)). Choose Grok Bot for recurring or multi-agent work you already pay X or Cursor for; choose Muse for personal errands and shopping if it is available where you live.
 
-Disclosure: Plays (grokbotplays.com) is an unofficial directory of Grok Bot plays. We are not affiliated with xAI, Cursor, or Meta, and nobody paid for this page. We checked every fact below against the linked source on October 28, 2026. Both products change often, so re-check the source before you decide.
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
+
+Disclosure: Plays (grokbotplays.com) is an unofficial directory of Grok Bot plays. We are not affiliated with xAI, Cursor, or Meta, and nobody paid for this page. We re-checked every fact below against the linked source on October 29, 2026. Both products change often, so re-check the source before you decide.
 
 ## Which "Muse" this page means
 
@@ -29,6 +34,7 @@ Disclosure: Plays (grokbotplays.com) is an unofficial directory of Grok Bot play
 | Scheduled / triggered work | Routines on a schedule or on Slack, GitHub, Linear, Sentry, PagerDuty, email, or webhook events ([docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)) | Keeps working after you close the app and returns when something changes ([newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)); a routine/trigger feature equivalent is **unverified** |
 | Multiple agents | Bots run in parallel, message each other, share group chats ([docs](https://docs.x.ai/grok-bot)) | Single Muse per person (per Meta's description); multi-agent use **unverified** |
 | Approvals | Sensitive actions need your approval, checked by an "Auto Review" model ([teams docs](https://docs.x.ai/grok-bot/teams-and-enterprises)) | Asks before sensitive actions like sending email or buying; a separate Sentinel agent must approve anything that reaches the internet ([newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)) |
+| Usage limits | Weekly usage pool; routines spend usage per run; up to 50 routines per Bot, schedules at least 5 minutes apart ([docs](https://docs.x.ai/grok-bot/skills-routines-and-automations), [Cursor help](https://cursor.com/help/grok-bot/plans)) | Free usage limit that refreshes; Power 500M and Maximum 3B Muse tokens per week ([Meta help](https://www.meta.com/help/subscriptions/1021145227643680/)) |
 | Payments | Hands payment steps to you ([teams docs](https://docs.x.ai/grok-bot/teams-and-enterprises)) | Checks out with Link by Stripe using one-time card numbers ([newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)) |
 | Connected apps | Gmail, Google Calendar, Slack, Notion, and others via plugins ([Cursor help](https://cursor.com/help/grok-bot/connect-plugins)) | Small-business connectors include Asana, Canva, Dropbox, Figma, QuickBooks, GitHub, Klaviyo, Zoom, Notion, Granola ([TechCrunch](https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/)) |
 | Availability | Desktop and mobile apps as above; @bot tagging region-limited ([docs](https://docs.x.ai/grok-bot)) | Rolling out in the US ([newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)); "not available in all locations yet"; 18+ to subscribe; needs a Meta account ([Meta help](https://www.meta.com/help/subscriptions/1021145227643680/)) |
@@ -67,8 +73,9 @@ Nothing stops you from using both. Neither vendor says the products conflict.
 ## What we could not verify
 
 - Whether Muse has a scheduler or event triggers comparable to Grok Bot routines. Meta's post says Muse keeps working and comes back when something changes, but documents no schedule feature we could find.
-- Muse availability outside the US. Third-party posts mention Canada and a Mac app; we could not open a primary source for either.
-- Current dollar prices of X Subscription tiers: x.ai/pricing renders in the browser and we did not re-read it for this post.
+- Muse availability outside the US. Meta's post (updated Sept 30, 2026) still says "rolling out in the US". Third-party posts mention Canada and a Mac app; we could not open a primary source for either.
+- Current dollar prices of X Subscription tiers (Premium, Super, Ultra). Cursor's help page names the tiers but not prices, and we did not open a price page this session.
+- Muse Confidential VM: Meta says it is coming "later this year"; not shipped as far as the sources we read show.
 
 ## FAQ
 
@@ -95,3 +102,11 @@ Yes. Work runs on the cloud computer, so closing the app doesn't stop a backgrou
 ### Where can I see real Grok Bot setups?
 
 Browse the [Plays directory](/) for setups people have shared, each linked to its original post.
+
+### Which is better, Grok Bot or Muse?
+
+Neither is better for every job. Grok Bot documents scheduled and event-triggered routines plus several Bots working in parallel ([docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)). Muse is built as one personal agent with a free tier and WhatsApp chat ([Meta newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)). Pick by the job and by where you live.
+
+### Does Muse have routines like Grok Bot?
+
+We could not verify it. Meta says Muse keeps working after you close the app and comes back when something changes, but we found no documented schedule or trigger feature ([Meta newsroom](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)).

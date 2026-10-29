@@ -93,9 +93,9 @@ const en = {
   "lang.aria": "Language",
   "page.catalogTitle": "Grok Bot Plays",
   "page.catalogDesc":
-    "Unofficial Grok Bot play catalog. Every entry has a source link, from public posts and xAI docs.",
+    "An unofficial directory of Grok Bot setups people shared publicly: steps, prompts, and a link to each original post. Guides for use cases, templates, and routines.",
   "page.discoverTitle": "Grok Bot Plays – Real Grok Bot Use Cases & Prompts",
-  "page.discoverDesc": "Latest public X posts about Grok Bot. Every card is a real permalink.",
+  "page.discoverDesc": "Latest public Grok Bot plays. Each card links to its source: usually an X post, sometimes GitHub, LinkedIn, YouTube, x.ai, or a blog.",
   "page.categoriesTitle": "Categories · Plays",
   "page.categoriesDesc": "Five categories of public Grok Bot posts.",
   "page.submitTitle": "Submit · Plays",
@@ -158,7 +158,7 @@ const zh: Record<keyof typeof en, string> = {
   "page.catalogDesc":
     "非官方 Grok Bot 玩法导航。条目均带来源链接，来自公开帖与 xAI 官方说明。",
   "page.discoverTitle": "Plays",
-  "page.discoverDesc": "Latest public X posts about Grok Bot.",
+  "page.discoverDesc": "最新的公开 Grok Bot 玩法。每张卡都链到来源：多数是 X 帖子，也有 GitHub、LinkedIn、YouTube、x.ai 或博客。",
   "page.categoriesTitle": "Categories · Plays",
   "page.categoriesDesc": "Five categories of public Grok Bot posts.",
   "page.submitTitle": "Submit · Plays",

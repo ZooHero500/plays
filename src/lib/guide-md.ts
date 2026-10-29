@@ -1,6 +1,19 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { Marked } from "marked";
 import type { GuideSlug } from "./guides";
+
+const md = new Marked({ gfm: true });
+md.use({
+  renderer: {
+    link({ href, tokens }) {
+      const text = this.parser.parseInline(tokens);
+      const ext = /^https?:\/\//i.test(href);
+      const extra = ext ? ' target="_blank" rel="noopener noreferrer"' : "";
+      return `<a href="${esc(href)}"${extra}>${text}</a>`;
+    },
+  },
+});
 
 export type GuideFrontmatter = {
   slug: GuideSlug;
@@ -9,6 +22,7 @@ export type GuideFrontmatter = {
   metaDescription: string;
   description: string;
   published: string;
+  updated?: string;
 };
 
 export type GuidePick = {
@@ -75,21 +89,18 @@ function esc(s: string): string {
 }
 
 function inline(text: string): string {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
-  return parts
-    .map((part) => {
-      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-      if (link) {
-        const href = link[2];
-        const ext = /^https?:\/\//i.test(href);
-        const extra = ext ? ' target="_blank" rel="noopener noreferrer"' : "";
-        return `<a href="${esc(href)}"${extra}>${inline(link[1])}</a>`;
-      }
-      const bold = part.match(/^\*\*([^*]+)\*\*$/);
-      if (bold) return `<strong>${esc(bold[1])}</strong>`;
-      return esc(part);
-    })
-    .join("");
+  return md.parseInline(text, { async: false }) as string;
+}
+
+/** Plain text of an inline Markdown string (for JSON-LD). */
+export function plainText(htmlOrMd: string): string {
+  return htmlOrMd
+    .replace(/<[^>]+>/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function pickSection(h2: string, h3: string): GuidePick["section"] {
@@ -273,7 +284,7 @@ export function loadGuideMarkdown(slug: GuideSlug): ParsedGuide {
       paras.push(lines[i]);
       i += 1;
     }
-    const html = `<p>${inline(paras.join(" "))}</p>`;
+    const html = md.parse(paras.join("\n"), { async: false }) as string;
     if (faq && faqQ) faqA.push(paras.join(" "));
     else blocks.push({ type: "prose", html });
   }
@@ -289,6 +300,7 @@ export function loadGuideMarkdown(slug: GuideSlug): ParsedGuide {
       metaDescription: fm.metaDescription || fm.description || "",
       description: fm.description || fm.metaDescription || "",
       published: fm.published || "2026-09-08",
+      updated: fm.updated || undefined,
     },
     ledeHtml,
     blocks,

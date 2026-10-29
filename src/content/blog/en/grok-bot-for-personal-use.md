@@ -3,13 +3,16 @@ title: "Grok Bot for personal use: 10 real setups people shared"
 description: "Grok Bot for personal use, with real examples: household errands, refunds, car shopping, reminders, money check-ins, and research. Each links to the original post."
 slug: "grok-bot-for-personal-use"
 date: 2026-10-28
+updated: 2026-10-29
 ---
 
 # Grok Bot for personal use: 10 real setups people shared
 
-Yes, Grok Bot works for personal use. Each Bot runs on a cloud computer with a browser, files, and a terminal, can sign into the apps you grant it, and can run routines while your laptop is closed ([xAI docs](https://docs.x.ai/grok-bot)). Below are ten personal setups people have posted publicly, what each one does, and how to copy the pattern. Each links to its page on Plays and to the original post.
+Yes, you can use Grok Bot for personal tasks: people have publicly shared setups for household errands, refund hunting, car shopping, reminders, money check-ins, and daily news radars, and each Bot works on a cloud computer with a browser, files, and a terminal that keeps going while your laptop is closed ([xAI docs](https://docs.x.ai/grok-bot)). Below are ten of those setups, each linked to its page on Plays and to the original post. Plays is unofficial and not affiliated with xAI or Cursor; we summarise what authors wrote and did not run their setups ourselves.
 
-Plays is an unofficial directory of Grok Bot setups and is not affiliated with xAI or Cursor. We summarise what authors wrote; we did not run their setups ourselves.
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
 
 ## Before you start: what you need
 
@@ -111,3 +114,7 @@ There is a trial usage credit; after that you need an eligible plan ([Cursor hel
 ### Where can I find more ideas?
 
 Browse all plays on the [Plays homepage](/).
+
+### How much does Grok Bot cost for personal use?
+
+There is no separate Grok Bot subscription. It is included with Premium, Super, and Ultra on The X Subscription (not Plus or Free), with paid legacy Cursor plans, or through a linked SuperGrok or X Premium+ account. New accounts get a trial usage credit with a 7-day window ([Cursor help](https://cursor.com/help/grok-bot/plans)).

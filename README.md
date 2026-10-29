@@ -1,15 +1,37 @@
-# Plays
+# Plays — Grok Bot Plays
 
-Grok Bot plays. An unofficial how-to catalog, not affiliated with xAI / Grok.
-Every entry is rewritten from a public post or official doc, and every entry has a source link.
+**Live site:** https://grokbotplays.com
 
-[grokbotplays.com](https://grokbotplays.com/)
+An unofficial, edited directory of real Grok Bot setups ("plays") that people shared publicly.
+
+## What's collected
+
+- **Plays**: real Grok Bot use cases, each rewritten as steps and prompts and linked to its public source. Most sources are X posts; some are GitHub, LinkedIn, YouTube, x.ai, or blogs.
+- **Guides**: how to use Grok Bot, templates, and use cases for sales and engineering (`/guides/`).
+- **Blog**: longer posts on routines, personal use, comparisons (`/blog/`).
+- **Languages**: English at `/`, Chinese at `/zh/`.
+
+Not affiliated with xAI.
 
 ![Plays homepage](plays-home.png)
 
-138 English plays on the site. 33 Chinese write-ups still live at `/zh/` (the language switch is hidden).
+## Stack
 
-## Catalog
+- [Astro](https://astro.build) with static output (no SSR).
+- Content collections in `src/content/` (`plays/{en,zh}`, `blog/{en,zh}`); guide copy in `seo/guides/*.md`.
+- Hosted on Cloudflare Pages; small Pages Functions in `functions/api/` (`/api/click`, `/api/trending`) backed by D1.
+
+## Develop
+
+```sh
+npm install
+npm run dev      # local dev server
+npm run build    # astro build + scripts/verify-guides.mjs
+```
+
+Deploys go to the Cloudflare Pages Production branch (`main`).
+
+## Catalog snapshot (older, partial; the live site has the full list)
 
 ### Official
 

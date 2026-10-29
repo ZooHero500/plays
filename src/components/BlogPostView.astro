@@ -37,6 +37,37 @@ const articleLd: Record<string, unknown> = {
 if (post.data.date) articleLd.datePublished = post.data.date.toISOString().slice(0, 10);
 if (post.data.updated) articleLd.dateModified = post.data.updated.toISOString().slice(0, 10);
 if (post.data.cover) articleLd.image = new URL(post.data.cover, 'https://grokbotplays.com').href;
+// FAQPage from a "## FAQ" section with "### Question" headings.
+const plain = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_`>]/g, '').replace(/\s+/g, ' ').trim();
+const body = post.body || '';
+const faqMatch = body.match(/^##\s+(FAQ|常见问题)[^\n]*\n([\s\S]*?)(?=^##\s|(?![\s\S]))/m);
+const faqs = faqMatch
+  ? faqMatch[2].split(/^###\s+/m).slice(1).map((chunk) => {
+      const [q, ...rest] = chunk.split('\n');
+      return { q: plain(q), a: plain(rest.join(' ')) };
+    }).filter((f) => f.q && f.a)
+  : [];
+const extraLd: Record<string, unknown>[] = [];
+if (faqs.length) {
+  extraLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  });
+}
+// Listicle posts: ItemList of the plays they walk through.
+if (slug === 'grok-bot-for-personal-use') {
+  const ids = [...new Set([...body.matchAll(/\]\(\/play\/([a-z0-9-]+)\/?\)/gi)].map((m) => m[1]))];
+  if (ids.length) {
+    extraLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: post.data.title,
+      numberOfItems: ids.length,
+      itemListElement: ids.map((id, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://grokbotplays.com/play/${id}/` })),
+    });
+  }
+}
 const alternates = otherHas ? { en: `/blog/${slug}/`, zh: `/zh/blog/${slug}/` } : undefined;
 ---
 <Base
@@ -46,7 +77,7 @@ const alternates = otherHas ? { en: `/blog/${slug}/`, zh: `/zh/blog/${slug}/` } 
   locale={locale}
   switchHref={switchHref}
   alternates={alternates}
-  jsonLd={[articleLd]}
+  jsonLd={[articleLd, ...extraLd]}
   crumbs={[{ name: locale === 'zh' ? '博客' : 'Blog', path: localePath(locale, '/blog/') }, { name: post.data.title, path: selfPath }]}
 >
   <Mast locale={locale} tagline="Blog" heading={false} compact />

@@ -6,11 +6,16 @@ metaDescription: How to use Grok Bot: sign in, create one focused bot, run a saf
 description: How to use Grok Bot: sign in, create one focused bot, run a safe first task, then connect plugins. Unofficial Plays guide with real public examples.
 locale: en
 published: 2026-09-08
+updated: 2026-10-29
 ---
 
 # How to use Grok Bot
 
-To use Grok Bot, sign in after install, create one bot with a single job, run a safe first task that ends in human review, then connect only the plugins that job needs. Save a skill once the method works; add a routine later. Unofficial Plays guide with real public examples—not affiliated with xAI ([about](/about)).
+To use Grok Bot, install the desktop app (macOS, Windows, Linux) or the iPhone or Android app, sign in with an account whose plan includes it, create one Bot with one job, and message it a real task with a clear finish line; it works on a persistent cloud computer and comes back when something needs your approval ([xAI docs](https://docs.x.ai/grok-bot)). Once the method works, save it as a skill, then schedule it as a routine ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)). Unofficial Plays guide, not affiliated with xAI ([about](/about)).
+
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
 
 Official docs explain product capabilities. This page is the **operator order**: what to do first, what to keep behind approval, and which verified Plays to copy next. Browse the full shelf on the [home page](/) or [Crew](/categories/crew) when you want discovery instead of a path.
 
@@ -21,6 +26,17 @@ Using Grok Bot is not the same as opening a one-shot chat. A bot is a **persiste
 A useful contrast: a single ChatGPT-style turn is great for a question. Grok Bot is built for a **repeatable outcome**—research that lands as a review list, a draft you approve, a PR pack you still merge. The computer and plugins are tools for that loop, not a free pass to auto-send mail or change production without you.
 
 This site, [grokbotplays.com](/), is an unofficial directory of public Plays (real posts you can check). We are **not affiliated with xAI**. Product facts, plan names, and install requirements live on official docs and our short [install](/install) page; see also [about](/about).
+
+## Which plans include Grok Bot
+
+| Plan | Grok Bot included? | Source |
+| --- | --- | --- |
+| The X Subscription: Premium, Super, Ultra | Yes (shared weekly pool) | [Cursor help](https://cursor.com/help/grok-bot/plans) |
+| The X Subscription: Plus, Free | No | [Cursor help](https://cursor.com/help/grok-bot/plans) |
+| Legacy Cursor Pro, Pro+, Ultra, Teams | Yes | [Cursor help](https://cursor.com/help/grok-bot/plans) |
+| Linked SuperGrok, SuperGrok Plus, SuperGrok Heavy, X Premium+ | Yes, as a usage grant | [Cursor help](https://cursor.com/help/grok-bot/plans) |
+| SuperGrok Lite | No | [Cursor help](https://cursor.com/help/grok-bot/plans) |
+| New account trial | Usage credit with a 7-day window | [Cursor help](https://cursor.com/help/grok-bot/plans) |
 
 ## Before you start
 
@@ -107,9 +123,9 @@ More Crew setups live under [Crew](/categories/crew). Discover new cards on the 
 
 Sign in after [install](/install), create one bot with a single outcome, and run a safe task that ends in a deliverable you review. Connect only the plugins that job needs. Save a skill after the method works; add a routine later. Copy a Play above instead of inventing a mega-bot on day one.
 
-### Do I need Cursor Ultra / SuperGrok?
+### Do I need Cursor Ultra or SuperGrok to use Grok Bot?
 
-Access and plan thresholds change with the product. Use whatever tier the **official product currently publishes** for Grok Bot. This site does not list prices. Confirm on official docs or account settings, then return here for the operator path—not a second pricing page.
+No. Premium, Super, or Ultra on The X Subscription includes it, as do legacy Cursor Pro, Pro+, Ultra, and Teams, and a linked SuperGrok or X Premium+ account. Plus, Free, and SuperGrok Lite do not ([Cursor help](https://cursor.com/help/grok-bot/plans)). We don't list prices; check your account's billing page.
 
 ### Should I create one bot or many?
 
@@ -122,6 +138,10 @@ Use the **computer browser** for one-off public pages or sessions you do not wan
 ### What should stay behind approval?
 
 Anything that leaves the building: sending email or LinkedIn, enrolling sequences, changing CRM stages, spending money, merging to protected branches, or deploying production. Default loop for outreach is **draft → human sends**. Widen autonomy only after you trust the skill, the evidence, and the failure path.
+
+### Can I use Grok Bot on my phone?
+
+Yes. There are iPhone and Android apps, and the same Bot is reachable from desktop and mobile ([xAI docs](https://docs.x.ai/grok-bot)).
 
 ---
 

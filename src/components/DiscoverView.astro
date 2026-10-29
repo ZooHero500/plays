@@ -3,10 +3,14 @@ import Base from '../layouts/Base.astro';
 import DiscoverCard from './DiscoverCard.astro';
 import { getDiscoverPosts, SCENES } from '../lib/discover';
 import { t } from '../lib/i18n';
+import { getPlays } from '../lib/plays';
 
 const posts = await getDiscoverPosts();
 const chips = ['All', ...SCENES] as const;
 const site = 'https://grokbotplays.com/';
+const enPlays = await getPlays('en');
+const isX = (u?: string) => /^https?:\/\/(www\.)?(x|twitter)\.com\//i.test(u || '');
+const xCount = enPlays.filter((p) => isX(p.sourceUrl)).length;
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Grok Bot Plays', url: site, inLanguage: 'en' },
   {
@@ -30,7 +34,13 @@ const jsonLd = [
   jsonLd={jsonLd}
 >
   <div class="discover-head discover-feed-head">
-    <h1 class="discover-h1">Grok Bot Plays: real use cases &amp; prompts</h1>
+    <h1 class="discover-h1">Grok Bot plays: real setups people shared, each linked to its source</h1>
+    <p class="discover-intro">
+      Plays is an unofficial directory of {enPlays.length} Grok Bot setups ("plays") that people have shared publicly, each rewritten as steps and prompts and linked to the original post. Grok Bot is xAI's product for named AI Bots that work on a persistent cloud computer with a browser, files, and a terminal (<a href="https://docs.x.ai/grok-bot" target="_blank" rel="noopener noreferrer">xAI docs</a>). Browse by category, or start with the guides: <a href="/guides/how-to-use-grok-bot/">how to use Grok Bot</a>, <a href="/guides/grok-bot-templates/">templates</a>, and <a href="/guides/grok-bot-use-cases/">use cases</a>.
+    </p>
+    <p class="discover-intro discover-intro-note">
+      Every play links to its source: {xCount} of {enPlays.length} English plays link to an X post; the rest link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. We don't invent likes, views, or results. Not affiliated with xAI.
+    </p>
   </div>
   <nav class="chips discover-scenes" id="discover-chips" aria-label="Categories">
     <div class="chip-cats">

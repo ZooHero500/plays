@@ -6,13 +6,31 @@ metaDescription: What Grok Bot templates include, how to share or install one, a
 description: What Grok Bot templates include, how to share or install one, and what you must reconnect. Unofficial Plays picks with real public examples.
 locale: en
 published: 2026-09-08
+updated: 2026-10-29
 ---
 
 # Grok Bot templates
 
-A Grok Bot template is a **shareable blueprint**—identity, instructions, skills, routines, and plugin *configuration*—not a prompt dump. You share or install it in the app; recipients reconnect their own logins and run a safe first task before any routine. This unofficial Plays guide shows the mechanism plus curated public examples. Not affiliated with xAI ([about](/about)).
+A Grok Bot template is a shareable blueprint of a bot: a copy of its instructions, relevant memories and skills, and specific plugins, published to your team or as a public link that others add with one click. Personal memories, secrets, custom code, scripts, and MCP servers stay out ([x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot)). This unofficial Plays guide explains the mechanism and links public examples; it is not affiliated with xAI ([about](/about)).
+
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
 
 If you have not run a first bot yet, start with [How to use Grok Bot](/guides/how-to-use-grok-bot/). For sales and engineering loops built on those blueprints, see [use cases](/guides/grok-bot-use-cases/). Browse more cards on the [home page](/), [Crew](/categories/crew), and [Official](/categories/official).
+
+## What travels in a template
+
+| Item | Included? | Source |
+| --- | --- | --- |
+| Instructions | Yes | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Relevant memories | Yes; personal or internal memories left out by default | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Skills | First-party skills yes; personal or private skills no | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Routines | Read during packaging; inclusion is shown under View Details (we did not confirm a general rule) | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| First-party plugins | Yes, but the installer reinstalls them with their own accounts | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Custom code, scripts, MCP servers | No | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Secrets and private information | No | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
+| Sharing scope | Team only or public link | [x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot) |
 
 ## What a Grok Bot template is
 
@@ -81,7 +99,7 @@ Typically the bot’s identity and instructions, selected skills and routines, a
 
 ### How do I share a Grok Bot as a template?
 
-In the app, use **Share as template** (or the share flow your build shows). Strip secrets and private memory first, check inclusions, and attach a short recipient brief. Prefer sharing after you have run the job yourself. See the Share Plays above for public examples of packing and shipping links.
+In the bot's settings, choose **Share as Template**; this does not make the bot public. Then pick Team or a public link and choose Publish ([x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot)). Strip secrets and private memory first, check inclusions, and attach a short recipient brief. Prefer sharing after you have run the job yourself. See the Share Plays above for public examples of packing and shipping links.
 
 ### Will the recipient get my logins?
 
@@ -90,6 +108,10 @@ No. Recipients reconnect plugins with **their own** accounts and OAuth. Your liv
 ### Templates vs prompt libraries?
 
 Prompt libraries move text you paste into a chat. Templates move an **agent configuration** meant to become a bot on someone else’s account. Installers still reconnect tools, run a safe first task, and decide when routines may run. Use templates when the seat—not just the wording—is the asset.
+
+### Where can I find Grok Bot templates?
+
+Template links open on x.ai pages with an Add to Grok Bot button ([x.ai guide](https://x.ai/bot/guides/templates-for-grok-bot)). Community directories also index public share links. On Plays, the template plays above each link to the post where the author shared it.
 
 ---
 

@@ -6,13 +6,27 @@ metaDescription: Practical Grok Bot use cases for sales/GTM and engineering—dr
 description: Practical Grok Bot use cases for sales/GTM and engineering—drafting, research, PR watchers—with linked Plays from public posts. Unofficial.
 locale: en
 published: 2026-09-08
+updated: 2026-10-29
 ---
 
 # Grok Bot use cases for sales and engineering
 
-For sales and GTM, Grok Bot fits **research → draft outreach → human sends**; for engineering, it fits **watchers, review packs, and overnight chores with evidence you still merge**. Keep email, LinkedIn, CRM stage changes, and production behind approval. This unofficial Plays page curates public examples—not affiliated with xAI ([about](/about)).
+The most common Grok Bot use cases in public posts are overnight sales research with drafted outreach a human sends, and engineering watchers that review PRs or run overnight chores you still merge; xAI's own docs give a CRM-research-and-draft task as the model first handoff ([xAI docs](https://docs.x.ai/grok-bot)). This unofficial Plays page curates public examples and is not affiliated with xAI ([about](/about)).
+
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
 
 New to the product? Start with [How to use Grok Bot](/guides/how-to-use-grok-bot/). Reusing seats across a team? See [Grok Bot templates](/guides/grok-bot-templates/). Official background (no invented customer metrics here): [x.ai use cases](https://x.ai/bot/use-cases), [Grok Bot for enterprise](https://x.ai/news/grok-bot-for-enterprise), and [teams and enterprises](https://docs.x.ai/grok-bot/teams-and-enterprises).
+
+## Use cases at a glance
+
+| Use case | What the Bot does | What stays with a human | Source |
+| --- | --- | --- | --- |
+| Sales research + outreach drafts | Pulls a CRM list, researches accounts, drafts outreach by morning | Approving and sending | [xAI docs](https://docs.x.ai/grok-bot); [play](/play/official-sales-outbound) |
+| Scheduled monitoring | Runs a saved skill on a schedule and posts a watch list | Contacting customers | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Event-triggered repro | On a Slack/GitHub/Linear/Sentry/PagerDuty event, reproduces an issue and posts a repro pack | Posting back to Slack | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Coding work | Delegates coding to Cursor Cloud Agents | Merging | [teams docs](https://docs.x.ai/grok-bot/teams-and-enterprises) |
 
 ## How to read these use cases
 
@@ -117,6 +131,10 @@ PR and CI watchers, review packs, draft PRs with ticket IDs, overnight chores on
 ### Where do I browse more plays after this?
 
 Use the category shelves and home—not another card dump on this guide: [/categories/growth](/categories/growth), [/categories/engineering](/categories/engineering), and the [home page](/). This page stays curated. For the operator path and reusable seats, open [How to use Grok Bot](/guides/how-to-use-grok-bot/) and [Grok Bot templates](/guides/grok-bot-templates/) next.
+
+### What is Grok Bot used for?
+
+Mostly multi-step work across apps and websites that ends in something you review: research packs, drafts, watch lists, and PR reviews. Each Bot has a persistent cloud computer with a browser, filesystem, and terminal, and comes back when something needs approval ([xAI docs](https://docs.x.ai/grok-bot)).
 
 ---
 

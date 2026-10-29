@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Mast from './Mast.astro';
+import { getPlays } from '../lib/plays';
 import { t, localePath, otherLocale, type Locale } from '../lib/i18n';
 
 interface Props {
@@ -8,6 +9,10 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const isX = (u?: string) => /^https?:\/\/(www\.)?(x|twitter)\.com\//i.test(u || '');
+const enPlays = await getPlays('en');
+const zhPlays = await getPlays('zh');
+const enX = enPlays.filter((p) => isX(p.sourceUrl)).length;
 ---
 <Base
   title={t(locale, 'page.aboutTitle')}
@@ -17,7 +22,8 @@ const { locale } = Astro.props;
   switchHref={localePath(otherLocale(locale), '/about')}
   alternates={{ en: '/about/', zh: '/zh/about/' }}
 >
-  <Mast locale={locale} compact />
+  <Mast locale={locale} compact heading={false} />
+  <h1 class="discover-h1">{locale === 'zh' ? '关于 Grok Bot Plays' : 'About Grok Bot Plays'}</h1>
 
   {locale === 'zh' ? (
     <article class="about">
@@ -28,7 +34,7 @@ const { locale } = Astro.props;
 
       <section class="about-block">
         <h2>收录</h2>
-        <p>每条必须有可点开的真实来源：公开帖或官方说明。没有来源的不写。现刊 33 条，收在 content/plays.json。</p>
+        <p>每条必须有可点开的真实来源：公开帖或官方说明。没有来源的不写。现有英文 {enPlays.length} 条、中文 {zhPlays.length} 条。来源不全是 X：英文里 {enX} 条链到 X 帖子，其余链到 GitHub、LinkedIn、YouTube、x.ai 或博客等。</p>
       </section>
 
       <section class="about-block">
@@ -50,7 +56,7 @@ const { locale } = Astro.props;
 
       <section class="about-block">
         <h2>What’s here</h2>
-        <p>Every play needs a real, clickable source — a public post or official docs. No source, no entry. English plays are not up yet. The Chinese catalog has 33.</p>
+        <p>Every play needs a real, clickable source — a public post or official docs. No source, no entry. There are {enPlays.length} English plays and {zhPlays.length} Chinese plays. Sources aren’t all X: {enX} English plays link to an X post; the rest link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar.</p>
       </section>
 
       <section class="about-block">

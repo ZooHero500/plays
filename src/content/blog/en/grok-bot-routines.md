@@ -3,13 +3,18 @@ title: "Grok Bot routines: how to set up scheduled monitoring and research diges
 description: "How to use Grok Bot routines to watch sources and collect research on a schedule: the prompt, time zones, testing, limits, and usage costs, from the official docs."
 slug: "grok-bot-routines"
 date: 2026-10-28
+updated: 2026-10-29
 ---
 
 # Grok Bot routines: scheduled monitoring and research digests
 
-A Grok Bot routine tells one Bot when to run a job: on a schedule ("every weekday at 8:00 AM") or when something happens, such as a Slack message, a GitHub event, an email, or a webhook call. You create one by asking the Bot in chat, and it runs in the cloud while your laptop is closed ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)). For monitoring and research, the reliable order is: do the job once by hand, save it as a skill, then schedule it.
+A Grok Bot routine tells one Bot when to run a workflow, on a schedule such as "every weekday at 8:00 AM" or when something happens (a Slack message, a GitHub, Linear, Sentry, or PagerDuty event, an email, or a webhook call), and it runs in the cloud while your laptop is closed ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)). You create one by asking the Bot in chat; for monitoring and research, do the job once by hand, save it as a skill, then schedule it.
 
-Plays is an unofficial directory of Grok Bot setups, not affiliated with xAI or Cursor. Product details below come from the linked official docs, checked October 28, 2026.
+_Last checked 2026-10-29._
+
+> **Every play links to its source.** Most plays link to the X post they came from; others link to GitHub, LinkedIn, YouTube, x.ai, a blog, or similar. Open the source to check the original before you copy a setup.
+
+Plays is an unofficial directory of Grok Bot setups, not affiliated with xAI or Cursor. Product details below come from the linked official docs, re-checked October 29, 2026.
 
 ## What a routine is (and what a skill is)
 
@@ -69,6 +74,18 @@ Some monitoring should not wait for a clock. A routine can start on a Slack mess
 
 Keep triggers narrow. The docs warn that a trigger on every message in a busy channel runs often and spends usage on messages that don't need the Bot ([Cursor help](https://cursor.com/help/grok-bot/routines)). For webhooks, the routine shows a POST URL and a bearer key; a `200` response means a run started, not that it finished ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)).
 
+## Routine limits at a glance
+
+| Limit | Value | Source |
+| --- | --- | --- |
+| Routines per Bot | Up to 50 | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Minimum gap between scheduled runs | 5 minutes | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Runs per hour, all routines | 300 | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Runs per hour, one routine | 200 | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Run records kept | 20 most recent per routine | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| First run | Next scheduled time, not on creation (use Test to run now) | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+| Cost | Every run, including Test, spends usage | [xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations) |
+
 ## Limits and usage costs
 
 From the docs ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)):
@@ -122,3 +139,7 @@ No closer than five minutes apart, and up to 200 runs an hour per routine ([xAI 
 ### How do I stop a routine?
 
 Pause it with the switch on its row, or open it and choose **Delete routine**. Deleting can't be undone ([Cursor help](https://cursor.com/help/grok-bot/routines)).
+
+### What can trigger a Grok Bot routine?
+
+A schedule, or an event: a Slack message, a GitHub, Linear, Sentry, or PagerDuty event, an email to your Bot's own address, or a webhook call. Only new activity counts; events from before the trigger existed don't start a run ([xAI docs](https://docs.x.ai/grok-bot/skills-routines-and-automations)).

@@ -8,7 +8,7 @@ import {
   type GuideDef,
   type GuideSlug,
 } from '../lib/guides';
-import type { ParsedGuide } from '../lib/guide-md';
+import { plainText, type ParsedGuide } from '../lib/guide-md';
 import type { PlayData } from '../lib/plays';
 
 interface Props {
@@ -42,6 +42,7 @@ const articleLd = {
   description: doc.fm.metaDescription,
   inLanguage: 'en',
   datePublished: doc.fm.published,
+  ...(doc.fm.updated ? { dateModified: doc.fm.updated } : {}),
   mainEntityOfPage: pageUrl,
   url: pageUrl,
 };
@@ -55,6 +56,52 @@ const breadcrumbLd = {
     { '@type': 'ListItem', position: 3, name: guide.crumb, item: pageUrl },
   ],
 };
+
+const faqItems = doc.blocks.flatMap((b) => (b.type === 'faq' ? b.items : []));
+const faqLd = faqItems.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((f) => ({
+        '@type': 'Question',
+        name: plainText(f.q),
+        acceptedAnswer: { '@type': 'Answer', text: plainText(f.a) },
+      })),
+    }
+  : null;
+
+// Use-cases guide: ItemList of linked plays.
+const pickIds = [...new Set(doc.blocks.flatMap((b) => (b.type === 'picks' ? b.items.map((p) => p.id) : [])))];
+const itemListLd = guide.slug === 'grok-bot-use-cases' && pickIds.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: doc.fm.title,
+      numberOfItems: pickIds.length,
+      itemListElement: pickIds.map((id, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: playOf(id)?.title || id,
+        url: `${origin}/play/${id}/`,
+      })),
+    }
+  : null;
+
+// How-to guide: HowTo from the visible step sections (H2s marked data-guide-howto).
+const HOWTO_H2 = ['Before you start', 'Create one bot with one job', 'Give it a first safe task', 'Connect only the plugins you need', 'Save a skill, then a routine'];
+const howtoSteps = guide.slug === 'how-to-use-grok-bot'
+  ? doc.blocks.filter((b) => b.type === 'h2' && HOWTO_H2.includes(b.text)).map((b) => (b as { text: string }).text)
+  : [];
+const howtoLd = howtoSteps.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: doc.fm.title,
+      description: doc.fm.metaDescription,
+      step: howtoSteps.map((name, i) => ({ '@type': 'HowToStep', position: i + 1, name, url: `${pageUrl}#step-${i + 1}` })),
+    }
+  : null;
+const extraLd = [faqLd, itemListLd, howtoLd].filter(Boolean);
 
 const nextLinks = doc.blocks.find((b) => b.type === 'next');
 const related = nextLinks && nextLinks.type === 'next'
@@ -80,6 +127,7 @@ const otherLabel: Record<GuideSlug, string> = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  {extraLd.map((b) => <script slot="head" type="application/ld+json" set:html={JSON.stringify(b).replace(/</g, '\\u003c')} />)}
 
   <article class="guide-page" data-guide-page={guide.slug}>
     <nav class="guide-crumb" aria-label="Breadcrumb">
@@ -94,7 +142,10 @@ const otherLabel: Record<GuideSlug, string> = {
 
     {doc.blocks.map((block) => {
       if (block.type === 'h2') {
-        return <h2 class="guide-h2">{block.text}</h2>;
+        const si = howtoSteps.indexOf(block.text);
+        return si >= 0
+          ? <h2 class="guide-h2" id={`step-${si + 1}`} data-guide-howto={si + 1}>{block.text}</h2>
+          : <h2 class="guide-h2">{block.text}</h2>;
       }
       if (block.type === 'h3') {
         return <h3 class="guide-h3">{block.text}</h3>;

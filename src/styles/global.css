@@ -2718,3 +2718,17 @@ body.lock-j .j-masonry a.card {
   line-height: 1.25;
 }
 .discover-feed-head { margin: 4px 0 18px; }
+.guide-prose { overflow-x: auto; }
+.guide-prose table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 14px; line-height: 1.5; }
+.guide-prose th, .guide-prose td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid rgba(17, 20, 24, 0.1); color: var(--text-2); }
+.guide-prose th { color: var(--text); font-weight: 600; }
+.guide-prose blockquote { margin: 0 0 16px; padding: 10px 14px; border-left: 3px solid rgba(17, 20, 24, 0.18); background: rgba(17, 20, 24, 0.03); }
+.guide-prose blockquote p { margin: 0; }
+.post table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; line-height: 1.5; }
+.post th, .post td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid rgba(127, 127, 127, 0.25); }
+.post th { font-weight: 600; }
+.post blockquote { margin: 0 0 18px; padding: 10px 14px; border-left: 3px solid rgba(127, 127, 127, 0.35); }
+.post blockquote p { margin: 0; }
+.discover-intro { margin: 8px 0 0; max-width: 72ch; font-size: 14px; line-height: 1.6; color: var(--text-muted, #6B6760); }
+.discover-intro a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.discover-intro-note { font-size: 12px; }
