@@ -12,5 +12,11 @@ const { locale } = Astro.props;
   <a href="/guides/">{t('en', 'nav.guides')}</a>
   {' · '}
   <a href="/submit">{t('en', 'nav.submit')}</a>
+  {' · '}
+  <a href={locale === 'zh' ? '/zh/privacy/' : '/privacy/'}>{locale === 'zh' ? '隐私' : 'Privacy'}</a>
+  {' · '}
+  <a href={locale === 'zh' ? '/zh/terms/' : '/terms/'}>{locale === 'zh' ? '条款' : 'Terms'}</a>
+  {' · '}
+  <a href={locale === 'zh' ? '/zh/contact/' : '/contact/'}>{locale === 'zh' ? '联系' : 'Contact'}</a>
   <slot />
 </footer>

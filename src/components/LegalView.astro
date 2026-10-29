@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Mast from './Mast.astro';
+import { localePath, otherLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  kind: 'privacy' | 'terms' | 'contact';
+}
+
+const { locale, kind } = Astro.props;
+const zh = locale === 'zh';
+const ISSUES = 'https://github.com/ZooHero500/plays/issues';
+const REPO = 'https://github.com/ZooHero500/plays';
+const titles = {
+  privacy: zh ? '隐私说明' : 'Privacy',
+  terms: zh ? '使用条款' : 'Terms of use',
+  contact: zh ? '联系' : 'Contact',
+};
+const descs = {
+  privacy: zh ? 'Grok Bot Plays 收集什么、不收集什么。' : 'What Grok Bot Plays collects and what it does not.',
+  terms: zh ? '使用 Grok Bot Plays 的简单条款。' : 'Plain terms for using Grok Bot Plays.',
+  contact: zh ? '通过 GitHub issues 联系 Grok Bot Plays。' : 'Reach Grok Bot Plays through GitHub issues.',
+};
+const title = titles[kind];
+---
+<Base
+  title={`${title} · Grok Bot Plays`}
+  description={descs[kind]}
+  nav="none"
+  locale={locale}
+  switchHref={localePath(otherLocale(locale), `/${kind}`)}
+  alternates={{ en: `/${kind}/`, zh: `/zh/${kind}/` }}
+>
+  <Mast locale={locale} compact heading={false} />
+  <h1 class="discover-h1">{title}</h1>
+  <article class="about">
+    {kind === 'privacy' && (zh ? (
+      <>
+        <section class="about-block"><h2>站点类型</h2><p>本站是静态网站。没有账号、登录或表单，不收集姓名、邮箱或密码。</p></section>
+        <section class="about-block"><h2>访问统计</h2><p>页面加载自托管的 Umami 统计脚本（analysis.zoohero.me），用于统计页面浏览量。Umami 不设置 Cookie。</p></section>
+        <section class="about-block"><h2>点击计数</h2><p>首页点开某个玩法时，会把该玩法的 id 发送到 /api/click，只累加一个匿名点击数，用于“热门”排序。不记录你是谁。</p></section>
+        <section class="about-block"><h2>托管</h2><p>站点托管在 Cloudflare Pages，Cloudflare 作为托管方可能按其政策处理常规请求日志。外链（X、GitHub 等）适用各自的隐私政策。</p></section>
+        <section class="about-block"><h2>疑问</h2><p>请在 <a href={ISSUES}>GitHub issues</a> 提出。</p></section>
+      </>
+    ) : (
+      <>
+        <section class="about-block"><h2>What this site is</h2><p>A static website. There are no accounts, logins, or forms, and it does not collect names, emails, or passwords.</p></section>
+        <section class="about-block"><h2>Analytics</h2><p>Pages load a self-hosted Umami analytics script (analysis.zoohero.me) to count page views. Umami does not set cookies.</p></section>
+        <section class="about-block"><h2>Click counts</h2><p>When you open a play from the home page, its id is sent to /api/click, which only increments an anonymous click count used for “trending” order. It does not record who you are.</p></section>
+        <section class="about-block"><h2>Hosting</h2><p>The site is hosted on Cloudflare Pages; Cloudflare may process standard request logs under its own policies. Outbound links (X, GitHub and others) follow their own privacy policies.</p></section>
+        <section class="about-block"><h2>Questions</h2><p>Open an issue on <a href={ISSUES}>GitHub</a>.</p></section>
+      </>
+    ))}
+    {kind === 'terms' && (zh ? (
+      <>
+        <section class="about-block"><h2>本站是什么</h2><p>非官方、编辑整理的 Grok Bot 玩法导航，与 xAI / Grok 无关。不卖任何东西。</p></section>
+        <section class="about-block"><h2>内容</h2><p>每条玩法链到原始来源，原作归原作者所有。摘要和点评仅供参考，按“现状”提供，不保证准确或适用于你的情况。</p></section>
+        <section class="about-block"><h2>纠错与下架</h2><p>如果内容有误或你希望移除自己的内容，请在 <a href={ISSUES}>GitHub issues</a> 提出。</p></section>
+      </>
+    ) : (
+      <>
+        <section class="about-block"><h2>What this is</h2><p>An unofficial, edited catalog of Grok Bot plays. It is not affiliated with xAI or Grok, and nothing is for sale.</p></section>
+        <section class="about-block"><h2>Content</h2><p>Each play links to its original source; original work belongs to its authors. Summaries and commentary are provided as-is, for information only, with no guarantee they are accurate or fit your situation.</p></section>
+        <section class="about-block"><h2>Corrections and removals</h2><p>If something is wrong or you want your content removed, open an issue on <a href={ISSUES}>GitHub</a>.</p></section>
+      </>
+    ))}
+    {kind === 'contact' && (zh ? (
+      <section class="about-block"><p>本站没有邮箱或表单。提建议、纠错、投稿或请求下架，请在 <a href={ISSUES}>GitHub issues</a> 开一个 issue。源码在 <a href={REPO}>GitHub</a>。</p></section>
+    ) : (
+      <section class="about-block"><p>There is no email or contact form. For suggestions, corrections, submissions, or removal requests, open an issue at <a href={ISSUES}>GitHub issues</a>. Source code is on <a href={REPO}>GitHub</a>.</p></section>
+    ))}
+  </article>
+</Base>

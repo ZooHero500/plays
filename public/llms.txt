@@ -1,0 +1,30 @@
+# Grok Bot Plays
+
+> Unofficial, edited catalog of real Grok Bot "plays": setups, routines and workflows people have publicly shared, each linked to its original source (X posts, GitHub, LinkedIn, YouTube, x.ai docs, blogs). Not affiliated with xAI. Nothing for sale. English at the root, Chinese under /zh/.
+
+## Main pages
+
+- [Home: latest plays](https://grokbotplays.com/): browse all English plays
+- [Categories](https://grokbotplays.com/categories/): plays grouped by scenario
+- [Install Grok Bot](https://grokbotplays.com/install/): how to get started
+- [About](https://grokbotplays.com/about/): what is included and how entries are chosen
+- [Submit a play](https://grokbotplays.com/submit/): suggest a new play
+
+## Guides
+
+- [How to use Grok Bot](https://grokbotplays.com/guides/how-to-use-grok-bot/)
+- [Grok Bot templates](https://grokbotplays.com/guides/grok-bot-templates/)
+- [Grok Bot use cases](https://grokbotplays.com/guides/grok-bot-use-cases/)
+
+## Blog
+
+- [Grok Bot for personal use: 10 real setups people shared](https://grokbotplays.com/blog/grok-bot-for-personal-use/)
+- [Grok Bot routines: scheduled monitoring and research digests](https://grokbotplays.com/blog/grok-bot-routines/)
+- [Grok Bot vs Muse](https://grokbotplays.com/blog/grok-bot-vs-muse/)
+
+## Optional
+
+- [Sitemap](https://grokbotplays.com/sitemap.xml): every play, guide and post
+- [中文首页](https://grokbotplays.com/zh/)
+- [Privacy](https://grokbotplays.com/privacy/), [Terms](https://grokbotplays.com/terms/), [Contact](https://grokbotplays.com/contact/)
+- [Source code](https://github.com/ZooHero500/plays)
